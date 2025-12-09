@@ -75,7 +75,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             border: 2px solid #2563eb;
-            cursor: pointer;
+            cursor: button;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
@@ -318,6 +318,7 @@
             font-size: 2.5rem;
         }
         
+        /* FIXED: Updated popular badge positioning for desktop */
         .popular-badge {
             position: absolute;
             top: -12px;
@@ -331,6 +332,115 @@
             font-size: 0.875rem;
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
             z-index: 10;
+            white-space: nowrap;
+        }
+        
+        /* NEW: Legal pages modal styling */
+        .legal-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 1rem;
+        }
+        
+        .legal-content {
+            background: white;
+            border-radius: 0.5rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        
+        .legal-tabs {
+            display: flex;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+        }
+        
+        .legal-tab {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            font-weight: 600;
+            color: #6b7280;
+            cursor: pointer;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .legal-tab:hover {
+            color: #2563eb;
+        }
+        
+        .legal-tab.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+        
+        .legal-section {
+            display: none;
+        }
+        
+        .legal-section.active {
+            display: block;
+        }
+        
+        .legal-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .legal-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin: 1.25rem 0 0.75rem;
+        }
+        
+        .legal-section p {
+            color: #4b5563;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .legal-section ul, .legal-section ol {
+            color: #4b5563;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .legal-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .legal-date {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        /* NEW: Logo clickable style */
+        .logo-container {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
@@ -339,12 +449,13 @@
     <nav class="sticky-nav">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
+                <!-- UPDATED: Made logo clickable -->
+                <a href="#" id="home-logo" class="logo-container space-x-2">
                     <div class="w-10 h-10 bg-gradient-to-r from-blue-700 to-green-500 rounded-lg flex items-center justify-center">
                         <i class="fas fa-shield-alt text-white text-xl"></i>
                     </div>
                     <span class="text-xl font-bold text-gray-900">SecurePatch<span class="blue-gradient-text">Pro</span></span>
-                </div>
+                </a>
                 
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-gray-700 font-medium hover:text-gray-900">Home</a>
@@ -595,8 +706,8 @@
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Basic</h3>
                         <p class="text-gray-600">For small businesses</p>
                         <div class="mt-4">
+                            <!-- UPDATED: Removed /month -->
                             <span class="text-4xl font-bold blue-gradient-text">$105</span>
-                            <span class="text-gray-600">/month</span>
                         </div>
                         <p class="text-gray-500 text-sm mt-2">Billed for 5 months</p>
                     </div>
@@ -622,7 +733,7 @@
                             <span class="text-gray-400">Compliance reporting</span>
                         </li>
                     </ul>
-                    <button onclick="selectPlan('Basic', '$105/month', '5 months')" class="btn-secondary w-full">Get Started</button>
+                    <button onclick="selectPlan('Basic', '$105', '5 months')" class="btn-secondary w-full">Get Started</button>
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-blue-500 relative card-hover">
@@ -630,8 +741,8 @@
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Standard</h3>
                         <p class="text-gray-600">For growing businesses</p>
                         <div class="mt-4">
+                            <!-- UPDATED: Removed /month -->
                             <span class="text-4xl font-bold blue-gradient-text">$160</span>
-                            <span class="text-gray-600">/month</span>
                         </div>
                         <p class="text-gray-500 text-sm mt-2">Billed for 12 months</p>
                     </div>
@@ -657,17 +768,18 @@
                             <span class="text-gray-400">Dedicated engineer</span>
                         </li>
                     </ul>
-                    <button onclick="selectPlan('Standard', '$160/month', '12 months')" class="btn-primary w-full">Get Started</button>
+                    <button onclick="selectPlan('Standard', '$160', '12 months')" class="btn-primary w-full">Get Started</button>
                 </div>
                 
-                <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-green-500 relative card-hover">
+                <!-- UPDATED: Fixed MOST POPULAR badge positioning -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-green-500 relative card-hover" style="padding-top: 2rem;">
                     <div class="popular-badge">MOST POPULAR</div>
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Premium</h3>
                         <p class="text-gray-600">For established businesses</p>
                         <div class="mt-4">
+                            <!-- UPDATED: Removed /month -->
                             <span class="text-4xl font-bold green-gradient-text">$250</span>
-                            <span class="text-gray-600">/month</span>
                         </div>
                         <p class="text-gray-500 text-sm mt-2">Billed for 2 years</p>
                     </div>
@@ -693,7 +805,7 @@
                             <span>Dedicated security engineer</span>
                         </li>
                     </ul>
-                    <button onclick="selectPlan('Premium', '$250/month', '2 years')" class="btn-green w-full">Get Started</button>
+                    <button onclick="selectPlan('Premium', '$250', '2 years')" class="btn-green w-full">Get Started</button>
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 relative">
@@ -1032,7 +1144,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope mr-3"></i>
-                            <span>mailer.securepatchpro@gmail.com</span>
+                            <span>mailer.secureguard@gmail.com</span>
                         </li>
                     </ul>
                 </div>
@@ -1041,14 +1153,162 @@
             <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 SecurePatch Pro. All rights reserved.</p>
                 <div class="flex space-x-6 text-sm text-gray-400">
-                    <a href="#" class="hover:text-white">Privacy Policy</a>
-                    <a href="#" class="hover:text-white">Terms of Service</a>
-                    <a href="#" class="hover:text-white">Cookie Policy</a>
-                    <a href="#" class="hover:text-white">GDPR</a>
+                    <!-- UPDATED: Added onclick events for legal pages -->
+                    <a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="hover:text-white">Privacy Policy</a>
+                    <a href="javascript:void(0)" onclick="showLegalPage('terms')" class="hover:text-white">Terms of Service</a>
+                    <a href="javascript:void(0)" onclick="showLegalPage('cookie')" class="hover:text-white">Cookie Policy</a>
+                    <a href="javascript:void(0)" onclick="showLegalPage('gdpr')" class="hover:text-white">GDPR</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- NEW: Legal Pages Modal -->
+    <div id="legalModal" class="legal-modal hidden">
+        <div class="legal-content">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-gray-800">Legal Documents</h2>
+                <button onclick="closeLegalModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="legal-tabs">
+                <button class="legal-tab active" data-tab="privacy">Privacy Policy</button>
+                <button class="legal-tab" data-tab="terms">Terms of Service</button>
+                <button class="legal-tab" data-tab="cookie">Cookie Policy</button>
+                <button class="legal-tab" data-tab="gdpr">GDPR Compliance</button>
+            </div>
+            
+            <!-- Privacy Policy -->
+            <div id="privacy-policy" class="legal-section active">
+                <p class="legal-date">Last Updated: November 2023</p>
+                
+                <h2>1. Information We Collect</h2>
+                <p>We collect information that you provide directly to us, including:</p>
+                <ul>
+                    <li><strong>Contact Information:</strong> Name, email address, phone number, company name</li>
+                    <li><strong>Business Information:</strong> Company size, industry, number of endpoints</li>
+                    <li><strong>Technical Information:</strong> IP address, browser type, device information</li>
+                    <li><strong>Communication Data:</strong> Emails, chat messages, support requests</li>
+                </ul>
+                
+                <h2>2. How We Use Your Information</h2>
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>Provide and maintain our patch management services</li>
+                    <li>Process your subscription and billing</li>
+                    <li>Send technical notices, updates, and security alerts</li>
+                    <li>Respond to your comments, questions, and customer service requests</li>
+                    <li>Monitor and analyze trends, usage, and activities</li>
+                    <li>Comply with legal obligations and enforce our agreements</li>
+                </ul>
+                
+                <h2>3. Data Security</h2>
+                <p>We implement appropriate technical and organizational security measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+                
+                <h2>4. Data Retention</h2>
+                <p>We retain personal data only for as long as necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements.</p>
+                
+                <h2>5. Your Rights</h2>
+                <p>Depending on your location, you may have rights regarding your personal data including access, correction, deletion, and data portability.</p>
+                
+                <h2>6. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at privacy@securepatchpro.com.</p>
+            </div>
+            
+            <!-- Terms of Service -->
+            <div id="terms-service" class="legal-section">
+                <p class="legal-date">Last Updated: November 2023</p>
+                
+                <h2>1. Agreement to Terms</h2>
+                <p>By accessing or using SecurePatch Pro's services, you agree to be bound by these Terms of Service.</p>
+                
+                <h2>2. Subscription Terms</h2>
+                <h3>2.1 Subscription Periods:</h3>
+                <ul>
+                    <li><strong>Basic Plan:</strong> 5-month minimum commitment</li>
+                    <li><strong>Standard Plan:</strong> 12-month minimum commitment</li>
+                    <li><strong>Premium Plan:</strong> 24-month minimum commitment</li>
+                    <li><strong>Enterprise Plan:</strong> Custom term as agreed</li>
+                </ul>
+                
+                <h3>2.2 Billing and Payment:</h3>
+                <ul>
+                    <li>All fees are payable in advance</li>
+                    <li>Auto-renewal is enabled by default</li>
+                    <li>Late payments may result in service suspension</li>
+                </ul>
+                
+                <h2>3. Service Level Agreement (SLA)</h2>
+                <p>We guarantee 99.9% uptime for our patch management services.</p>
+                
+                <h2>4. Acceptable Use</h2>
+                <p>You agree not to misuse our services, including attempting to breach security or using the service for any illegal purpose.</p>
+                
+                <h2>5. Termination</h2>
+                <p>Either party may terminate this agreement with 30 days written notice.</p>
+                
+                <h2>6. Governing Law</h2>
+                <p>These Terms shall be governed by the laws of the State of California.</p>
+            </div>
+            
+            <!-- Cookie Policy -->
+            <div id="cookie-policy" class="legal-section">
+                <p class="legal-date">Last Updated: November 2023</p>
+                
+                <h2>1. What Are Cookies</h2>
+                <p>Cookies are small text files that are placed on your computer or mobile device when you visit our website.</p>
+                
+                <h2>2. How We Use Cookies</h2>
+                <p>We use cookies for the following purposes:</p>
+                <ul>
+                    <li><strong>Essential Cookies:</strong> Necessary for the website to function properly</li>
+                    <li><strong>Performance Cookies:</strong> Collect information about how visitors use our website</li>
+                    <li><strong>Functionality Cookies:</strong> Remember choices you make to improve your experience</li>
+                </ul>
+                
+                <h2>3. Managing Cookies</h2>
+                <p>You can control and/or delete cookies as you wish through your browser settings.</p>
+                
+                <h2>4. Specific Cookies We Use</h2>
+                <ul>
+                    <li><strong>Google Analytics:</strong> _ga, _gid, _gat - Used to distinguish users</li>
+                    <li><strong>Formspree:</strong> formspree_session - Used for form submission</li>
+                    <li><strong>Session Cookie:</strong> securepatch_session - Maintains your session</li>
+                </ul>
+            </div>
+            
+            <!-- GDPR Compliance -->
+            <div id="gdpr-compliance" class="legal-section">
+                <p class="legal-date">Last Updated: November 2023</p>
+                
+                <h2>1. Our Commitment to GDPR</h2>
+                <p>SecurePatch Pro is committed to complying with the General Data Protection Regulation (GDPR) for all users in the European Union.</p>
+                
+                <h2>2. Data Protection Principles</h2>
+                <p>We adhere to data protection principles including lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, and integrity.</p>
+                
+                <h2>3. Legal Basis for Processing</h2>
+                <p>We process personal data based on consent, contract, legal obligation, or legitimate interests.</p>
+                
+                <h2>4. Data Subject Rights</h2>
+                <p>Under GDPR, you have rights including access, rectification, erasure, restriction of processing, data portability, and objection.</p>
+                
+                <h2>5. Data Protection Officer</h2>
+                <p>We have appointed a Data Protection Officer (DPO) who can be contacted at dpo@securepatchpro.com.</p>
+                
+                <h2>6. Data Breach Notification</h2>
+                <p>In the event of a data breach, we will notify affected users and authorities within 72 hours where feasible.</p>
+            </div>
+            
+            <div class="mt-6 pt-4 border-t border-gray-200">
+                <button onclick="closeLegalModal()" class="btn-primary">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Opt-In Modal with Expert Code -->
     <div id="optinModal" class="modal-overlay hidden">
@@ -1064,11 +1324,13 @@
                 <form id="optin-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-4">
                     <input type="hidden" name="_subject" value="New Package Opt-In - SecurePatch Pro">
                     <input type="hidden" name="selected_plan" id="selected-plan">
+                    <!-- UPDATED: Changed price format -->
                     <input type="hidden" name="selected_price" id="selected-price">
                     <input type="hidden" name="selected_duration" id="selected-duration">
                     
                     <div class="bg-blue-50 p-4 rounded-lg mb-4">
                         <h4 class="font-bold text-blue-800 mb-2">Selected Package</h4>
+                        <!-- UPDATED: Updated price display -->
                         <p id="selected-package-info" class="text-blue-700"></p>
                     </div>
                     
@@ -1100,7 +1362,7 @@
                     <div class="flex items-start">
                         <input type="checkbox" id="terms-optin" name="terms" required class="mt-1">
                         <label for="terms-optin" class="ml-3 text-sm text-gray-600">
-                            I agree to the <a href="#" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>
+                            I agree to the <a href="javascript:void(0)" onclick="showLegalPage('terms')" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="text-blue-600 hover:underline">Privacy Policy</a>
                         </label>
                     </div>
                     
@@ -1142,6 +1404,20 @@
     </div>
 
     <script>
+        // UPDATED: Logo click functionality
+        document.getElementById('home-logo').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            // Close any open modals
+            closeOptinModal();
+            closeConfirmationModal();
+            closeContactModal();
+            closeLegalModal();
+        });
+        
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
@@ -1169,14 +1445,14 @@
             });
         });
         
-        // Plan selection function
+        // UPDATED: Plan selection function with new price format
         function selectPlan(plan, price, duration) {
             // Update hidden fields
             document.getElementById('selected-plan').value = plan;
             document.getElementById('selected-price').value = price;
             document.getElementById('selected-duration').value = duration;
             
-            // Update display text
+            // Update display text - UPDATED format
             document.getElementById('selected-package-info').textContent = `${plan} - ${price} (${duration})`;
             
             // Open opt-in modal
@@ -1202,7 +1478,7 @@
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
             
-            // Update confirmation message
+            // Update confirmation message - UPDATED format
             document.getElementById('confirmation-message').textContent = 
                 `Thank you, you have opt in for ${plan}. You will receive an invoice via the email you provided.`;
             
@@ -1224,31 +1500,86 @@
         
         // Contact modal functions
         function openContactModal(plan = '') {
-            const modal = document.getElementById('contactModal');
+            // For simplicity, we'll use the contact form in the page
+            window.scrollTo({
+                top: document.getElementById('contact').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+        
+        // NEW: Legal modal functions
+        function showLegalPage(page) {
+            const modal = document.getElementById('legalModal');
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
             
-            if (plan && document.getElementById('plan-select')) {
-                document.getElementById('plan-select').value = plan;
+            // Update active tab
+            document.querySelectorAll('.legal-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.legal-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.querySelector(`.legal-tab[data-tab="${page}"]`).classList.add('active');
+            
+            if (page === 'privacy') {
+                document.getElementById('privacy-policy').classList.add('active');
+            } else if (page === 'terms') {
+                document.getElementById('terms-service').classList.add('active');
+            } else if (page === 'cookie') {
+                document.getElementById('cookie-policy').classList.add('active');
+            } else if (page === 'gdpr') {
+                document.getElementById('gdpr-compliance').classList.add('active');
             }
         }
         
-        function closeContactModal() {
-            const modal = document.getElementById('contactModal');
+        function closeLegalModal() {
+            const modal = document.getElementById('legalModal');
             modal.classList.add('hidden');
             document.body.style.overflow = '';
         }
         
+        // Legal tab switching
+        document.querySelectorAll('.legal-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                
+                // Update active tab
+                document.querySelectorAll('.legal-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Show selected section
+                document.querySelectorAll('.legal-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                if (tabName === 'privacy') {
+                    document.getElementById('privacy-policy').classList.add('active');
+                } else if (tabName === 'terms') {
+                    document.getElementById('terms-service').classList.add('active');
+                } else if (tabName === 'cookie') {
+                    document.getElementById('cookie-policy').classList.add('active');
+                } else if (tabName === 'gdpr') {
+                    document.getElementById('gdpr-compliance').classList.add('active');
+                }
+            });
+        });
+        
         // Close modal when clicking outside
-        document.querySelectorAll('.modal-overlay').forEach(modal => {
+        document.querySelectorAll('.modal-overlay, .legal-modal').forEach(modal => {
             modal.addEventListener('click', function(e) {
                 if (e.target === this) {
                     if (this.id === 'optinModal') {
                         closeOptinModal();
                     } else if (this.id === 'confirmationModal') {
                         closeConfirmationModal();
-                    } else if (this.id === 'contactModal') {
-                        closeContactModal();
+                    } else if (this.id === 'legalModal') {
+                        closeLegalModal();
                     }
                 }
             });
@@ -1261,8 +1592,8 @@
                     closeOptinModal();
                 } else if (!document.getElementById('confirmationModal').classList.contains('hidden')) {
                     closeConfirmationModal();
-                } else if (!document.getElementById('contactModal').classList.contains('hidden')) {
-                    closeContactModal();
+                } else if (!document.getElementById('legalModal').classList.contains('hidden')) {
+                    closeLegalModal();
                 }
             }
         });
