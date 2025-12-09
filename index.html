@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecurePatch Pro | Managed Security Patch Services</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/security-shield.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -290,6 +291,47 @@
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
         }
+        
+        .expert-code-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 2px dashed #2563eb;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            font-size: 1.5rem;
+            text-align: center;
+            letter-spacing: 0.1em;
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+        
+        .confirmation-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -313,7 +355,7 @@
                 </div>
                 
                 <div class="flex items-center space-x-4">
-                    <button class="btn-secondary hidden md:block">Client Login</button>
+                    <!-- Client Login removed as requested -->
                     <button onclick="openContactModal()" class="btn-primary">Get Quote</button>
                     <button id="mobile-menu-btn" class="md:hidden text-gray-700">
                         <i class="fas fa-bars text-xl"></i>
@@ -329,7 +371,6 @@
                     <a href="#pricing" class="text-gray-700 font-medium hover:text-gray-900">Pricing</a>
                     <a href="#about" class="text-gray-700 font-medium hover:text-gray-900">About</a>
                     <a href="#contact" class="text-gray-700 font-medium hover:text-gray-900">Contact</a>
-                    <button class="btn-secondary w-full mt-2">Client Login</button>
                 </div>
             </div>
         </div>
@@ -549,7 +590,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 relative">
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Basic</h3>
                         <p class="text-gray-600">For small businesses</p>
@@ -557,7 +598,7 @@
                             <span class="text-4xl font-bold blue-gradient-text">$105</span>
                             <span class="text-gray-600">/month</span>
                         </div>
-                        <p class="text-gray-500 text-sm mt-2">Billed annually</p>
+                        <p class="text-gray-500 text-sm mt-2">Billed for 5 months</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start">
@@ -581,7 +622,7 @@
                             <span class="text-gray-400">Compliance reporting</span>
                         </li>
                     </ul>
-                    <button onclick="openContactModal('Basic Plan - $105/month')" class="btn-secondary w-full">Get Started</button>
+                    <button onclick="selectPlan('Basic', '$105/month', '5 months')" class="btn-secondary w-full">Get Started</button>
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-blue-500 relative card-hover">
@@ -592,7 +633,7 @@
                             <span class="text-4xl font-bold blue-gradient-text">$160</span>
                             <span class="text-gray-600">/month</span>
                         </div>
-                        <p class="text-gray-500 text-sm mt-2">Billed annually</p>
+                        <p class="text-gray-500 text-sm mt-2">Billed for 12 months</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start">
@@ -616,13 +657,11 @@
                             <span class="text-gray-400">Dedicated engineer</span>
                         </li>
                     </ul>
-                    <button onclick="openContactModal('Standard Plan - $160/month')" class="btn-primary w-full">Get Started</button>
+                    <button onclick="selectPlan('Standard', '$160/month', '12 months')" class="btn-primary w-full">Get Started</button>
                 </div>
                 
-                <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-green-500 relative card-hover pulse">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <span class="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">MOST POPULAR</span>
-                    </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-green-500 relative card-hover">
+                    <div class="popular-badge">MOST POPULAR</div>
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Premium</h3>
                         <p class="text-gray-600">For established businesses</p>
@@ -630,7 +669,7 @@
                             <span class="text-4xl font-bold green-gradient-text">$250</span>
                             <span class="text-gray-600">/month</span>
                         </div>
-                        <p class="text-gray-500 text-sm mt-2">Billed annually</p>
+                        <p class="text-gray-500 text-sm mt-2">Billed for 2 years</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start">
@@ -654,10 +693,10 @@
                             <span>Dedicated security engineer</span>
                         </li>
                     </ul>
-                    <button onclick="openContactModal('Premium Plan - $250/month')" class="btn-green w-full">Get Started</button>
+                    <button onclick="selectPlan('Premium', '$250/month', '2 years')" class="btn-green w-full">Get Started</button>
                 </div>
                 
-                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 relative">
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Enterprise</h3>
                         <p class="text-gray-600">For large organizations</p>
@@ -1011,20 +1050,27 @@
         </div>
     </footer>
 
-    <!-- Contact Modal -->
-    <div id="contactModal" class="modal-overlay hidden">
+    <!-- Opt-In Modal with Expert Code -->
+    <div id="optinModal" class="modal-overlay hidden">
         <div class="modal-content">
             <div class="p-6">
                 <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-2xl font-bold text-gray-800">Request a Quote</h3>
-                    <button onclick="closeContactModal()" class="text-gray-500 hover:text-gray-700">
+                    <h3 class="text-2xl font-bold text-gray-800">Complete Your Opt-In</h3>
+                    <button onclick="closeOptinModal()" class="text-gray-500 hover:text-gray-700">
                         <i class="fas fa-times text-xl"></i>
                     </button>
                 </div>
                 
-                <form id="quote-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-4">
-                    <input type="hidden" name="_subject" value="New Quote Request - SecurePatch Pro">
-                    <input type="hidden" name="_replyto" value="">
+                <form id="optin-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-4">
+                    <input type="hidden" name="_subject" value="New Package Opt-In - SecurePatch Pro">
+                    <input type="hidden" name="selected_plan" id="selected-plan">
+                    <input type="hidden" name="selected_price" id="selected-price">
+                    <input type="hidden" name="selected_duration" id="selected-duration">
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-bold text-blue-800 mb-2">Selected Package</h4>
+                        <p id="selected-package-info" class="text-blue-700"></p>
+                    </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
@@ -1038,50 +1084,59 @@
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Company Name (Optional)</label>
                         <input type="text" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                        <input type="tel" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                            Expert Code <span class="text-red-500">*</span>
+                            <span class="ml-1 text-xs text-gray-500">(Required for patch delivery)</span>
+                        </label>
+                        <input type="text" name="expert_code" required placeholder="e.g. DA-87543" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" pattern="[A-Z]{2}-[0-9]{5}" title="Format: XX-12345 (e.g., DA-87543)">
+                        <p class="text-xs text-gray-500 mt-1">Format: XX-12345 (e.g., DA-87543)</p>
                     </div>
                     
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Plan Interest</label>
-                        <select id="plan-select" name="plan_interest" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
-                            <option value="">Select a plan</option>
-                            <option value="Basic - $105/month">Basic Plan ($105/month)</option>
-                            <option value="Standard - $160/month">Standard Plan ($160/month)</option>
-                            <option value="Premium - $250/month">Premium Plan ($250/month)</option>
-                            <option value="Enterprise - Custom">Enterprise Plan (Custom)</option>
-                            <option value="Not Sure">Not sure - need consultation</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Approximate Number of Endpoints</label>
-                        <select name="endpoints" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
-                            <option value="">Select range</option>
-                            <option value="1-25">1-25</option>
-                            <option value="26-100">26-100</option>
-                            <option value="101-500">101-500</option>
-                            <option value="500+">500+</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
-                        <textarea name="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"></textarea>
+                    <div class="flex items-start">
+                        <input type="checkbox" id="terms-optin" name="terms" required class="mt-1">
+                        <label for="terms-optin" class="ml-3 text-sm text-gray-600">
+                            I agree to the <a href="#" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>
+                        </label>
                     </div>
                     
                     <div class="pt-2">
                         <button type="submit" class="btn-primary w-full py-3">
-                            <i class="fas fa-paper-plane mr-2"></i> Submit Quote Request
+                            <i class="fas fa-check-circle mr-2"></i> Complete Opt-In
                         </button>
-                        <p class="text-gray-500 text-sm mt-2">We'll contact you within 24 hours with pricing and next steps.</p>
+                        <p class="text-gray-500 text-sm mt-2">You will receive an invoice via the email you provided.</p>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="p-8 text-center">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-800 mt-6 mb-4">Opt-In Confirmed</h3>
+                
+                <div class="text-gray-600 mb-6">
+                    <p id="confirmation-message" class="mb-4"></p>
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-500 mb-2">The ID:</p>
+                        <div id="expert-code-display" class="expert-code-box mb-4"></div>
+                        <p class="text-sm text-gray-500">will receive the selected patch.</p>
+                    </div>
+                </div>
+                
+                <button onclick="closeConfirmationModal()" class="btn-secondary px-6 py-2">
+                    Return to Home
+                </button>
             </div>
         </div>
     </div>
@@ -1114,6 +1169,59 @@
             });
         });
         
+        // Plan selection function
+        function selectPlan(plan, price, duration) {
+            // Update hidden fields
+            document.getElementById('selected-plan').value = plan;
+            document.getElementById('selected-price').value = price;
+            document.getElementById('selected-duration').value = duration;
+            
+            // Update display text
+            document.getElementById('selected-package-info').textContent = `${plan} - ${price} (${duration})`;
+            
+            // Open opt-in modal
+            openOptinModal();
+        }
+        
+        // Opt-In modal functions
+        function openOptinModal() {
+            const modal = document.getElementById('optinModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeOptinModal() {
+            const modal = document.getElementById('optinModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        // Confirmation modal functions
+        function openConfirmationModal(plan, expertCode) {
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Update confirmation message
+            document.getElementById('confirmation-message').textContent = 
+                `Thank you, you have opt in for ${plan}. You will receive an invoice via the email you provided.`;
+            
+            // Update expert code display
+            document.getElementById('expert-code-display').textContent = expertCode;
+        }
+        
+        function closeConfirmationModal() {
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+            
+            // Reset opt-in form
+            document.getElementById('optin-form').reset();
+            
+            // Close opt-in modal if open
+            closeOptinModal();
+        }
+        
         // Contact modal functions
         function openContactModal(plan = '') {
             const modal = document.getElementById('contactModal');
@@ -1132,16 +1240,90 @@
         }
         
         // Close modal when clicking outside
-        document.getElementById('contactModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeContactModal();
-            }
+        document.querySelectorAll('.modal-overlay').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    if (this.id === 'optinModal') {
+                        closeOptinModal();
+                    } else if (this.id === 'confirmationModal') {
+                        closeConfirmationModal();
+                    } else if (this.id === 'contactModal') {
+                        closeContactModal();
+                    }
+                }
+            });
         });
         
         // Close modal with Escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && !document.getElementById('contactModal').classList.contains('hidden')) {
-                closeContactModal();
+            if (e.key === 'Escape') {
+                if (!document.getElementById('optinModal').classList.contains('hidden')) {
+                    closeOptinModal();
+                } else if (!document.getElementById('confirmationModal').classList.contains('hidden')) {
+                    closeConfirmationModal();
+                } else if (!document.getElementById('contactModal').classList.contains('hidden')) {
+                    closeContactModal();
+                }
+            }
+        });
+        
+        // Expert code validation
+        document.querySelector('input[name="expert_code"]').addEventListener('input', function() {
+            const input = this.value;
+            if (/^[A-Z]{2}-[0-9]{5}$/.test(input)) {
+                this.classList.add('border-green-500');
+                this.classList.remove('border-red-500');
+            } else {
+                this.classList.remove('border-green-500');
+                if (input.length > 0) {
+                    this.classList.add('border-red-500');
+                } else {
+                    this.classList.remove('border-red-500');
+                }
+            }
+        });
+        
+        // Opt-In form submission
+        document.getElementById('optin-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(this);
+                const expertCode = formData.get('expert_code');
+                const selectedPlan = document.getElementById('selected-plan').value;
+                
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Close opt-in modal and show confirmation
+                    closeOptinModal();
+                    setTimeout(() => {
+                        openConfirmationModal(selectedPlan, expertCode);
+                    }, 300);
+                } else {
+                    // Show error message
+                    alert('There was an error submitting your opt-in. Please try again or contact us directly.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error submitting your opt-in. Please try again or contact us directly.');
+            } finally {
+                // Reset button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
             }
         });
         
@@ -1171,46 +1353,6 @@
                     // Show success message
                     alert('Thank you for your interest! A security specialist will contact you within 24 hours to schedule your free assessment.');
                     this.reset();
-                } else {
-                    // Show error message
-                    alert('There was an error submitting your form. Please try again or contact us directly.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('There was an error submitting your form. Please try again or contact us directly.');
-            } finally {
-                // Reset button state
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-        
-        document.getElementById('quote-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
-            submitBtn.disabled = true;
-            
-            try {
-                const formData = new FormData(this);
-                
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    // Show success message
-                    alert('Thank you for your quote request! We will contact you within 24 hours with detailed information.');
-                    this.reset();
-                    closeContactModal();
                 } else {
                     // Show error message
                     alert('There was an error submitting your form. Please try again or contact us directly.');
