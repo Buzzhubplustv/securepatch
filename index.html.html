@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePatch Pro | Managed Security Patch Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        }
+        
+        .section-padding {
+            padding: 5rem 1rem;
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #2563eb;
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #2563eb;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-green {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-green:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .testimonial-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        
+        .footer-bg {
+            background: #0f172a;
+        }
+        
+        .tab-active {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 0.5rem;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .client-logo {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .blue-accent {
+            color: #2563eb;
+        }
+        
+        .blue-bg {
+            background-color: #dbeafe;
+        }
+        
+        .blue-gradient-text {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .green-gradient-text {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .grey-bg {
+            background-color: #f8fafc;
+        }
+        
+        .dark-blue-bg {
+            background-color: #1e293b;
+        }
+        
+        .border-blue {
+            border-color: #2563eb;
+        }
+        
+        .border-green {
+            border-color: #10b981;
+        }
+        
+        .green-bg {
+            background-color: #d1fae5;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .assessment-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);
+        }
+        
+        .assessment-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(16, 185, 129, 0.5);
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        }
+        
+        .highlight-blue {
+            background: linear-gradient(120deg, #dbeafe 0%, #dbeafe 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.4em;
+            background-position: 0 88%;
+            transition: background-size 0.25s ease-in;
+        }
+        
+        .highlight-blue:hover {
+            background-size: 100% 88%;
+        }
+        
+        .green-icon {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="sticky-nav">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-700 to-green-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">SecurePatch<span class="blue-gradient-text">Pro</span></span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 font-medium hover:text-gray-900">Home</a>
+                    <a href="#services" class="nav-link text-gray-700 font-medium hover:text-gray-900">Services</a>
+                    <a href="#pricing" class="nav-link text-gray-700 font-medium hover:text-gray-900">Pricing</a>
+                    <a href="#about" class="nav-link text-gray-700 font-medium hover:text-gray-900">About</a>
+                    <a href="#contact" class="nav-link text-gray-700 font-medium hover:text-gray-900">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="btn-secondary hidden md:block">Client Login</button>
+                    <button onclick="openContactModal()" class="btn-primary">Get Quote</button>
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-4 mt-4">
+                    <a href="#home" class="text-gray-700 font-medium hover:text-gray-900">Home</a>
+                    <a href="#services" class="text-gray-700 font-medium hover:text-gray-900">Services</a>
+                    <a href="#pricing" class="text-gray-700 font-medium hover:text-gray-900">Pricing</a>
+                    <a href="#about" class="text-gray-700 font-medium hover:text-gray-900">About</a>
+                    <a href="#contact" class="text-gray-700 font-medium hover:text-gray-900">Contact</a>
+                    <button class="btn-secondary w-full mt-2">Client Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white">
+        <div class="container mx-auto px-4 section-padding">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Enterprise-Grade Security Patch Management</h1>
+                <p class="text-xl mb-8 opacity-90">Protect your infrastructure with automated, compliant patch management. Reduce vulnerabilities by 95% with our managed service.</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <button onclick="openContactModal()" class="assessment-btn">
+                        <i class="fas fa-calendar-check mr-2"></i> Schedule Free Assessment
+                    </button>
+                    <a href="#services" class="btn-secondary border-white text-white hover:bg-white hover:text-blue-600">
+                        <i class="fas fa-play-circle mr-2"></i> How It Works
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 card-hover">
+                    <div class="feature-icon bg-white bg-opacity-20 mx-auto">
+                        <i class="fas fa-robot text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Automated Deployment</h3>
+                    <p class="opacity-90">Patches deployed automatically during maintenance windows with zero downtime.</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 card-hover">
+                    <div class="feature-icon bg-white bg-opacity-20 mx-auto">
+                        <i class="fas fa-clipboard-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Compliance Reporting</h3>
+                    <p class="opacity-90">Meet HIPAA, PCI DSS, GDPR, and other regulatory requirements with detailed reporting.</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 card-hover">
+                    <div class="feature-icon bg-white bg-opacity-20 mx-auto">
+                        <i class="fas fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">24/7 Support</h3>
+                    <p class="opacity-90">Dedicated security engineers monitor and respond to threats around the clock.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="stat-number">99.9%</div>
+                    <p class="text-gray-600 mt-2">Patch Success Rate</p>
+                </div>
+                <div>
+                    <div class="stat-number">95%</div>
+                    <p class="text-gray-600 mt-2">Vulnerability Reduction</p>
+                </div>
+                <div>
+                    <div class="stat-number">24/7</div>
+                    <p class="text-gray-600 mt-2">Monitoring & Support</p>
+                </div>
+                <div>
+                    <div class="stat-number">500+</div>
+                    <p class="text-gray-600 mt-2">Applications Supported</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="grey-bg section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Comprehensive Patch Management Services</h2>
+                <p class="text-gray-600">We handle the complete patch lifecycle from detection to deployment and reporting.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover border border-gray-100">
+                    <div class="feature-icon blue-bg text-blue-700">
+                        <i class="fas fa-windows text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Operating System Patching</h3>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Windows Server & Workstation updates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Linux distribution updates (RHEL, Ubuntu, CentOS)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>macOS security updates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Rollback capabilities for failed updates</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover border border-gray-100">
+                    <div class="feature-icon green-bg text-green-700">
+                        <i class="fas fa-cube text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Third-Party Application Patching</h3>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Java, Adobe, Browser updates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Microsoft Office suite updates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Virtualization platform updates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Database security patches</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover border border-gray-100">
+                    <div class="feature-icon bg-blue-50 text-blue-700">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Vulnerability Management</h3>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>CVE vulnerability scanning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Priority-based patch scheduling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Risk assessment and reporting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Zero-day vulnerability response</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-xl shadow-lg p-8 border border-blue-200 blue-bg">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/3 mb-6 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-900">Need Custom Patch Management?</h3>
+                        <p class="text-gray-700">We offer tailored solutions for complex environments, legacy systems, and specialized compliance requirements.</p>
+                    </div>
+                    <div class="md:w-1/3 text-center md:text-right">
+                        <button onclick="openContactModal()" class="btn-green">
+                            <i class="fas fa-comment-dots mr-2"></i> Discuss Custom Solution
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="bg-white section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our 4-Step Patch Management Process</h2>
+                <p class="text-gray-600">A systematic approach to keeping your systems secure and compliant.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 blue-bg text-blue-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-bold mb-3">Discovery & Assessment</h3>
+                    <p class="text-gray-600">We inventory all systems and applications, assessing current patch status and vulnerabilities.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 green-bg text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-bold mb-3">Testing & Validation</h3>
+                    <p class="text-gray-600">Patches are tested in a staging environment to ensure compatibility and stability.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-bold mb-3">Deployment</h3>
+                    <p class="text-gray-600">Automated deployment during approved maintenance windows with rollback capability.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-green-50 text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="text-xl font-bold mb-3">Verification & Reporting</h3>
+                    <p class="text-gray-600">Comprehensive reporting on patch compliance, vulnerabilities remediated, and system status.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="testimonial-bg section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Transparent, Scalable Pricing</h2>
+                <p class="text-gray-600">Choose the plan that fits your organization's needs. All plans include 24/7 monitoring.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Basic</h3>
+                        <p class="text-gray-600">For small businesses</p>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold blue-gradient-text">$105</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-2">Billed annually</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Up to 25 endpoints</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>OS patching only</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Monthly reporting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-gray-300 mt-1 mr-2"></i>
+                            <span class="text-gray-400">Third-party application patching</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-gray-300 mt-1 mr-2"></i>
+                            <span class="text-gray-400">Compliance reporting</span>
+                        </li>
+                    </ul>
+                    <button onclick="openContactModal('Basic Plan - $105/month')" class="btn-secondary w-full">Get Started</button>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-blue-500 relative card-hover">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Standard</h3>
+                        <p class="text-gray-600">For growing businesses</p>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold blue-gradient-text">$160</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-2">Billed annually</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Up to 100 endpoints</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>OS + 50+ third-party apps</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Weekly reporting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Basic compliance reporting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-gray-300 mt-1 mr-2"></i>
+                            <span class="text-gray-400">Dedicated engineer</span>
+                        </li>
+                    </ul>
+                    <button onclick="openContactModal('Standard Plan - $160/month')" class="btn-primary w-full">Get Started</button>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-green-500 relative card-hover pulse">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">MOST POPULAR</span>
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Premium</h3>
+                        <p class="text-gray-600">For established businesses</p>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold green-gradient-text">$250</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-2">Billed annually</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Up to 250 endpoints</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>500+ applications supported</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Real-time dashboard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Advanced compliance (HIPAA, PCI DSS)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Dedicated security engineer</span>
+                        </li>
+                    </ul>
+                    <button onclick="openContactModal('Premium Plan - $250/month')" class="btn-green w-full">Get Started</button>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Enterprise</h3>
+                        <p class="text-gray-600">For large organizations</p>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold blue-gradient-text">Custom</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-2">Tailored pricing</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Unlimited endpoints</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>1000+ applications supported</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Custom reporting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Custom compliance requirements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>24/7 dedicated engineering team</span>
+                        </li>
+                    </ul>
+                    <button onclick="openContactModal('Enterprise Plan - Custom')" class="btn-secondary w-full">Contact Sales</button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600">Need a different plan? <button onclick="openContactModal()" class="blue-accent font-medium hover:underline">Contact us for custom pricing</button></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Trusted by Security-Conscious Organizations</h3>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                <div class="client-logo flex justify-center">
+                    <div class="w-32 h-16 blue-bg rounded-lg flex items-center justify-center">
+                        <span class="font-bold text-blue-800">TechCorp Inc.</span>
+                    </div>
+                </div>
+                <div class="client-logo flex justify-center">
+                    <div class="w-32 h-16 green-bg rounded-lg flex items-center justify-center">
+                        <span class="font-bold text-green-800">HealthFirst</span>
+                    </div>
+                </div>
+                <div class="client-logo flex justify-center">
+                    <div class="w-32 h-16 blue-bg rounded-lg flex items-center justify-center">
+                        <span class="font-bold text-blue-800">GlobalBank</span>
+                    </div>
+                </div>
+                <div class="client-logo flex justify-center">
+                    <div class="w-32 h-16 green-bg rounded-lg flex items-center justify-center">
+                        <span class="font-bold text-green-800">EduSystems</span>
+                    </div>
+                </div>
+                <div class="client-logo flex justify-center">
+                    <div class="w-32 h-16 blue-bg rounded-lg flex items-center justify-center">
+                        <span class="font-bold text-blue-800">RetailPlus</span>
+                    </div>
+                </div>
+                <div class="client-logo flex justify-center">
+                    <div class="w-32 h-16 green-bg rounded-lg flex items-center justify-center">
+                        <span class="font-bold text-green-800">GovSecure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="grey-bg section-padding">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About SecurePatch Pro</h2>
+                    <p class="text-gray-600 mb-6">Founded in 2015, SecurePatch Pro has been at the forefront of security patch management, helping organizations of all sizes protect their digital assets from evolving cyber threats.</p>
+                    <p class="text-gray-600 mb-6">Our team of certified security engineers brings decades of combined experience in vulnerability management, compliance, and IT infrastructure.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="blue-bg text-blue-700 p-2 rounded-lg mr-4">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Certified Experts</h4>
+                                <p class="text-gray-600 text-sm">CISSP, CISM, and Microsoft-certified engineers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="green-bg text-green-700 p-2 rounded-lg mr-4">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">24/7 SOC</h4>
+                                <p class="text-gray-600 text-sm">Security Operations Center monitoring all client systems</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-50 text-blue-700 p-2 rounded-lg mr-4">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Proven Methodology</h4>
+                                <p class="text-gray-600 text-sm">4-step process with 99.9% patch success rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Why Choose SecurePatch Pro?</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="blue-bg text-blue-700 rounded-lg p-3 mr-4">
+                                    <i class="fas fa-bolt text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">Rapid Response to Zero-Day Threats</h4>
+                                    <p class="text-gray-600">Average deployment time of critical patches: 4 hours from release.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="green-bg text-green-700 rounded-lg p-3 mr-4">
+                                    <i class="fas fa-chart-pie text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">Comprehensive Compliance</h4>
+                                    <p class="text-gray-600">Ready-to-use reports for HIPAA, PCI DSS, GDPR, ISO 27001, and more.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-50 text-blue-700 rounded-lg p-3 mr-4">
+                                    <i class="fas fa-cogs text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">No Disruption to Operations</h4>
+                                    <p class="text-gray-600">99.9% of patches deployed during scheduled maintenance windows with zero downtime.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonial-bg py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600">Don't just take our word for it. Here's what our clients have to say about our service.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 blue-bg rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">JD</div>
+                        <div>
+                            <h4 class="font-bold">James Davidson</h4>
+                            <p class="text-gray-500 text-sm">CTO, TechCorp Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"SecurePatch Pro reduced our vulnerability exposure by 92% in the first 6 months. Their team is responsive and their reporting is exceptional."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 green-bg rounded-full flex items-center justify-center text-green-700 font-bold mr-4">SM</div>
+                        <div>
+                            <h4 class="font-bold">Sarah Miller</h4>
+                            <p class="text-gray-500 text-sm">Security Director, HealthFirst</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Their HIPAA compliance reporting saved us countless hours during our audit. The peace of mind knowing our systems are patched is invaluable."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">RK</div>
+                        <div>
+                            <h4 class="font-bold">Robert Kim</h4>
+                            <p class="text-gray-500 text-sm">IT Manager, GlobalBank</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The automated deployment has eliminated after-hours work for my team. We've had zero security incidents related to unpatched systems since onboarding."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Secure Your Systems?</h2>
+            <p class="text-xl opacity-90 max-w-2xl mx-auto mb-10">Schedule a free security assessment and see how we can reduce your vulnerability exposure.</p>
+            
+            <div class="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8">
+                <form id="contact-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-6">
+                    <input type="hidden" name="_subject" value="New Security Assessment Request - SecurePatch Pro">
+                    <input type="hidden" name="_replyto" value="">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-left text-white mb-2">Full Name *</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                        <div>
+                            <label class="block text-left text-white mb-2">Email Address *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-left text-white mb-2">Company Name</label>
+                            <input type="text" name="company" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                        <div>
+                            <label class="block text-left text-white mb-2">Number of Endpoints</label>
+                            <select name="endpoints" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white focus:outline-none focus:ring-2 focus:ring-white">
+                                <option value="" class="text-gray-800">Select range</option>
+                                <option value="1-25" class="text-gray-800">1-25</option>
+                                <option value="26-100" class="text-gray-800">26-100</option>
+                                <option value="101-500" class="text-gray-800">101-500</option>
+                                <option value="500+" class="text-gray-800">500+</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-left text-white mb-2">Message *</label>
+                        <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                    </div>
+                    
+                    <div class="text-center pt-4">
+                        <button type="submit" class="assessment-btn px-10 py-4 text-lg">
+                            <i class="fas fa-paper-plane mr-2"></i> Request Free Assessment
+                        </button>
+                        <p class="text-white text-opacity-80 text-sm mt-4">We'll contact you within 24 hours to schedule your assessment.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bg text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">SecurePatch<span class="text-blue-400">Pro</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Enterprise-grade security patch management for modern organizations.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">OS Patch Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Third-Party Patching</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Vulnerability Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Compliance Reporting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>123 Security Ave, Suite 500<br>San Francisco, CA 94107</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>sales@securepatchpro.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 SecurePatch Pro. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-400">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                    <a href="#" class="hover:text-white">Cookie Policy</a>
+                    <a href="#" class="hover:text-white">GDPR</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Request a Quote</h3>
+                    <button onclick="closeContactModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <form id="quote-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-4">
+                    <input type="hidden" name="_subject" value="New Quote Request - SecurePatch Pro">
+                    <input type="hidden" name="_replyto" value="">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                            <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                        <input type="text" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Plan Interest</label>
+                        <select id="plan-select" name="plan_interest" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                            <option value="">Select a plan</option>
+                            <option value="Basic - $105/month">Basic Plan ($105/month)</option>
+                            <option value="Standard - $160/month">Standard Plan ($160/month)</option>
+                            <option value="Premium - $250/month">Premium Plan ($250/month)</option>
+                            <option value="Enterprise - Custom">Enterprise Plan (Custom)</option>
+                            <option value="Not Sure">Not sure - need consultation</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Approximate Number of Endpoints</label>
+                        <select name="endpoints" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                            <option value="">Select range</option>
+                            <option value="1-25">1-25</option>
+                            <option value="26-100">26-100</option>
+                            <option value="101-500">101-500</option>
+                            <option value="500+">500+</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+                        <textarea name="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"></textarea>
+                    </div>
+                    
+                    <div class="pt-2">
+                        <button type="submit" class="btn-primary w-full py-3">
+                            <i class="fas fa-paper-plane mr-2"></i> Submit Quote Request
+                        </button>
+                        <p class="text-gray-500 text-sm mt-2">We'll contact you within 24 hours with pricing and next steps.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Contact modal functions
+        function openContactModal(plan = '') {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            if (plan && document.getElementById('plan-select')) {
+                document.getElementById('plan-select').value = plan;
+            }
+        }
+        
+        function closeContactModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('contactModal').classList.contains('hidden')) {
+                closeContactModal();
+            }
+        });
+        
+        // Form submission handling with Formspree
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(this);
+                
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Show success message
+                    alert('Thank you for your interest! A security specialist will contact you within 24 hours to schedule your free assessment.');
+                    this.reset();
+                } else {
+                    // Show error message
+                    alert('There was an error submitting your form. Please try again or contact us directly.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error submitting your form. Please try again or contact us directly.');
+            } finally {
+                // Reset button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        
+        document.getElementById('quote-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(this);
+                
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Show success message
+                    alert('Thank you for your quote request! We will contact you within 24 hours with detailed information.');
+                    this.reset();
+                    closeContactModal();
+                } else {
+                    // Show error message
+                    alert('There was an error submitting your form. Please try again or contact us directly.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error submitting your form. Please try again or contact us directly.');
+            } finally {
+                // Reset button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.card-hover, .fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('fade-in');
+                }
+            });
+        }
+        
+        // Run on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Sticky navigation background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('sticky-nav');
+            } else {
+                nav.classList.remove('sticky-nav');
+            }
+        });
+    </script>
+</body>
+</html>
