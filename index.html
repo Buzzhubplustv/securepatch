@@ -534,6 +534,110 @@
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
         
+        /* FIXED: White placeholder text for contact form */
+        .contact-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        
+        .contact-input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .contact-input:focus {
+            outline: none;
+            border-color: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .contact-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        
+        .contact-select:focus {
+            outline: none;
+            border-color: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .contact-select option {
+            color: #333;
+            background-color: white;
+        }
+        
+        .contact-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            resize: vertical;
+        }
+        
+        .contact-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .contact-textarea:focus {
+            outline: none;
+            border-color: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        /* Platform selection styles */
+        .platform-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        
+        .platform-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .platform-option:hover {
+            border-color: #2563eb;
+            background-color: #f0f9ff;
+        }
+        
+        .platform-option.selected {
+            border-color: #2563eb;
+            background-color: #dbeafe;
+        }
+        
+        .platform-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
         /* Loading spinner */
         .loading-spinner {
             display: inline-block;
@@ -608,15 +712,15 @@
                 <div class="trust-badges">
                     <div class="trust-badge">
                         <i class="fas fa-shield-check text-green-500"></i>
-                        <span class="text-sm font-medium">SOC 2 Type II</span>
+                        <span class="text-sm font-medium:text-blue-600">SOC 2 Type II</span>
                     </div>
                     <div class="trust-badge">
                         <i class="fas fa-lock text-blue-500"></i>
-                        <span class="text-sm font-medium">Military-Grade Encryption</span>
+                        <span class="text-sm font-medium:text-blue-600">Military-Grade Encryption</span>
                     </div>
                     <div class="trust-badge">
                         <i class="fas fa-medal text-yellow-500"></i>
-                        <span class="text-sm font-medium">99.9% Uptime SLA</span>
+                        <span class="text-sm font-medium:text-blue-600">99.9% Uptime SLA</span>
                     </div>
                 </div>
                 
@@ -987,97 +1091,7 @@
         </div>
     </section>
 
-    <!-- Methodology Section -->
-    <section class="bg-white section-padding">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Zero-Trust Security Implementation Framework</h2>
-                <p class="text-gray-600">Our proven methodology for transforming enterprise security posture.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 blue-bg text-blue-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-                    <h3 class="text-xl font-bold mb-3">Discovery & Asset Intelligence</h3>
-                    <p class="text-gray-600">Comprehensive inventory with automated dependency mapping and criticality assessment.</p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 green-bg text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-                    <h3 class="text-xl font-bold mb-3">Vulnerability Assessment</h3>
-                    <p class="text-gray-600">Context-aware threat analysis with EPSS scoring and business impact prioritization.</p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-                    <h3 class="text-xl font-bold mb-3">Remediation Orchestration</h3>
-                    <p class="text-gray-600">Automated patch deployment with rollback assurance and compliance validation.</p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-green-50 text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
-                    <h3 class="text-xl font-bold mb-3">Continuous Governance</h3>
-                    <p class="text-gray-600">Ongoing monitoring with executive dashboards and regulatory compliance reporting.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonial-bg py-16">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Security Leadership Validation</h2>
-                <p class="text-gray-600">Endorsements from enterprise security decision-makers.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 blue-bg rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">CD</div>
-                        <div>
-                            <h4 class="font-bold">Chief Digital Officer</h4>
-                            <p class="text-gray-500 text-sm">Fortune 500 Financial Services</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">"SecurePatch Pro transformed our security posture from reactive to predictive. Our audit findings reduced by 92% while operational efficiency increased 40%."</p>
-                    <div class="flex text-yellow-400 mt-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 green-bg rounded-full flex items-center justify-center text-green-700 font-bold mr-4">CSO</div>
-                        <div>
-                            <h4 class="font-bold">Chief Security Officer</h4>
-                            <p class="text-gray-500 text-sm">Global Healthcare Provider</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">"Their compliance automation cut our HIPAA audit preparation from 6 weeks to 3 days. The ROI was realized within the first quarter of implementation."</p>
-                    <div class="flex text-yellow-400 mt-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">CISO</div>
-                        <div>
-                            <h4 class="font-bold">Chief Information Security Officer</h4>
-                            <p class="text-gray-500 text-sm">Enterprise Retail Corporation</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic">"The predictive vulnerability scoring prevented three potential zero-day exploits. Their CSIRT team's response time exceeded our internal capabilities."</p>
-                    <div class="flex text-yellow-400 mt-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact CTA -->
+    <!-- Contact CTA with FIXED placeholder visibility -->
     <section id="contact" class="hero-gradient text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Security Posture?</h2>
@@ -1090,22 +1104,22 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-left text-white mb-2">Executive Contact *</label>
-                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Full Name">
+                            <input type="text" name="name" required class="contact-input" placeholder="Full Name">
                         </div>
                         <div>
                             <label class="block text-left text-white mb-2">Corporate Email *</label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" placeholder="business@company.com">
+                            <input type="email" name="email" required class="contact-input" placeholder="business@company.com">
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-left text-white mb-2">Organization</label>
-                            <input type="text" name="company" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Company Name">
+                            <input type="text" name="company" class="contact-input" placeholder="Company Name">
                         </div>
                         <div>
                             <label class="block text-left text-white mb-2">Enterprise Asset Count</label>
-                            <select name="endpoints" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white focus:outline-none focus:ring-2 focus:ring-white">
+                            <select name="endpoints" class="contact-select">
                                 <option value="" class="text-gray-800">Select range</option>
                                 <option value="1-50" class="text-gray-800">1-50 assets</option>
                                 <option value="51-250" class="text-gray-800">51-250 assets</option>
@@ -1117,7 +1131,7 @@
                     
                     <div>
                         <label class="block text-left text-white mb-2">Primary Security Objectives *</label>
-                        <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Describe your key security challenges..."></textarea>
+                        <textarea name="message" rows="4" required class="contact-textarea" placeholder="Describe your key security challenges, compliance requirements, and objectives..."></textarea>
                     </div>
                     
                     <div class="text-center pt-4">
@@ -1193,7 +1207,7 @@
         </div>
     </footer>
 
-    <!-- NEW: Signup Form Modal -->
+    <!-- UPDATED: Signup Form Modal with new fields -->
     <div id="signupModal" class="modal-overlay hidden">
         <div class="modal-content">
             <div class="p-6">
@@ -1217,29 +1231,85 @@
                     
                     <div class="form-group">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                        <input type="text" name="name" required class="form-control">
+                        <input type="text" name="name" required class="form-control" placeholder="John Smith">
                     </div>
                     
                     <div class="form-group">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                        <input type="email" name="email" required class="form-control">
+                        <input type="email" name="email" required class="form-control" placeholder="john@example.com">
                     </div>
                     
                     <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
-                        <input type="text" name="company" class="form-control">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Company Name *</label>
+                        <input type="text" name="company" required class="form-control" placeholder="Your Company Inc.">
                     </div>
                     
                     <div class="form-group">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                        <input type="tel" name="phone" class="form-control">
+                        <input type="tel" name="phone" class="form-control" placeholder="(555) 123-4567">
                     </div>
                     
+                    <!-- NEW: Platform Selection -->
                     <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Number of Endpoints *</label>
-                        <input type="number" name="endpoints" min="1" required class="form-control">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Select Your Platform *</label>
+                        <div class="platform-options">
+                            <div class="platform-option" data-platform="shopify">
+                                <i class="fab fa-shopify platform-icon text-purple-600"></i>
+                                <span class="text-sm font-medium">Shopify</span>
+                            </div>
+                            <div class="platform-option" data-platform="wix">
+                                <i class="fas fa-shopping-cart platform-icon text-blue-600"></i>
+                                <span class="text-sm font-medium">Wix</span>
+                            </div>
+                            <div class="platform-option" data-platform="woocommerce">
+                                <i class="fab fa-wordpress platform-icon text-blue-800"></i>
+                                <span class="text-sm font-medium">WooCommerce</span>
+                            </div>
+                            <div class="platform-option" data-platform="squarespace">
+                                <i class="fas fa-square platform-icon text-black"></i>
+                                <span class="text-sm font-medium">Squarespace</span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="platform" id="selected-platform" required>
                     </div>
                     
+                    <!-- NEW: Store URL -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Store URL *</label>
+                        <input type="url" name="store_url" required class="form-control" placeholder="https://yourstore.com">
+                    </div>
+                    
+                    <!-- NEW: Business Address -->
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Business Address *</label>
+                        <input type="text" name="business_address" required class="form-control" placeholder="123 Business Street">
+                    </div>
+                    
+                    <!-- NEW: Country and Zip Code -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Country *</label>
+                            <select name="country" required class="form-control">
+                                <option value="">Select Country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="AU">Australia</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="JP">Japan</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Zip/Postal Code *</label>
+                            <input type="text" name="zip_code" required class="form-control" placeholder="12345">
+                        </div>
+                    </div>
+                    
+                    <!-- REMOVED: Number of endpoints field -->
+                    
+                    <!-- Expert Code Field -->
                     <div class="form-group">
                         <label class="block text-sm font-medium text-gray-700 mb-1">
                             Expert Code (Required for patch delivery) *
@@ -1490,7 +1560,31 @@
             });
         });
         
-        // NEW: Signup Form Functions
+        // NEW: Platform selection functionality
+        function setupPlatformSelection() {
+            const platformOptions = document.querySelectorAll('.platform-option');
+            const hiddenInput = document.getElementById('selected-platform');
+            
+            platformOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    platformOptions.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Update hidden input value
+                    hiddenInput.value = this.getAttribute('data-platform');
+                });
+            });
+            
+            // Set default selection
+            if (platformOptions.length > 0) {
+                platformOptions[0].click();
+            }
+        }
+        
+        // Signup Form Functions
         function openSignupForm(plan, price, duration) {
             // Update hidden fields
             document.getElementById('selected-plan').value = plan;
@@ -1499,6 +1593,9 @@
             
             // Update display text
             document.getElementById('selected-package-info').textContent = `${plan} Plan - ${price} (${duration})`;
+            
+            // Reset platform selection
+            setupPlatformSelection();
             
             // Open modal
             const modal = document.getElementById('signupModal');
@@ -1657,6 +1754,13 @@
         document.getElementById('signup-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            // Validate platform selection
+            const platformInput = document.getElementById('selected-platform');
+            if (!platformInput.value) {
+                alert('Please select a platform.');
+                return;
+            }
+            
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             const expertCode = this.querySelector('input[name="expert_code"]').value;
@@ -1764,6 +1868,7 @@
         // Initialize on load
         window.addEventListener('load', function() {
             animateOnScroll();
+            setupPlatformSelection();
             
             // Check for mobile
             if (window.innerWidth <= 768) {
