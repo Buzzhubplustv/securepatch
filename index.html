@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecurePatch Pro | Managed Security Patch Services</title>
+    <title>SecurePatch Pro | Enterprise Security Patch Management Solutions</title>
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/security-shield.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,6 +20,7 @@
             color: #333;
             line-height: 1.6;
             background-color: #ffffff;
+            overflow-x: hidden;
         }
         
         .hero-gradient {
@@ -75,7 +76,7 @@
             font-weight: 600;
             transition: all 0.3s ease;
             border: 2px solid #2563eb;
-            cursor: button;
+            cursor: pointer;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
@@ -140,11 +141,6 @@
             background: #0f172a;
         }
         
-        .tab-active {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            color: white;
-        }
-        
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -197,16 +193,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
         .blue-accent {
             color: #2563eb;
         }
@@ -231,18 +217,6 @@
             background-color: #f8fafc;
         }
         
-        .dark-blue-bg {
-            background-color: #1e293b;
-        }
-        
-        .border-blue {
-            border-color: #2563eb;
-        }
-        
-        .border-green {
-            border-color: #10b981;
-        }
-        
         .green-bg {
             background-color: #d1fae5;
         }
@@ -254,6 +228,21 @@
             
             .stat-number {
                 font-size: 2.5rem;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-padding {
+                padding: 2rem 1rem;
+            }
+            
+            .modal-content {
+                padding: 1rem !important;
             }
         }
         
@@ -273,23 +262,6 @@
             transform: translateY(-3px);
             box-shadow: 0 12px 25px rgba(16, 185, 129, 0.5);
             background: linear-gradient(135deg, #059669 0%, #047857 100%);
-        }
-        
-        .highlight-blue {
-            background: linear-gradient(120deg, #dbeafe 0%, #dbeafe 100%);
-            background-repeat: no-repeat;
-            background-size: 100% 0.4em;
-            background-position: 0 88%;
-            transition: background-size 0.25s ease-in;
-        }
-        
-        .highlight-blue:hover {
-            background-size: 100% 88%;
-        }
-        
-        .green-icon {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
         }
         
         .expert-code-box {
@@ -318,7 +290,7 @@
             font-size: 2.5rem;
         }
         
-        /* FIXED: Updated popular badge positioning for desktop */
+        /* Popular badge positioning */
         .popular-badge {
             position: absolute;
             top: -12px;
@@ -335,7 +307,76 @@
             white-space: nowrap;
         }
         
-        /* NEW: Legal pages modal styling */
+        /* Trust badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Activity feed */
+        .activity-feed {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+        
+        .activity-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #dbeafe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.75rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+        
+        /* Logo clickable style */
+        .logo-container {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Risk-free guarantee */
+        .risk-free-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        /* Legal pages modal styling */
         .legal-modal {
             position: fixed;
             top: 0;
@@ -434,13 +475,78 @@
             border-bottom: 1px solid #e5e7eb;
         }
         
-        /* NEW: Logo clickable style */
-        .logo-container {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
+        /* Responsive pricing cards */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        /* Mobile menu improvements */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid #e5e7eb;
+                z-index: 100;
+            }
+            
+            .legal-content {
+                padding: 1.5rem;
+            }
+            
+            .legal-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .trust-badges {
+                gap: 1rem;
+            }
+            
+            .trust-badge {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.875rem;
+            }
+        }
+        
+        /* Form improvements for mobile */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* Loading spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -449,7 +555,7 @@
     <nav class="sticky-nav">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <!-- UPDATED: Made logo clickable -->
+                <!-- Logo clickable -->
                 <a href="#" id="home-logo" class="logo-container space-x-2">
                     <div class="w-10 h-10 bg-gradient-to-r from-blue-700 to-green-500 rounded-lg flex items-center justify-center">
                         <i class="fas fa-shield-alt text-white text-xl"></i>
@@ -459,15 +565,14 @@
                 
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-gray-700 font-medium hover:text-gray-900">Home</a>
-                    <a href="#services" class="nav-link text-gray-700 font-medium hover:text-gray-900">Services</a>
+                    <a href="#services" class="nav-link text-gray-700 font-medium hover:text-gray-900">Solutions</a>
                     <a href="#pricing" class="nav-link text-gray-700 font-medium hover:text-gray-900">Pricing</a>
-                    <a href="#about" class="nav-link text-gray-700 font-medium hover:text-gray-900">About</a>
+                    <a href="#about" class="nav-link text-gray-700 font-medium hover:text-gray-900">Enterprise</a>
                     <a href="#contact" class="nav-link text-gray-700 font-medium hover:text-gray-900">Contact</a>
                 </div>
                 
                 <div class="flex items-center space-x-4">
-                    <!-- Client Login removed as requested -->
-                    <button onclick="openContactModal()" class="btn-primary">Get Quote</button>
+                    <button onclick="openContactModal()" class="btn-primary hidden md:inline-block">Get Quote</button>
                     <button id="mobile-menu-btn" class="md:hidden text-gray-700">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
@@ -475,13 +580,14 @@
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
-                <div class="flex flex-col space-y-4 mt-4">
-                    <a href="#home" class="text-gray-700 font-medium hover:text-gray-900">Home</a>
-                    <a href="#services" class="text-gray-700 font-medium hover:text-gray-900">Services</a>
-                    <a href="#pricing" class="text-gray-700 font-medium hover:text-gray-900">Pricing</a>
-                    <a href="#about" class="text-gray-700 font-medium hover:text-gray-900">About</a>
-                    <a href="#contact" class="text-gray-700 font-medium hover:text-gray-900">Contact</a>
+            <div id="mobile-menu" class="mobile-menu hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4 mt-4 px-4">
+                    <a href="#home" class="text-gray-700 font-medium hover:text-gray-900 py-2">Home</a>
+                    <a href="#services" class="text-gray-700 font-medium hover:text-gray-900 py-2">Solutions</a>
+                    <a href="#pricing" class="text-gray-700 font-medium hover:text-gray-900 py-2">Pricing</a>
+                    <a href="#about" class="text-gray-700 font-medium hover:text-gray-900 py-2">Enterprise</a>
+                    <a href="#contact" class="text-gray-700 font-medium hover:text-gray-900 py-2">Contact</a>
+                    <button onclick="openContactModal()" class="btn-primary w-full mt-4">Get Quote</button>
                 </div>
             </div>
         </div>
@@ -491,14 +597,35 @@
     <section id="home" class="hero-gradient text-white">
         <div class="container mx-auto px-4 section-padding">
             <div class="max-w-4xl mx-auto text-center fade-in">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Enterprise-Grade Security Patch Management</h1>
-                <p class="text-xl mb-8 opacity-90">Protect your infrastructure with automated, compliant patch management. Reduce vulnerabilities by 95% with our managed service.</p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm mb-6">
+                    <i class="fas fa-crown mr-2 text-yellow-300"></i>
+                    <span class="text-sm font-medium">Enterprise-Grade Security Platform</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Intelligent Vulnerability Remediation & Compliance Automation</h1>
+                <p class="text-xl mb-8 opacity-90">Proactive patch orchestration reducing enterprise risk exposure by 95% through automated security governance and regulatory compliance.</p>
+                
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-check text-green-500"></i>
+                        <span class="text-sm font-medium">SOC 2 Type II</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-lock text-blue-500"></i>
+                        <span class="text-sm font-medium">Military-Grade Encryption</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-medal text-yellow-500"></i>
+                        <span class="text-sm font-medium">99.9% Uptime SLA</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">
                     <button onclick="openContactModal()" class="assessment-btn">
-                        <i class="fas fa-calendar-check mr-2"></i> Schedule Free Assessment
+                        <i class="fas fa-calendar-check mr-2"></i> Schedule Security Assessment
                     </button>
-                    <a href="#services" class="btn-secondary border-white text-white hover:bg-white hover:text-blue-600">
-                        <i class="fas fa-play-circle mr-2"></i> How It Works
+                    <a href="#pricing" class="btn-secondary border-white text-white hover:bg-white hover:text-blue-600">
+                        <i class="fas fa-tags mr-2"></i> View Pricing Plans
                     </a>
                 </div>
             </div>
@@ -506,26 +633,26 @@
             <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 card-hover">
                     <div class="feature-icon bg-white bg-opacity-20 mx-auto">
-                        <i class="fas fa-robot text-2xl"></i>
+                        <i class="fas fa-brain text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Automated Deployment</h3>
-                    <p class="opacity-90">Patches deployed automatically during maintenance windows with zero downtime.</p>
+                    <h3 class="text-xl font-bold mb-3">AI-Powered Vulnerability Intelligence</h3>
+                    <p class="opacity-90">Context-aware threat prioritization with predictive risk scoring and automated remediation workflows.</p>
                 </div>
                 
                 <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 card-hover">
                     <div class="feature-icon bg-white bg-opacity-20 mx-auto">
-                        <i class="fas fa-clipboard-check text-2xl"></i>
+                        <i class="fas fa-clipboard-list-check text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Compliance Reporting</h3>
-                    <p class="opacity-90">Meet HIPAA, PCI DSS, GDPR, and other regulatory requirements with detailed reporting.</p>
+                    <h3 class="text-xl font-bold mb-3">Regulatory Compliance Orchestration</h3>
+                    <p class="opacity-90">Continuous compliance monitoring for HIPAA, PCI DSS, GDPR, ISO 27001 with audit-ready reporting.</p>
                 </div>
                 
                 <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 card-hover">
                     <div class="feature-icon bg-white bg-opacity-20 mx-auto">
                         <i class="fas fa-headset text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">24/7 Support</h3>
-                    <p class="opacity-90">Dedicated security engineers monitor and respond to threats around the clock.</p>
+                    <h3 class="text-xl font-bold mb-3">24/7 Security Operations Center</h3>
+                    <p class="opacity-90">Dedicated CSIRT team monitoring your ecosystem with real-time threat detection and response.</p>
                 </div>
             </div>
         </div>
@@ -536,119 +663,134 @@
         <div class="container mx-auto px-4 py-12">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                    <div class="stat-number">99.9%</div>
-                    <p class="text-gray-600 mt-2">Patch Success Rate</p>
+                    <div class="stat-number">99.97%</div>
+                    <p class="text-gray-600 mt-2">Remediation Success Rate</p>
                 </div>
                 <div>
-                    <div class="stat-number">95%</div>
-                    <p class="text-gray-600 mt-2">Vulnerability Reduction</p>
+                    <div class="stat-number">4.2h</div>
+                    <p class="text-gray-600 mt-2">Avg. Critical Patch Deployment</p>
                 </div>
                 <div>
-                    <div class="stat-number">24/7</div>
-                    <p class="text-gray-600 mt-2">Monitoring & Support</p>
+                    <div class="stat-number">5000+</div>
+                    <p class="text-gray-600 mt-2">CVEs Monitored Daily</p>
                 </div>
                 <div>
-                    <div class="stat-number">500+</div>
-                    <p class="text-gray-600 mt-2">Applications Supported</p>
+                    <div class="stat-number">98%</div>
+                    <p class="text-gray-600 mt-2">Audit Compliance Score</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Solutions Section -->
     <section id="services" class="grey-bg section-padding">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Comprehensive Patch Management Services</h2>
-                <p class="text-gray-600">We handle the complete patch lifecycle from detection to deployment and reporting.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Comprehensive Security Posture Management</h2>
+                <p class="text-gray-600">End-to-end vulnerability lifecycle management from discovery through remediation to compliance validation.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white rounded-xl shadow-lg p-6 card-hover border border-gray-100">
                     <div class="feature-icon blue-bg text-blue-700">
-                        <i class="fas fa-windows text-2xl"></i>
+                        <i class="fas fa-server text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Operating System Patching</h3>
+                    <h3 class="text-xl font-bold mb-3">Enterprise Infrastructure Hardening</h3>
                     <ul class="space-y-2 text-gray-600 mb-6">
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Windows Server & Workstation updates</span>
+                            <span>Windows/Linux/Unix Server hardening</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Linux distribution updates (RHEL, Ubuntu, CentOS)</span>
+                            <span>Container & virtualization platform security</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>macOS security updates</span>
+                            <span>Cloud infrastructure compliance (AWS/Azure/GCP)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Rollback capabilities for failed updates</span>
+                            <span>Configuration drift detection & remediation</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-lg p-6 card-hover border border-gray-100">
                     <div class="feature-icon green-bg text-green-700">
-                        <i class="fas fa-cube text-2xl"></i>
+                        <i class="fas fa-layer-group text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Third-Party Application Patching</h3>
+                    <h3 class="text-xl font-bold mb-3">Application Security Governance</h3>
                     <ul class="space-y-2 text-gray-600 mb-6">
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Java, Adobe, Browser updates</span>
+                            <span>Third-party dependency vulnerability management</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Microsoft Office suite updates</span>
+                            <span>Software composition analysis (SCA)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Virtualization platform updates</span>
+                            <span>Container image scanning & hardening</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Database security patches</span>
+                            <span>DevSecOps pipeline integration</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-lg p-6 card-hover border border-gray-100">
                     <div class="feature-icon bg-blue-50 text-blue-700">
-                        <i class="fas fa-chart-line text-2xl"></i>
+                        <i class="fas fa-chart-network text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Vulnerability Management</h3>
+                    <h3 class="text-xl font-bold mb-3">Continuous Threat Exposure Management</h3>
                     <ul class="space-y-2 text-gray-600 mb-6">
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>CVE vulnerability scanning</span>
+                            <span>Real-time CVE monitoring & intelligence</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Priority-based patch scheduling</span>
+                            <span>Risk-based vulnerability prioritization</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Risk assessment and reporting</span>
+                            <span>Attack surface reduction analytics</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Zero-day vulnerability response</span>
+                            <span>Zero-day vulnerability response automation</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="mt-12 bg-white rounded-xl shadow-lg p-8 border border-blue-200 blue-bg">
+            <!-- Risk-Free Guarantee Section -->
+            <div class="risk-free-section mt-12">
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="md:w-2/3 mb-6 md:mb-0 md:pr-8">
-                        <h3 class="text-2xl font-bold mb-4 text-blue-900">Need Custom Patch Management?</h3>
-                        <p class="text-gray-700">We offer tailored solutions for complex environments, legacy systems, and specialized compliance requirements.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-blue-900">Risk-Free Implementation Guarantee</h3>
+                        <p class="text-gray-700">Our 60-day pilot program includes full implementation at no cost. Only commit if you achieve measurable risk reduction and compliance improvement.</p>
+                        <div class="mt-4 flex flex-wrap gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-sm">No upfront costs</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-sm">Cancel anytime</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-sm">Full implementation support</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="md:w-1/3 text-center md:text-right">
+                    <div class="md:w-1/3 text-center md:text-right mt-4 md:mt-0">
                         <button onclick="openContactModal()" class="btn-green">
-                            <i class="fas fa-comment-dots mr-2"></i> Discuss Custom Solution
+                            <i class="fas fa-comment-dots mr-2"></i> Schedule Pilot
                         </button>
                     </div>
                 </div>
@@ -656,58 +798,54 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="bg-white section-padding">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our 4-Step Patch Management Process</h2>
-                <p class="text-gray-600">A systematic approach to keeping your systems secure and compliant.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 blue-bg text-blue-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-                    <h3 class="text-xl font-bold mb-3">Discovery & Assessment</h3>
-                    <p class="text-gray-600">We inventory all systems and applications, assessing current patch status and vulnerabilities.</p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 green-bg text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-                    <h3 class="text-xl font-bold mb-3">Testing & Validation</h3>
-                    <p class="text-gray-600">Patches are tested in a staging environment to ensure compatibility and stability.</p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-                    <h3 class="text-xl font-bold mb-3">Deployment</h3>
-                    <p class="text-gray-600">Automated deployment during approved maintenance windows with rollback capability.</p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-green-50 text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
-                    <h3 class="text-xl font-bold mb-3">Verification & Reporting</h3>
-                    <p class="text-gray-600">Comprehensive reporting on patch compliance, vulnerabilities remediated, and system status.</p>
+    <!-- Activity Feed -->
+    <section class="bg-white">
+        <div class="container mx-auto px-4 py-8">
+            <div class="activity-feed">
+                <h4 class="font-bold text-lg mb-4 text-gray-800">Recent Enterprise Onboardings</h4>
+                <div class="space-y-1">
+                    <div class="activity-item">
+                        <div class="activity-avatar">FH</div>
+                        <div>
+                            <span class="font-medium">Fintech Holdings</span> upgraded to <span class="text-green-600 font-medium">Enterprise Platform</span>
+                            <div class="text-sm text-gray-500">• 2 hours ago • 1,250 endpoints secured</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-avatar">HC</div>
+                        <div>
+                            <span class="font-medium">Healthcare Corp</span> achieved <span class="text-blue-600 font-medium">HIPAA Compliance</span>
+                            <div class="text-sm text-gray-500">• 5 hours ago • 98.7% compliance score</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-avatar">RG</div>
+                        <div>
+                            <span class="font-medium">Retail Giant</span> eliminated <span class="text-red-600 font-medium">95% of critical vulnerabilities</span>
+                            <div class="text-sm text-gray-500">• 1 day ago • 5,000+ systems protected</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- Pricing Section with UPDATED PRICING -->
     <section id="pricing" class="testimonial-bg section-padding">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Transparent, Scalable Pricing</h2>
-                <p class="text-gray-600">Choose the plan that fits your organization's needs. All plans include 24/7 monitoring.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Transparent Security Investment</h2>
+                <p class="text-gray-600">Scale your security posture with predictable, value-aligned pricing.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div class="pricing-cards">
+                <!-- Basic Plan - $120 -->
                 <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 relative">
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Basic</h3>
                         <p class="text-gray-600">For small businesses</p>
                         <div class="mt-4">
-                            <!-- UPDATED: Removed /month -->
-                            <span class="text-4xl font-bold blue-gradient-text">$105</span>
+                            <span class="text-4xl font-bold blue-gradient-text">$120</span>
                         </div>
                         <p class="text-gray-500 text-sm mt-2">Billed for 5 months</p>
                     </div>
@@ -725,24 +863,24 @@
                             <span>Monthly reporting</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-times text-gray-300 mt-1 mr-2"></i>
-                            <span class="text-gray-400">Third-party application patching</span>
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Third-party application patching</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-times text-gray-300 mt-1 mr-2"></i>
-                            <span class="text-gray-400">Compliance reporting</span>
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Compliance reporting</span>
                         </li>
                     </ul>
-                    <button onclick="selectPlan('Basic', '$105', '5 months')" class="btn-secondary w-full">Get Started</button>
+                    <button onclick="openSignupForm('Basic', '$120', '5 months')" class="btn-secondary w-full">Get Started</button>
                 </div>
                 
+                <!-- Standard Plan - $180 -->
                 <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-blue-500 relative card-hover">
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Standard</h3>
                         <p class="text-gray-600">For growing businesses</p>
                         <div class="mt-4">
-                            <!-- UPDATED: Removed /month -->
-                            <span class="text-4xl font-bold blue-gradient-text">$160</span>
+                            <span class="text-4xl font-bold blue-gradient-text">$180</span>
                         </div>
                         <p class="text-gray-500 text-sm mt-2">Billed for 12 months</p>
                     </div>
@@ -764,22 +902,21 @@
                             <span>Basic compliance reporting</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-times text-gray-300 mt-1 mr-2"></i>
-                            <span class="text-gray-400">Dedicated engineer</span>
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Dedicated engineer</span>
                         </li>
                     </ul>
-                    <button onclick="selectPlan('Standard', '$160', '12 months')" class="btn-primary w-full">Get Started</button>
+                    <button onclick="openSignupForm('Standard', '$180', '12 months')" class="btn-primary w-full">Get Started</button>
                 </div>
                 
-                <!-- UPDATED: Fixed MOST POPULAR badge positioning -->
+                <!-- Premium Plan - $280 -->
                 <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-green-500 relative card-hover" style="padding-top: 2rem;">
                     <div class="popular-badge">MOST POPULAR</div>
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Premium</h3>
                         <p class="text-gray-600">For established businesses</p>
                         <div class="mt-4">
-                            <!-- UPDATED: Removed /month -->
-                            <span class="text-4xl font-bold green-gradient-text">$250</span>
+                            <span class="text-4xl font-bold green-gradient-text">$280</span>
                         </div>
                         <p class="text-gray-500 text-sm mt-2">Billed for 2 years</p>
                     </div>
@@ -805,9 +942,10 @@
                             <span>Dedicated security engineer</span>
                         </li>
                     </ul>
-                    <button onclick="selectPlan('Premium', '$250', '2 years')" class="btn-green w-full">Get Started</button>
+                    <button onclick="openSignupForm('Premium', '$280', '2 years')" class="btn-green w-full">Get Started</button>
                 </div>
                 
+                <!-- Enterprise Plan - Custom -->
                 <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 relative">
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold mb-2 text-gray-800">Enterprise</h3>
@@ -839,7 +977,7 @@
                             <span>24/7 dedicated engineering team</span>
                         </li>
                     </ul>
-                    <button onclick="openContactModal('Enterprise Plan - Custom')" class="btn-secondary w-full">Contact Sales</button>
+                    <button onclick="openContactModal('Enterprise Plan')" class="btn-secondary w-full">Contact Sales</button>
                 </div>
             </div>
             
@@ -849,123 +987,37 @@
         </div>
     </section>
 
-    <!-- Clients Section -->
-    <section class="bg-white py-12">
+    <!-- Methodology Section -->
+    <section class="bg-white section-padding">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-10">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">Trusted by Security-Conscious Organizations</h3>
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Zero-Trust Security Implementation Framework</h2>
+                <p class="text-gray-600">Our proven methodology for transforming enterprise security posture.</p>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-                <div class="client-logo flex justify-center">
-                    <div class="w-32 h-16 blue-bg rounded-lg flex items-center justify-center">
-                        <span class="font-bold text-blue-800">TechCorp Inc.</span>
-                    </div>
-                </div>
-                <div class="client-logo flex justify-center">
-                    <div class="w-32 h-16 green-bg rounded-lg flex items-center justify-center">
-                        <span class="font-bold text-green-800">HealthFirst</span>
-                    </div>
-                </div>
-                <div class="client-logo flex justify-center">
-                    <div class="w-32 h-16 blue-bg rounded-lg flex items-center justify-center">
-                        <span class="font-bold text-blue-800">GlobalBank</span>
-                    </div>
-                </div>
-                <div class="client-logo flex justify-center">
-                    <div class="w-32 h-16 green-bg rounded-lg flex items-center justify-center">
-                        <span class="font-bold text-green-800">EduSystems</span>
-                    </div>
-                </div>
-                <div class="client-logo flex justify-center">
-                    <div class="w-32 h-16 blue-bg rounded-lg flex items-center justify-center">
-                        <span class="font-bold text-blue-800">RetailPlus</span>
-                    </div>
-                </div>
-                <div class="client-logo flex justify-center">
-                    <div class="w-32 h-16 green-bg rounded-lg flex items-center justify-center">
-                        <span class="font-bold text-green-800">GovSecure</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="grey-bg section-padding">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About SecurePatch Pro</h2>
-                    <p class="text-gray-600 mb-6">Founded in 2015, SecurePatch Pro has been at the forefront of security patch management, helping organizations of all sizes protect their digital assets from evolving cyber threats.</p>
-                    <p class="text-gray-600 mb-6">Our team of certified security engineers brings decades of combined experience in vulnerability management, compliance, and IT infrastructure.</p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="blue-bg text-blue-700 p-2 rounded-lg mr-4">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Certified Experts</h4>
-                                <p class="text-gray-600 text-sm">CISSP, CISM, and Microsoft-certified engineers</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="green-bg text-green-700 p-2 rounded-lg mr-4">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">24/7 SOC</h4>
-                                <p class="text-gray-600 text-sm">Security Operations Center monitoring all client systems</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-blue-50 text-blue-700 p-2 rounded-lg mr-4">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Proven Methodology</h4>
-                                <p class="text-gray-600 text-sm">4-step process with 99.9% patch success rate</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 blue-bg text-blue-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-bold mb-3">Discovery & Asset Intelligence</h3>
+                    <p class="text-gray-600">Comprehensive inventory with automated dependency mapping and criticality assessment.</p>
                 </div>
                 
-                <div class="lg:w-1/2">
-                    <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Why Choose SecurePatch Pro?</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="blue-bg text-blue-700 rounded-lg p-3 mr-4">
-                                    <i class="fas fa-bolt text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-800 mb-2">Rapid Response to Zero-Day Threats</h4>
-                                    <p class="text-gray-600">Average deployment time of critical patches: 4 hours from release.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="green-bg text-green-700 rounded-lg p-3 mr-4">
-                                    <i class="fas fa-chart-pie text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-800 mb-2">Comprehensive Compliance</h4>
-                                    <p class="text-gray-600">Ready-to-use reports for HIPAA, PCI DSS, GDPR, ISO 27001, and more.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-blue-50 text-blue-700 rounded-lg p-3 mr-4">
-                                    <i class="fas fa-cogs text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-gray-800 mb-2">No Disruption to Operations</h4>
-                                    <p class="text-gray-600">99.9% of patches deployed during scheduled maintenance windows with zero downtime.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 green-bg text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-bold mb-3">Vulnerability Assessment</h3>
+                    <p class="text-gray-600">Context-aware threat analysis with EPSS scoring and business impact prioritization.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-bold mb-3">Remediation Orchestration</h3>
+                    <p class="text-gray-600">Automated patch deployment with rollback assurance and compliance validation.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-green-50 text-green-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="text-xl font-bold mb-3">Continuous Governance</h3>
+                    <p class="text-gray-600">Ongoing monitoring with executive dashboards and regulatory compliance reporting.</p>
                 </div>
             </div>
         </div>
@@ -975,62 +1027,50 @@
     <section class="testimonial-bg py-16">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
-                <p class="text-gray-600">Don't just take our word for it. Here's what our clients have to say about our service.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Security Leadership Validation</h2>
+                <p class="text-gray-600">Endorsements from enterprise security decision-makers.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 blue-bg rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">JD</div>
+                        <div class="w-12 h-12 blue-bg rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">CD</div>
                         <div>
-                            <h4 class="font-bold">James Davidson</h4>
-                            <p class="text-gray-500 text-sm">CTO, TechCorp Inc.</p>
+                            <h4 class="font-bold">Chief Digital Officer</h4>
+                            <p class="text-gray-500 text-sm">Fortune 500 Financial Services</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"SecurePatch Pro reduced our vulnerability exposure by 92% in the first 6 months. Their team is responsive and their reporting is exceptional."</p>
+                    <p class="text-gray-600 italic">"SecurePatch Pro transformed our security posture from reactive to predictive. Our audit findings reduced by 92% while operational efficiency increased 40%."</p>
                     <div class="flex text-yellow-400 mt-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 green-bg rounded-full flex items-center justify-center text-green-700 font-bold mr-4">SM</div>
+                        <div class="w-12 h-12 green-bg rounded-full flex items-center justify-center text-green-700 font-bold mr-4">CSO</div>
                         <div>
-                            <h4 class="font-bold">Sarah Miller</h4>
-                            <p class="text-gray-500 text-sm">Security Director, HealthFirst</p>
+                            <h4 class="font-bold">Chief Security Officer</h4>
+                            <p class="text-gray-500 text-sm">Global Healthcare Provider</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"Their HIPAA compliance reporting saved us countless hours during our audit. The peace of mind knowing our systems are patched is invaluable."</p>
+                    <p class="text-gray-600 italic">"Their compliance automation cut our HIPAA audit preparation from 6 weeks to 3 days. The ROI was realized within the first quarter of implementation."</p>
                     <div class="flex text-yellow-400 mt-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                 </div>
                 
                 <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">RK</div>
+                        <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-700 font-bold mr-4">CISO</div>
                         <div>
-                            <h4 class="font-bold">Robert Kim</h4>
-                            <p class="text-gray-500 text-sm">IT Manager, GlobalBank</p>
+                            <h4 class="font-bold">Chief Information Security Officer</h4>
+                            <p class="text-gray-500 text-sm">Enterprise Retail Corporation</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 italic">"The automated deployment has eliminated after-hours work for my team. We've had zero security incidents related to unpatched systems since onboarding."</p>
+                    <p class="text-gray-600 italic">"The predictive vulnerability scoring prevented three potential zero-day exploits. Their CSIRT team's response time exceeded our internal capabilities."</p>
                     <div class="flex text-yellow-400 mt-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                 </div>
             </div>
@@ -1040,52 +1080,51 @@
     <!-- Contact CTA -->
     <section id="contact" class="hero-gradient text-white py-16">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Secure Your Systems?</h2>
-            <p class="text-xl opacity-90 max-w-2xl mx-auto mb-10">Schedule a free security assessment and see how we can reduce your vulnerability exposure.</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Security Posture?</h2>
+            <p class="text-xl opacity-90 max-w-2xl mx-auto mb-10">Schedule a comprehensive security assessment and receive your custom risk reduction roadmap.</p>
             
             <div class="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8">
                 <form id="contact-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-6">
-                    <input type="hidden" name="_subject" value="New Security Assessment Request - SecurePatch Pro">
-                    <input type="hidden" name="_replyto" value="">
+                    <input type="hidden" name="_subject" value="Enterprise Security Assessment Request - SecurePatch Pro">
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-left text-white mb-2">Full Name *</label>
-                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white">
+                            <label class="block text-left text-white mb-2">Executive Contact *</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Full Name">
                         </div>
                         <div>
-                            <label class="block text-left text-white mb-2">Email Address *</label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white">
+                            <label class="block text-left text-white mb-2">Corporate Email *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" placeholder="business@company.com">
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-left text-white mb-2">Company Name</label>
-                            <input type="text" name="company" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white">
+                            <label class="block text-left text-white mb-2">Organization</label>
+                            <input type="text" name="company" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Company Name">
                         </div>
                         <div>
-                            <label class="block text-left text-white mb-2">Number of Endpoints</label>
+                            <label class="block text-left text-white mb-2">Enterprise Asset Count</label>
                             <select name="endpoints" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white focus:outline-none focus:ring-2 focus:ring-white">
                                 <option value="" class="text-gray-800">Select range</option>
-                                <option value="1-25" class="text-gray-800">1-25</option>
-                                <option value="26-100" class="text-gray-800">26-100</option>
-                                <option value="101-500" class="text-gray-800">101-500</option>
-                                <option value="500+" class="text-gray-800">500+</option>
+                                <option value="1-50" class="text-gray-800">1-50 assets</option>
+                                <option value="51-250" class="text-gray-800">51-250 assets</option>
+                                <option value="251-1000" class="text-gray-800">251-1,000 assets</option>
+                                <option value="1000+" class="text-gray-800">1,000+ assets</option>
                             </select>
                         </div>
                     </div>
                     
                     <div>
-                        <label class="block text-left text-white mb-2">Message *</label>
-                        <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                        <label class="block text-left text-white mb-2">Primary Security Objectives *</label>
+                        <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" placeholder="Describe your key security challenges..."></textarea>
                     </div>
                     
                     <div class="text-center pt-4">
                         <button type="submit" class="assessment-btn px-10 py-4 text-lg">
-                            <i class="fas fa-paper-plane mr-2"></i> Request Free Assessment
+                            <i class="fas fa-paper-plane mr-2"></i> Request Executive Briefing
                         </button>
-                        <p class="text-white text-opacity-80 text-sm mt-4">We'll contact you within 24 hours to schedule your assessment.</p>
+                        <p class="text-white text-opacity-80 text-sm mt-4">A security architect will contact you within 24 hours to schedule your assessment.</p>
                     </div>
                 </form>
             </div>
@@ -1103,49 +1142,41 @@
                         </div>
                         <span class="text-xl font-bold">SecurePatch<span class="text-blue-400">Pro</span></span>
                     </div>
-                    <p class="text-gray-400 mb-4">Enterprise-grade security patch management for modern organizations.</p>
+                    <p class="text-gray-400 mb-4">Enterprise-grade vulnerability management and compliance automation.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <h4 class="text-lg font-bold mb-4">Platform</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">OS Patch Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Third-Party Patching</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Vulnerability Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Compliance Reporting</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Vulnerability Management</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Compliance Automation</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Threat Intelligence</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white">Enterprise Pricing</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <h4 class="text-lg font-bold mb-4">Enterprise</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">Security Leadership</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Security Research</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Partner Program</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
-                            <span>123 Security Ave, Suite 500<br>San Francisco, CA 94107</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone mr-3"></i>
-                            <span>(555) 123-4567</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-3"></i>
-                            <span>mailer.secureguardteam@gmail.com</span>
-                        </li>
+                    <h4 class="text-lg font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="showLegalPage('terms')" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)" onclick="showLegalPage('cookie')" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="showLegalPage('gdpr')" class="text-gray-400 hover:text-white">GDPR Compliance</a></li>
                     </ul>
                 </div>
             </div>
@@ -1153,17 +1184,120 @@
             <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 SecurePatch Pro. All rights reserved.</p>
                 <div class="flex space-x-6 text-sm text-gray-400">
-                    <!-- UPDATED: Added onclick events for legal pages -->
-                    <a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="hover:text-white">Privacy Policy</a>
-                    <a href="javascript:void(0)" onclick="showLegalPage('terms')" class="hover:text-white">Terms of Service</a>
-                    <a href="javascript:void(0)" onclick="showLegalPage('cookie')" class="hover:text-white">Cookie Policy</a>
+                    <a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="hover:text-white">Security Policy</a>
+                    <a href="javascript:void(0)" onclick="showLegalPage('terms')" class="hover:text-white">Service Terms</a>
                     <a href="javascript:void(0)" onclick="showLegalPage('gdpr')" class="hover:text-white">GDPR</a>
+                    <a href="javascript:void(0)" onclick="showLegalPage('cookie')" class="hover:text-white">Cookies</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- NEW: Legal Pages Modal -->
+    <!-- NEW: Signup Form Modal -->
+    <div id="signupModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Complete Your Signup</h3>
+                    <button onclick="closeSignupModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <form id="signup-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-4">
+                    <input type="hidden" name="_subject" value="New Package Signup - SecurePatch Pro">
+                    <input type="hidden" name="selected_plan" id="selected-plan">
+                    <input type="hidden" name="selected_price" id="selected-price">
+                    <input type="hidden" name="selected_duration" id="selected-duration">
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-bold text-blue-800 mb-2">Selected Package</h4>
+                        <p id="selected-package-info" class="text-blue-700"></p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                        <input type="text" name="name" required class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                        <input type="email" name="email" required class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                        <input type="text" name="company" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" name="phone" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Number of Endpoints *</label>
+                        <input type="number" name="endpoints" min="1" required class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                            Expert Code (Required for patch delivery) *
+                        </label>
+                        <input type="text" name="expert_code" required placeholder="XX-12345" class="form-control" pattern="[A-Z]{2}-[0-9]{5}" title="Format: XX-12345 (e.g., DA-87543)">
+                        <p class="text-xs text-gray-500 mt-1">Format: XX-12345 (e.g., DA-87543)</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Additional Requirements (Optional)</label>
+                        <textarea name="requirements" rows="3" class="form-control" placeholder="Any specific requirements or questions..."></textarea>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <input type="checkbox" id="terms-signup" name="terms" required class="mt-1">
+                        <label for="terms-signup" class="ml-3 text-sm text-gray-600">
+                            I agree to the <a href="javascript:void(0)" onclick="showLegalPage('terms')" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="text-blue-600 hover:underline">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <div class="pt-2">
+                        <button type="submit" class="btn-primary w-full py-3">
+                            <i class="fas fa-check-circle mr-2"></i> Complete Signup
+                        </button>
+                        <p class="text-gray-500 text-sm mt-2">You will receive a confirmation email with next steps.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="p-8 text-center">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-800 mt-6 mb-4">Signup Successful!</h3>
+                
+                <div class="text-gray-600 mb-6">
+                    <p id="confirmation-message" class="mb-4"></p>
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-500 mb-2">Your Expert Code:</p>
+                        <div id="expert-code-display" class="expert-code-box mb-4"></div>
+                        <p class="text-sm text-gray-500">Keep this code for patch delivery configuration.</p>
+                    </div>
+                </div>
+                
+                <button onclick="closeConfirmationModal()" class="btn-secondary px-6 py-2">
+                    Return to Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Pages Modal -->
     <div id="legalModal" class="legal-modal hidden">
         <div class="legal-content">
             <div class="flex justify-between items-center mb-4">
@@ -1214,7 +1348,7 @@
                 <p>Depending on your location, you may have rights regarding your personal data including access, correction, deletion, and data portability.</p>
                 
                 <h2>6. Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy, please contact us at mailer.secureguardteam@gmail.com.</p>
+                <p>If you have any questions about this Privacy Policy, please contact us at privacy@securepatchpro.com.</p>
             </div>
             
             <!-- Terms of Service -->
@@ -1310,118 +1444,29 @@
         </div>
     </div>
 
-    <!-- Opt-In Modal with Expert Code -->
-    <div id="optinModal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-2xl font-bold text-gray-800">Complete Your Opt-In</h3>
-                    <button onclick="closeOptinModal()" class="text-gray-500 hover:text-gray-700">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-                
-                <form id="optin-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-4">
-                    <input type="hidden" name="_subject" value="New Package Opt-In - SecurePatch Pro">
-                    <input type="hidden" name="selected_plan" id="selected-plan">
-                    <!-- UPDATED: Changed price format -->
-                    <input type="hidden" name="selected_price" id="selected-price">
-                    <input type="hidden" name="selected_duration" id="selected-duration">
-                    
-                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                        <h4 class="font-bold text-blue-800 mb-2">Selected Package</h4>
-                        <!-- UPDATED: Updated price display -->
-                        <p id="selected-package-info" class="text-blue-700"></p>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                            <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                            <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Company Name (Optional)</label>
-                        <input type="text" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">
-                            Expert Code <span class="text-red-500">*</span>
-                            <span class="ml-1 text-xs text-gray-500">(Required for patch delivery)</span>
-                        </label>
-                        <input type="text" name="expert_code" required placeholder="e.g. SP-1345" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" pattern="[A-Z]{2}-[0-9]{5}" title="Format: XX-12345 (e.g., DA-87543)">
-                        <p class="text-xs text-gray-500 mt-1">Format: XX-12345 (e.g., SP-1345)</p>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <input type="checkbox" id="terms-optin" name="terms" required class="mt-1">
-                        <label for="terms-optin" class="ml-3 text-sm text-gray-600">
-                            I agree to the <a href="javascript:void(0)" onclick="showLegalPage('terms')" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="text-blue-600 hover:underline">Privacy Policy</a>
-                        </label>
-                    </div>
-                    
-                    <div class="pt-2">
-                        <button type="submit" class="btn-primary w-full py-3">
-                            <i class="fas fa-check-circle mr-2"></i> Complete Opt-In
-                        </button>
-                        <p class="text-gray-500 text-sm mt-2">You will receive an invoice via the email you provided.</p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Confirmation Modal -->
-    <div id="confirmationModal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <div class="p-8 text-center">
-                <div class="confirmation-icon">
-                    <i class="fas fa-check"></i>
-                </div>
-                
-                <h3 class="text-2xl font-bold text-gray-800 mt-6 mb-4">Opt-In Confirmed</h3>
-                
-                <div class="text-gray-600 mb-6">
-                    <p id="confirmation-message" class="mb-4"></p>
-                    <div class="mt-4">
-                        <p class="text-sm text-gray-500 mb-2">The ID:</p>
-                        <div id="expert-code-display" class="expert-code-box mb-4"></div>
-                        <p class="text-sm text-gray-500">will receive the selected patch.</p>
-                    </div>
-                </div>
-                
-                <button onclick="closeConfirmationModal()" class="btn-secondary px-6 py-2">
-                    Return to Home
-                </button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // UPDATED: Logo click functionality
+        // Logo click functionality
         document.getElementById('home-logo').addEventListener('click', function(e) {
             e.preventDefault();
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
-            // Close any open modals
-            closeOptinModal();
-            closeConfirmationModal();
-            closeContactModal();
-            closeLegalModal();
         });
         
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            if (!menu.contains(event.target) && !menuBtn.contains(event.target) && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+            }
         });
         
         // Smooth scrolling for navigation links
@@ -1445,29 +1490,24 @@
             });
         });
         
-        // UPDATED: Plan selection function with new price format
-        function selectPlan(plan, price, duration) {
+        // NEW: Signup Form Functions
+        function openSignupForm(plan, price, duration) {
             // Update hidden fields
             document.getElementById('selected-plan').value = plan;
             document.getElementById('selected-price').value = price;
             document.getElementById('selected-duration').value = duration;
             
-            // Update display text - UPDATED format
-            document.getElementById('selected-package-info').textContent = `${plan} - ${price} (${duration})`;
+            // Update display text
+            document.getElementById('selected-package-info').textContent = `${plan} Plan - ${price} (${duration})`;
             
-            // Open opt-in modal
-            openOptinModal();
-        }
-        
-        // Opt-In modal functions
-        function openOptinModal() {
-            const modal = document.getElementById('optinModal');
+            // Open modal
+            const modal = document.getElementById('signupModal');
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
         
-        function closeOptinModal() {
-            const modal = document.getElementById('optinModal');
+        function closeSignupModal() {
+            const modal = document.getElementById('signupModal');
             modal.classList.add('hidden');
             document.body.style.overflow = '';
         }
@@ -1478,12 +1518,12 @@
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
             
-            // Update confirmation message - UPDATED format
+            // Update confirmation message
             document.getElementById('confirmation-message').textContent = 
-                `Thank you, you have opt in for ${plan}. You will receive an invoice via the email you provided.`;
+                `Thank you for signing up for the ${plan} Plan! You will receive a confirmation email with next steps.`;
             
             // Update expert code display
-            document.getElementById('expert-code-display').textContent = expertCode;
+            document.getElementById('expert-code-display').textContent = expertCode || 'XX-12345';
         }
         
         function closeConfirmationModal() {
@@ -1491,23 +1531,19 @@
             modal.classList.add('hidden');
             document.body.style.overflow = '';
             
-            // Reset opt-in form
-            document.getElementById('optin-form').reset();
-            
-            // Close opt-in modal if open
-            closeOptinModal();
+            // Close signup modal if open
+            closeSignupModal();
         }
         
-        // Contact modal functions
+        // Contact modal function
         function openContactModal(plan = '') {
-            // For simplicity, we'll use the contact form in the page
             window.scrollTo({
                 top: document.getElementById('contact').offsetTop - 80,
                 behavior: 'smooth'
             });
         }
         
-        // NEW: Legal modal functions
+        // Legal modal functions
         function showLegalPage(page) {
             const modal = document.getElementById('legalModal');
             modal.classList.remove('hidden');
@@ -1574,8 +1610,8 @@
         document.querySelectorAll('.modal-overlay, .legal-modal').forEach(modal => {
             modal.addEventListener('click', function(e) {
                 if (e.target === this) {
-                    if (this.id === 'optinModal') {
-                        closeOptinModal();
+                    if (this.id === 'signupModal') {
+                        closeSignupModal();
                     } else if (this.id === 'confirmationModal') {
                         closeConfirmationModal();
                     } else if (this.id === 'legalModal') {
@@ -1588,8 +1624,8 @@
         // Close modal with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                if (!document.getElementById('optinModal').classList.contains('hidden')) {
-                    closeOptinModal();
+                if (!document.getElementById('signupModal').classList.contains('hidden')) {
+                    closeSignupModal();
                 } else if (!document.getElementById('confirmationModal').classList.contains('hidden')) {
                     closeConfirmationModal();
                 } else if (!document.getElementById('legalModal').classList.contains('hidden')) {
@@ -1599,36 +1635,39 @@
         });
         
         // Expert code validation
-        document.querySelector('input[name="expert_code"]').addEventListener('input', function() {
-            const input = this.value;
-            if (/^[A-Z]{2}-[0-9]{5}$/.test(input)) {
-                this.classList.add('border-green-500');
-                this.classList.remove('border-red-500');
-            } else {
-                this.classList.remove('border-green-500');
-                if (input.length > 0) {
-                    this.classList.add('border-red-500');
-                } else {
+        const expertCodeInput = document.querySelector('input[name="expert_code"]');
+        if (expertCodeInput) {
+            expertCodeInput.addEventListener('input', function() {
+                const input = this.value;
+                if (/^[A-Z]{2}-[0-9]{5}$/.test(input)) {
+                    this.classList.add('border-green-500');
                     this.classList.remove('border-red-500');
+                } else {
+                    this.classList.remove('border-green-500');
+                    if (input.length > 0) {
+                        this.classList.add('border-red-500');
+                    } else {
+                        this.classList.remove('border-red-500');
+                    }
                 }
-            }
-        });
+            });
+        }
         
-        // Opt-In form submission
-        document.getElementById('optin-form').addEventListener('submit', async function(e) {
+        // Signup form submission
+        document.getElementById('signup-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
+            const expertCode = this.querySelector('input[name="expert_code"]').value;
+            const selectedPlan = document.getElementById('selected-plan').value;
             
             // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+            submitBtn.innerHTML = '<span class="loading-spinner"></span> Processing...';
             submitBtn.disabled = true;
             
             try {
                 const formData = new FormData(this);
-                const expertCode = formData.get('expert_code');
-                const selectedPlan = document.getElementById('selected-plan').value;
                 
                 const response = await fetch(this.action, {
                     method: 'POST',
@@ -1639,18 +1678,20 @@
                 });
                 
                 if (response.ok) {
-                    // Close opt-in modal and show confirmation
-                    closeOptinModal();
+                    // Close signup modal and show confirmation
+                    closeSignupModal();
                     setTimeout(() => {
                         openConfirmationModal(selectedPlan, expertCode);
                     }, 300);
+                    
+                    // Reset form
+                    this.reset();
                 } else {
-                    // Show error message
-                    alert('There was an error submitting your opt-in. Please try again or contact us directly.');
+                    alert('There was an error submitting your signup. Please try again or contact us directly.');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('There was an error submitting your opt-in. Please try again or contact us directly.');
+                alert('There was an error submitting your signup. Please try again or contact us directly.');
             } finally {
                 // Reset button state
                 submitBtn.innerHTML = originalText;
@@ -1658,7 +1699,7 @@
             }
         });
         
-        // Form submission handling with Formspree
+        // Contact form submission
         document.getElementById('contact-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -1666,7 +1707,7 @@
             const originalText = submitBtn.innerHTML;
             
             // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+            submitBtn.innerHTML = '<span class="loading-spinner"></span> Processing...';
             submitBtn.disabled = true;
             
             try {
@@ -1681,11 +1722,9 @@
                 });
                 
                 if (response.ok) {
-                    // Show success message
-                    alert('Thank you for your interest! A security specialist will contact you within 24 hours to schedule your free assessment.');
+                    alert('Thank you for your interest! A security specialist will contact you within 24 hours to schedule your assessment.');
                     this.reset();
                 } else {
-                    // Show error message
                     alert('There was an error submitting your form. Please try again or contact us directly.');
                 }
             } catch (error) {
@@ -1712,11 +1751,7 @@
             });
         }
         
-        // Run on load and scroll
-        window.addEventListener('load', animateOnScroll);
-        window.addEventListener('scroll', animateOnScroll);
-        
-        // Sticky navigation background on scroll
+        // Sticky navigation
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
@@ -1725,6 +1760,21 @@
                 nav.classList.remove('sticky-nav');
             }
         });
+        
+        // Initialize on load
+        window.addEventListener('load', function() {
+            animateOnScroll();
+            
+            // Check for mobile
+            if (window.innerWidth <= 768) {
+                // Add touch improvements for mobile
+                document.querySelectorAll('button').forEach(btn => {
+                    btn.style.touchAction = 'manipulation';
+                });
+            }
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>
