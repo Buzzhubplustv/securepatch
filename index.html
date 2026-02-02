@@ -24,7 +24,11 @@
         }
         
         .hero-gradient {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(37, 99, 235, 0.95) 100%), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
         }
         
         .section-padding {
@@ -233,6 +237,10 @@
             .pricing-cards {
                 grid-template-columns: 1fr !important;
                 gap: 1.5rem !important;
+            }
+            
+            .hero-gradient {
+                background-attachment: scroll;
             }
         }
         
@@ -652,6 +660,187 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        
+        /* NEW: Auto-scrolling platforms section */
+        .platforms-scroll-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+            padding: 2rem 0;
+        }
+        
+        .platforms-track {
+            display: flex;
+            width: max-content;
+            animation: scrollPlatforms 30s linear infinite;
+        }
+        
+        @keyframes scrollPlatforms {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .platform-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 1rem;
+            margin: 0 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .platform-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .platform-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* NEW: Content carousel */
+        .content-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-indicator.active {
+            background: #2563eb;
+            transform: scale(1.2);
+        }
+        
+        /* NEW: SVG Icon fixes */
+        .svg-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+        }
+        
+        .svg-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        /* NEW: Hero improvements */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(37, 99, 235, 0.85) 100%);
+            z-index: 1;
+        }
+        
+        /* NEW: Floating shapes in hero */
+        .floating-shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 2;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -100px;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            left: -50px;
+        }
+        
+        /* NEW: Specialization badge */
+        .specialization-badge {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* NEW: Testimonial carousel */
+        .testimonial-carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 2rem;
+        }
+        
+        .testimonial-content {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -670,8 +859,8 @@
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-gray-700 font-medium hover:text-gray-900">Home</a>
                     <a href="#services" class="nav-link text-gray-700 font-medium hover:text-gray-900">Solutions</a>
+                    <a href="#platforms" class="nav-link text-gray-700 font-medium hover:text-gray-900">Platforms</a>
                     <a href="#pricing" class="nav-link text-gray-700 font-medium hover:text-gray-900">Pricing</a>
-                    <a href="#about" class="nav-link text-gray-700 font-medium hover:text-gray-900">Enterprise</a>
                     <a href="#contact" class="nav-link text-gray-700 font-medium hover:text-gray-900">Contact</a>
                 </div>
                 
@@ -688,8 +877,8 @@
                 <div class="flex flex-col space-y-4 mt-4 px-4">
                     <a href="#home" class="text-gray-700 font-medium hover:text-gray-900 py-2">Home</a>
                     <a href="#services" class="text-gray-700 font-medium hover:text-gray-900 py-2">Solutions</a>
+                    <a href="#platforms" class="text-gray-700 font-medium hover:text-gray-900 py-2">Platforms</a>
                     <a href="#pricing" class="text-gray-700 font-medium hover:text-gray-900 py-2">Pricing</a>
-                    <a href="#about" class="text-gray-700 font-medium hover:text-gray-900 py-2">Enterprise</a>
                     <a href="#contact" class="text-gray-700 font-medium hover:text-gray-900 py-2">Contact</a>
                     <button onclick="openContactModal()" class="btn-primary w-full mt-4">Get Quote</button>
                 </div>
@@ -697,30 +886,46 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-gradient text-white">
-        <div class="container mx-auto px-4 section-padding">
+    <!-- Enhanced Hero Section with Professional Background -->
+    <section id="home" class="hero-gradient text-white relative">
+        <div class="hero-overlay"></div>
+        <!-- Floating shapes -->
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        
+        <div class="container mx-auto px-4 section-padding hero-content">
             <div class="max-w-4xl mx-auto text-center fade-in">
+                <div class="specialization-badge">
+                    <i class="fas fa-store"></i>
+                    Specialized Ecommerce Platform Security
+                </div>
+                
                 <div class="inline-flex items-center px-4 py-2 rounded-full bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm mb-6">
                     <i class="fas fa-crown mr-2 text-yellow-300"></i>
                     <span class="text-sm font-medium">Enterprise-Grade Security Platform</span>
                 </div>
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Intelligent Vulnerability Remediation & Compliance Automation</h1>
-                <p class="text-xl mb-8 opacity-90">Proactive patch orchestration reducing enterprise risk exposure by 95% through automated security governance and regulatory compliance.</p>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Intelligent Vulnerability Remediation &<br>Compliance Automation
+                </h1>
+                
+                <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+                    Proactive patch orchestration reducing enterprise risk exposure by 95% through automated security governance and regulatory compliance. Specialized protection for ecommerce platforms.
+                </p>
                 
                 <!-- Trust Badges -->
                 <div class="trust-badges">
                     <div class="trust-badge">
                         <i class="fas fa-shield-check text-green-500"></i>
-                        <span class="text-sm font-medium:text-blue-600">SOC 2 Type II</span>
+                        <span class="text-sm font-medium">SOC 2 Type II</span>
                     </div>
                     <div class="trust-badge">
                         <i class="fas fa-lock text-blue-500"></i>
-                        <span class="text-sm font-medium:text-blue-600">Military-Grade Encryption</span>
+                        <span class="text-sm font-medium">Military-Grade Encryption</span>
                     </div>
                     <div class="trust-badge">
                         <i class="fas fa-medal text-yellow-500"></i>
-                        <span class="text-sm font-medium:text-blue-600">99.9% Uptime SLA</span>
+                        <span class="text-sm font-medium">99.9% Uptime SLA</span>
                     </div>
                 </div>
                 
@@ -734,6 +939,7 @@
                 </div>
             </div>
             
+            <!-- Hero Feature Cards -->
             <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 card-hover">
                     <div class="feature-icon bg-white bg-opacity-20 mx-auto">
@@ -762,9 +968,65 @@
         </div>
     </section>
 
+    <!-- NEW: Platforms Specialization Section with Auto-scrolling -->
+    <section id="platforms" class="platforms-scroll-container">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Specialized Security for Your Platform</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We provide specialized patch management and security solutions for all major ecommerce and business platforms
+                </p>
+            </div>
+            
+            <div class="platforms-track">
+                <!-- Platform items will be duplicated by JavaScript for infinite scroll -->
+                <div class="platform-item">
+                    <i class="fab fa-shopify text-purple-600"></i>
+                    <span class="font-bold">Shopify</span>
+                    <span class="text-sm text-gray-500">Store Security</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fas fa-shopping-cart text-blue-600"></i>
+                    <span class="font-bold">Wix</span>
+                    <span class="text-sm text-gray-500">Ecommerce Protection</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fab fa-wordpress text-blue-800"></i>
+                    <span class="font-bold">WooCommerce</span>
+                    <span class="text-sm text-gray-500">WordPress Security</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fas fa-square text-black"></i>
+                    <span class="font-bold">Squarespace</span>
+                    <span class="text-sm text-gray-500">Website Security</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fab fa-magento text-orange-600"></i>
+                    <span class="font-bold">Magento</span>
+                    <span class="text-sm text-gray-500">Enterprise Ecommerce</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fab fa-bigcommerce text-blue-500"></i>
+                    <span class="font-bold">BigCommerce</span>
+                    <span class="text-sm text-gray-500">SaaS Security</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fas fa-cloud text-green-600"></i>
+                    <span class="font-bold">AWS</span>
+                    <span class="text-sm text-gray-500">Cloud Security</span>
+                </div>
+                <div class="platform-item">
+                    <i class="fab fa-microsoft text-blue-600"></i>
+                    <span class="font-bold">Azure</span>
+                    <span class="text-sm text-gray-500">Microsoft Ecosystem</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Stats Section -->
-    <section class="bg-white">
-        <div class="container mx-auto px-4 py-12">
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
                     <div class="stat-number">99.97%</div>
@@ -786,88 +1048,69 @@
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section id="services" class="grey-bg section-padding">
+    <!-- NEW: Content Carousel (Replaces long static content) -->
+    <section class="bg-gray-50 py-16">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Comprehensive Security Posture Management</h2>
-                <p class="text-gray-600">End-to-end vulnerability lifecycle management from discovery through remediation to compliance validation.</p>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Comprehensive Security Solutions</h2>
+                <p class="text-gray-600">Scroll through our key security offerings</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl shadow-lg p-6 card-hover border border-gray-100">
-                    <div class="feature-icon blue-bg text-blue-700">
-                        <i class="fas fa-server text-2xl"></i>
+            <div class="content-carousel max-w-4xl mx-auto">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide">
+                        <div class="svg-icon blue-bg text-blue-700 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Enterprise Infrastructure Hardening</h3>
+                        <p class="text-gray-600 mb-6">Secure your core infrastructure with our comprehensive hardening solutions.</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Windows/Linux Security</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Cloud Compliance</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Container Security</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Enterprise Infrastructure Hardening</h3>
-                    <ul class="space-y-2 text-gray-600 mb-6">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Windows/Linux/Unix Server hardening</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Container & virtualization platform security</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Cloud infrastructure compliance (AWS/Azure/GCP)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Configuration drift detection & remediation</span>
-                        </li>
-                    </ul>
+                    
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <div class="svg-icon green-bg text-green-700 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Application Security Governance</h3>
+                        <p class="text-gray-600 mb-6">Protect your applications from third-party vulnerabilities and threats.</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Dependency Management</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Container Scanning</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">DevSecOps Integration</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <div class="svg-icon bg-purple-100 text-purple-700 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Continuous Threat Exposure Management</h3>
+                        <p class="text-gray-600 mb-6">Stay ahead of emerging threats with real-time monitoring and intelligence.</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">CVE Monitoring</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Risk Prioritization</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Zero-day Response</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="bg-white rounded-xl shadow-lg p-6 card-hover border border-gray-100">
-                    <div class="feature-icon green-bg text-green-700">
-                        <i class="fas fa-layer-group text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Application Security Governance</h3>
-                    <ul class="space-y-2 text-gray-600 mb-6">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Third-party dependency vulnerability management</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Software composition analysis (SCA)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Container image scanning & hardening</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>DevSecOps pipeline integration</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white rounded-xl shadow-lg p-6 card-hover border border-gray-100">
-                    <div class="feature-icon bg-blue-50 text-blue-700">
-                        <i class="fas fa-chart-network text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Continuous Threat Exposure Management</h3>
-                    <ul class="space-y-2 text-gray-600 mb-6">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Real-time CVE monitoring & intelligence</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Risk-based vulnerability prioritization</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Attack surface reduction analytics</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Zero-day vulnerability response automation</span>
-                        </li>
-                    </ul>
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <div class="carousel-indicator active" data-slide="0"></div>
+                    <div class="carousel-indicator" data-slide="1"></div>
+                    <div class="carousel-indicator" data-slide="2"></div>
                 </div>
             </div>
             
@@ -903,8 +1146,8 @@
     </section>
 
     <!-- Activity Feed -->
-    <section class="bg-white">
-        <div class="container mx-auto px-4 py-8">
+    <section class="bg-white py-8">
+        <div class="container mx-auto px-4">
             <div class="activity-feed">
                 <h4 class="font-bold text-lg mb-4 text-gray-800">Recent Enterprise Onboardings</h4>
                 <div class="space-y-1">
@@ -934,8 +1177,88 @@
         </div>
     </section>
 
+    <!-- NEW: Testimonial Carousel -->
+    <section class="testimonial-bg py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600">Trusted by enterprises worldwide</p>
+            </div>
+            
+            <div class="testimonial-carousel">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">FH</div>
+                                <div>
+                                    <h4 class="font-bold">Sarah Johnson</h4>
+                                    <p class="text-gray-600 text-sm">CTO, Fintech Holdings</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"SecurePatch Pro transformed our security posture. We reduced critical vulnerabilities by 92% and achieved PCI DSS compliance in record time."</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">HC</div>
+                                <div>
+                                    <h4 class="font-bold">Dr. Michael Chen</h4>
+                                    <p class="text-gray-600 text-sm">Security Director, Healthcare Corp</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"The specialized ecommerce platform protection has been invaluable for our online patient portals. HIPAA compliance is now seamless with their automated reporting."</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">RG</div>
+                                <div>
+                                    <h4 class="font-bold">Robert Williams</h4>
+                                    <p class="text-gray-600 text-sm">IT Director, Retail Giant</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"Our Shopify and WooCommerce stores are now completely secure. The automated patch management has saved us hundreds of hours monthly."</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-indicators mt-8" id="testimonialIndicators">
+                    <div class="carousel-indicator active" data-slide="0"></div>
+                    <div class="carousel-indicator" data-slide="1"></div>
+                    <div class="carousel-indicator" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section with UPDATED PRICING -->
-    <section id="pricing" class="testimonial-bg section-padding">
+    <section id="pricing" class="bg-white py-16">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Transparent Security Investment</h2>
@@ -1093,7 +1416,8 @@
 
     <!-- Contact CTA with FIXED placeholder visibility -->
     <section id="contact" class="hero-gradient text-white py-16">
-        <div class="container mx-auto px-4 text-center">
+        <div class="hero-overlay"></div>
+        <div class="container mx-auto px-4 text-center hero-content">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Security Posture?</h2>
             <p class="text-xl opacity-90 max-w-2xl mx-auto mb-10">Schedule a comprehensive security assessment and receive your custom risk reduction roadmap.</p>
             
@@ -1306,8 +1630,6 @@
                             <input type="text" name="zip_code" required class="form-control" placeholder="12345">
                         </div>
                     </div>
-                    
-                    <!-- REMOVED: Number of endpoints field -->
                     
                     <!-- Expert Code Field -->
                     <div class="form-group">
@@ -1582,6 +1904,94 @@
             if (platformOptions.length > 0) {
                 platformOptions[0].click();
             }
+        }
+        
+        // NEW: Infinite scrolling platforms
+        function setupInfinitePlatformScroll() {
+            const track = document.querySelector('.platforms-track');
+            const items = track.querySelectorAll('.platform-item');
+            
+            // Duplicate items for infinite scroll
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                track.appendChild(clone);
+            });
+        }
+        
+        // NEW: Content Carousel
+        let currentSlide = 0;
+        const carouselSlides = document.querySelectorAll('.carousel-slide');
+        const carouselTrack = document.getElementById('carouselTrack');
+        const carouselIndicators = document.querySelectorAll('#carouselIndicators .carousel-indicator');
+        
+        function setupCarousel() {
+            // Set initial position
+            updateCarousel();
+            
+            // Auto-advance carousel every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % carouselSlides.length;
+                updateCarousel();
+            }, 5000);
+            
+            // Indicator click handlers
+            carouselIndicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateCarousel();
+                });
+            });
+        }
+        
+        function updateCarousel() {
+            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update indicators
+            carouselIndicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        
+        // NEW: Testimonial Carousel
+        let currentTestimonial = 0;
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const testimonialTrack = document.getElementById('testimonialTrack');
+        const testimonialIndicators = document.querySelectorAll('#testimonialIndicators .carousel-indicator');
+        
+        function setupTestimonialCarousel() {
+            // Set initial position
+            updateTestimonialCarousel();
+            
+            // Auto-advance testimonial carousel every 6 seconds
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+                updateTestimonialCarousel();
+            }, 6000);
+            
+            // Indicator click handlers
+            testimonialIndicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentTestimonial = index;
+                    updateTestimonialCarousel();
+                });
+            });
+        }
+        
+        function updateTestimonialCarousel() {
+            testimonialTrack.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+            
+            // Update indicators
+            testimonialIndicators.forEach((indicator, index) => {
+                if (index === currentTestimonial) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
         }
         
         // Signup Form Functions
@@ -1869,6 +2279,9 @@
         window.addEventListener('load', function() {
             animateOnScroll();
             setupPlatformSelection();
+            setupInfinitePlatformScroll();
+            setupCarousel();
+            setupTestimonialCarousel();
             
             // Check for mobile
             if (window.innerWidth <= 768) {
