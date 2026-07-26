@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/security-shield.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,46 +18,208 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #333;
+            color: #1A1A1A;
             line-height: 1.6;
             background-color: #ffffff;
             overflow-x: hidden;
         }
         
-        /* Professional Hero Background */
+        /* Modern 2026 Hero Background */
         .hero-gradient {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(37, 99, 235, 0.9) 100%), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.92) 0%, rgba(94, 142, 62, 0.88) 100%), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             position: relative;
-            min-height: 85vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
         }
         
-        /* SVG Logo Animation */
+        /* SVG Logo - Modern Premium Design */
         .logo-svg {
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             margin-right: 12px;
         }
         
-        .shield-path {
-            fill: #2563eb;
-            stroke: #1d4ed8;
-            stroke-width: 2;
+        .logo-shield {
+            fill: #1A1A1A;
+            stroke: #5E8E3E;
+            stroke-width: 2.5;
         }
         
-        .check-path {
-            fill: #10b981;
-            animation: pulse 2s infinite;
+        .logo-shield-inner {
+            fill: #5E8E3E;
+            opacity: 0.15;
         }
         
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.7; }
-            100% { opacity: 1; }
+        .logo-check {
+            fill: #5E8E3E;
+            animation: logoPulse 2.5s ease-in-out infinite;
+        }
+        
+        .logo-text-primary {
+            fill: #1A1A1A;
+            font-weight: 800;
+            font-size: 24px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .logo-text-secondary {
+            fill: #5E8E3E;
+            font-weight: 800;
+            font-size: 24px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        @keyframes logoPulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Modern Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #5E8E3E 0%, #3D6B2B 100%);
+            color: white;
+            padding: 0.875rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(94, 142, 62, 0.4);
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(94, 142, 62, 0.5);
+            background: linear-gradient(135deg, #3D6B2B 0%, #2D4F1F 100%);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            padding: 0.875rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1A1A1A;
+            border-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-green {
+            background: linear-gradient(135deg, #5E8E3E 0%, #3D6B2B 100%);
+            color: white;
+            padding: 0.875rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(94, 142, 62, 0.4);
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        
+        .btn-green:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(94, 142, 62, 0.5);
+            background: linear-gradient(135deg, #3D6B2B 0%, #2D4F1F 100%);
+        }
+        
+        .btn-outline-dark {
+            background: transparent;
+            color: #1A1A1A;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #1A1A1A;
+            cursor: pointer;
+        }
+        
+        .btn-outline-dark:hover {
+            background: #1A1A1A;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-outline-green {
+            background: transparent;
+            color: #5E8E3E;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #5E8E3E;
+            cursor: pointer;
+        }
+        
+        .btn-outline-green:hover {
+            background: #5E8E3E;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(94, 142, 62, 0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+            color: #1A1A1A;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2.5px;
+            background: #5E8E3E;
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: #5E8E3E;
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #5E8E3E;
+            line-height: 1.1;
         }
         
         .section-padding {
@@ -69,280 +231,8 @@
         }
         
         .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 0.375rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
-            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: #2563eb;
-            padding: 0.75rem 2rem;
-            border-radius: 0.375rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #2563eb;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-secondary:hover {
-            background: #2563eb;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
-        }
-        
-        .btn-green {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 0.375rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-        }
-        
-        .btn-green:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
-        }
-        
-        .nav-link {
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: #2563eb;
-            left: 0;
-            bottom: 0;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .testimonial-bg {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-        }
-        
-        .footer-bg {
-            background: #0f172a;
-        }
-        
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            padding: 1rem;
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 0.5rem;
-            max-width: 600px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        
-        .client-logo {
-            filter: grayscale(100%);
-            opacity: 0.6;
-            transition: all 0.3s ease;
-        }
-        
-        .client-logo:hover {
-            filter: grayscale(0);
-            opacity: 1;
-        }
-        
-        .sticky-nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .blue-accent {
-            color: #2563eb;
-        }
-        
-        .blue-bg {
-            background-color: #dbeafe;
-        }
-        
-        .blue-gradient-text {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .green-gradient-text {
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .grey-bg {
-            background-color: #f8fafc;
-        }
-        
-        .green-bg {
-            background-color: #d1fae5;
-        }
-        
-        @media (max-width: 768px) {
-            .section-padding {
-                padding: 3rem 1rem;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
-            
-            .pricing-cards {
-                grid-template-columns: 1fr !important;
-                gap: 1.5rem !important;
-            }
-            
-            .hero-gradient {
-                min-height: 70vh;
-                background-attachment: scroll;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .section-padding {
-                padding: 2rem 1rem;
-            }
-            
-            .modal-content {
-                padding: 1rem !important;
-            }
-        }
-        
-        .assessment-btn {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 0.375rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);
-        }
-        
-        .assessment-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(16, 185, 129, 0.5);
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
-        }
-        
-        .expert-code-box {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            border: 2px dashed #2563eb;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            font-family: monospace;
-            font-size: 1.5rem;
-            text-align: center;
-            letter-spacing: 0.1em;
-            color: #1e3a8a;
-            font-weight: bold;
-        }
-        
-        .confirmation-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            color: white;
-            font-size: 2.5rem;
-        }
-        
-        /* Popular badge positioning */
-        .popular-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            font-size: 0.875rem;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-            z-index: 10;
-            white-space: nowrap;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
         }
         
         /* Trust badges */
@@ -358,162 +248,40 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            background: white;
-            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            padding: 0.6rem 1.2rem;
             border-radius: 50px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
         }
         
-        /* Activity feed */
-        .activity-feed {
-            background: white;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            margin-top: 2rem;
+        .trust-badge i {
+            font-size: 1.1rem;
         }
         
-        .activity-item {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #e5e7eb;
-            display: flex;
-            align-items: center;
-        }
-        
-        .activity-item:last-child {
-            border-bottom: none;
-        }
-        
-        .activity-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: #dbeafe;
+        /* Feature icons */
+        .feature-icon {
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 0.75rem;
-            font-weight: bold;
-            color: #2563eb;
-        }
-        
-        /* Logo clickable style */
-        .logo-container {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        /* Risk-free guarantee */
-        .risk-free-section {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        
-        /* Legal pages modal styling */
-        .legal-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            padding: 1rem;
-        }
-        
-        .legal-content {
-            background: white;
-            border-radius: 0.5rem;
-            max-width: 800px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 2rem;
-        }
-        
-        .legal-tabs {
-            display: flex;
-            border-bottom: 2px solid #e5e7eb;
+            border-radius: 20px;
             margin-bottom: 1.5rem;
-            overflow-x: auto;
         }
         
-        .legal-tab {
-            padding: 0.75rem 1.5rem;
-            background: none;
-            border: none;
-            font-weight: 600;
-            color: #6b7280;
-            cursor: pointer;
-            white-space: nowrap;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
+        .feature-icon-green {
+            background: rgba(94, 142, 62, 0.12);
+            color: #5E8E3E;
         }
         
-        .legal-tab:hover {
-            color: #2563eb;
+        .feature-icon-dark {
+            background: rgba(26, 26, 26, 0.08);
+            color: #1A1A1A;
         }
         
-        .legal-tab.active {
-            color: #2563eb;
-            border-bottom-color: #2563eb;
-        }
-        
-        .legal-section {
-            display: none;
-        }
-        
-        .legal-section.active {
-            display: block;
-        }
-        
-        .legal-section h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin: 1.5rem 0 1rem;
-        }
-        
-        .legal-section h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #374151;
-            margin: 1.25rem 0 0.75rem;
-        }
-        
-        .legal-section p {
-            color: #4b5563;
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-        
-        .legal-section ul, .legal-section ol {
-            color: #4b5563;
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-        }
-        
-        .legal-section li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .legal-date {
-            color: #6b7280;
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        /* Responsive pricing cards */
+        /* Pricing Cards */
         .pricing-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -521,127 +289,396 @@
             margin-top: 3rem;
         }
         
-        /* Mobile menu improvements */
-        @media (max-width: 768px) {
-            .mobile-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-                border-top: 1px solid #e5e7eb;
-                z-index: 100;
-            }
-            
-            .legal-content {
-                padding: 1.5rem;
-            }
-            
-            .legal-tabs {
-                flex-wrap: wrap;
-            }
-            
-            .trust-badges {
-                gap: 1rem;
-            }
-            
-            .trust-badge {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.875rem;
-            }
+        .pricing-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem 2rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.4s ease;
+            position: relative;
         }
         
-        /* Form improvements for mobile */
-        .form-group {
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid #5E8E3E;
+            background: linear-gradient(180deg, #ffffff 0%, #f8faf6 100%);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #5E8E3E 0%, #3D6B2B 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 15px rgba(94, 142, 62, 0.3);
+            z-index: 10;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .price-amount {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #1A1A1A;
+            line-height: 1;
+        }
+        
+        .price-amount .currency {
+            font-size: 1.8rem;
+            font-weight: 700;
+            vertical-align: super;
+            margin-right: 2px;
+        }
+        
+        .price-amount .amount {
+            font-size: 4.5rem;
+            font-weight: 900;
+        }
+        
+        .price-amount .period {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #6b7280;
+        }
+        
+        .price-green {
+            color: #5E8E3E;
+        }
+        
+        .price-green .currency,
+        .price-green .amount {
+            color: #5E8E3E;
+        }
+        
+        /* Testimonial Styles */
+        .testimonial-avatar-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #5E8E3E;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-content {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+            text-align: left;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-content:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .testimonial-carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0.5rem;
+        }
+        
+        /* Star ratings */
+        .stars-5 { color: #f59e0b; }
+        .stars-4 { color: #f59e0b; }
+        .stars-4-5 { color: #f59e0b; }
+        .star-empty { color: #d1d5db; }
+        
+        /* Platform Marquee */
+        .platforms-container {
+            background: #1A1A1A;
+            padding: 2.5rem 0;
+            overflow: hidden;
+        }
+        
+        .platforms-marquee {
+            display: flex;
+            animation: marquee 30s linear infinite;
+            width: max-content;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .platform-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 1rem;
+            margin: 0 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            color: white;
+        }
+        
+        .platform-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: scale(1.02);
+        }
+        
+        .platform-item i {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .platform-item .fa-shopify { color: #7BBF4A; }
+        .platform-item .fa-shopping-cart { color: #4A90D9; }
+        .platform-item .fa-wordpress { color: #00749C; }
+        .platform-item .fa-square { color: #ffffff; }
+        .platform-item .fa-magento { color: #EE672F; }
+        .platform-item .fa-bigcommerce { color: #4A90D9; }
+        
+        /* Hero Content */
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
             margin-bottom: 1.5rem;
+            letter-spacing: 0.3px;
         }
         
+        .hero-badge i {
+            color: #96BF48;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+        
+        .hero-title .highlight {
+            background: linear-gradient(135deg, #96BF48 0%, #5E8E3E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.85;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        
+        /* Stats section */
+        .stats-section {
+            background: #f8faf6;
+            padding: 4rem 0;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: #5E8E3E;
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1rem;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 1.5rem;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        
+        .modal-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+        
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #5E8E3E;
+            border-radius: 3px;
+        }
+        
+        /* Form Controls */
         .form-control {
             width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.375rem;
+            padding: 0.875rem 1.25rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.75rem;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: all 0.3s ease;
+            background: white;
         }
         
         .form-control:focus {
             outline: none;
-            border-color: #2563eb;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            border-color: #5E8E3E;
+            box-shadow: 0 0 0 4px rgba(94, 142, 62, 0.1);
         }
         
-        /* FIXED: White placeholder text for contact form */
+        /* Contact Form - White text on dark */
         .contact-input {
             width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 0.375rem;
+            padding: 0.875rem 1.25rem;
+            border-radius: 0.75rem;
             font-size: 1rem;
             transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             color: white;
         }
         
         .contact-input::placeholder {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
         }
         
         .contact-input:focus {
             outline: none;
-            border-color: white;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
-            background-color: rgba(255, 255, 255, 0.25);
+            border-color: #96BF48;
+            box-shadow: 0 0 0 4px rgba(150, 191, 72, 0.15);
+            background: rgba(255, 255, 255, 0.18);
         }
         
         .contact-select {
             width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 0.375rem;
+            padding: 0.875rem 1.25rem;
+            border-radius: 0.75rem;
             font-size: 1rem;
             transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             color: white;
+        }
+        
+        .contact-select option {
+            color: #1A1A1A;
+            background: white;
         }
         
         .contact-select:focus {
             outline: none;
-            border-color: white;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
-            background-color: rgba(255, 255, 255, 0.25);
-        }
-        
-        .contact-select option {
-            color: #333;
-            background-color: white;
+            border-color: #96BF48;
+            box-shadow: 0 0 0 4px rgba(150, 191, 72, 0.15);
         }
         
         .contact-textarea {
             width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 0.375rem;
+            padding: 0.875rem 1.25rem;
+            border-radius: 0.75rem;
             font-size: 1rem;
             transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             color: white;
             resize: vertical;
         }
         
         .contact-textarea::placeholder {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
         }
         
         .contact-textarea:focus {
             outline: none;
-            border-color: white;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
-            background-color: rgba(255, 255, 255, 0.25);
+            border-color: #96BF48;
+            box-shadow: 0 0 0 4px rgba(150, 191, 72, 0.15);
         }
         
-        /* Platform selection styles */
+        .assessment-btn {
+            background: linear-gradient(135deg, #5E8E3E 0%, #3D6B2B 100%);
+            color: white;
+            padding: 0.875rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(94, 142, 62, 0.4);
+            font-size: 1rem;
+        }
+        
+        .assessment-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(94, 142, 62, 0.5);
+            background: linear-gradient(135deg, #3D6B2B 0%, #2D4F1F 100%);
+        }
+        
+        /* Footer */
+        .footer-bg {
+            background: #0F0F0F;
+        }
+        
+        .footer-link {
+            color: #9CA3AF;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #96BF48;
+        }
+        
+        /* Platform selection */
         .platform-options {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -655,23 +692,23 @@
             align-items: center;
             padding: 0.75rem;
             border: 2px solid #e5e7eb;
-            border-radius: 0.5rem;
+            border-radius: 0.75rem;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
         }
         
         .platform-option:hover {
-            border-color: #2563eb;
-            background-color: #f0f9ff;
+            border-color: #5E8E3E;
+            background-color: #f8faf6;
         }
         
         .platform-option.selected {
-            border-color: #2563eb;
-            background-color: #dbeafe;
+            border-color: #5E8E3E;
+            background-color: rgba(94, 142, 62, 0.08);
         }
         
-        .platform-icon {
+        .platform-option i {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
@@ -691,69 +728,38 @@
             to { transform: rotate(360deg); }
         }
         
-        /* NEW: Platforms Marquee */
-        .platforms-container {
-            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
-            padding: 2rem 0;
-            overflow: hidden;
+        /* Expert code box */
+        .expert-code-box {
+            background: linear-gradient(135deg, #f8faf6 0%, #f0f4ea 100%);
+            border: 2px dashed #5E8E3E;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            font-family: monospace;
+            font-size: 1.5rem;
+            text-align: center;
+            letter-spacing: 0.1em;
+            color: #1A1A1A;
+            font-weight: bold;
         }
         
-        .platforms-marquee {
+        .confirmation-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #5E8E3E 0%, #3D6B2B 100%);
+            border-radius: 50%;
             display: flex;
-            animation: marquee 25s linear infinite;
-            width: max-content;
-        }
-        
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        .platform-item {
-            display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-width: 180px;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 1rem;
-            margin: 0 1rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        
-        .platform-item i {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* OPTIMIZED: Content Carousel */
-        .content-carousel {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 900px;
             margin: 0 auto;
-            padding: 1rem;
+            color: white;
+            font-size: 2.5rem;
         }
         
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        
-        .carousel-slide {
-            min-width: 100%;
-            padding: 3rem;
-            text-align: center;
-        }
-        
+        /* Carousel indicators */
         .carousel-indicators {
             display: flex;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             margin-top: 2rem;
         }
         
@@ -761,150 +767,293 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: #cbd5e1;
+            background: #d1d5db;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
         .carousel-indicator.active {
-            background: #2563eb;
-            transform: scale(1.2);
+            background: #5E8E3E;
+            transform: scale(1.3);
         }
         
-        /* OPTIMIZED: SVG Icon fixes */
-        .svg-icon {
-            width: 100px;
-            height: 100px;
+        /* Activity feed */
+        .activity-feed {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f0f0f0;
+        }
+        
+        .activity-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(94, 142, 62, 0.12);
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            padding: 1.5rem;
+            margin-right: 0.75rem;
+            font-weight: bold;
+            color: #5E8E3E;
+            flex-shrink: 0;
         }
         
-        .svg-icon svg {
-            width: 60px;
-            height: 60px;
-        }
-        
-        /* NEW: Clean Hero Content */
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .hero-tag {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            margin-bottom: 2rem;
-            font-weight: 500;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-        }
-        
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        /* OPTIMIZED: Testimonial Carousel */
-        .testimonial-carousel {
-            position: relative;
-            overflow: hidden;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .testimonial-track {
+        /* Legal Modal */
+        .legal-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
             display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        
-        .testimonial-slide {
-            min-width: 100%;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
             padding: 1rem;
         }
         
-        .testimonial-content {
+        .legal-content {
             background: white;
-            border-radius: 1rem;
+            border-radius: 1.5rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
             padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            text-align: left;
         }
         
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .legal-tabs {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            font-size: 1.5rem;
-            margin-right: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            gap: 0.5rem;
         }
         
-        /* Improved responsive styles */
-        @media (max-width: 640px) {
-            .hero-gradient {
-                min-height: 80vh;
+        .legal-tab {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            font-weight: 600;
+            color: #6b7280;
+            cursor: pointer;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .legal-tab:hover {
+            color: #1A1A1A;
+            background: #f8faf6;
+        }
+        
+        .legal-tab.active {
+            color: #5E8E3E;
+            border-bottom-color: #5E8E3E;
+            background: rgba(94, 142, 62, 0.06);
+        }
+        
+        .legal-section {
+            display: none;
+        }
+        
+        .legal-section.active {
+            display: block;
+        }
+        
+        .legal-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .legal-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #374151;
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .legal-section p {
+            color: #4b5563;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .legal-section ul {
+            color: #4b5563;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .legal-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .legal-date {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        /* Risk-free section */
+        .risk-free-section {
+            background: linear-gradient(135deg, #f8faf6 0%, #edf2e8 100%);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(94, 142, 62, 0.15);
+        }
+        
+        /* Star rating helper */
+        .star-filled {
+            color: #f59e0b;
+        }
+        .star-half {
+            color: #f59e0b;
+        }
+        .star-empty {
+            color: #d1d5db;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .carousel-slide {
-                padding: 2rem 1rem;
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 1rem;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            
+            .hero-gradient {
+                min-height: 80vh;
+                background-attachment: scroll;
             }
             
             .testimonial-content {
                 padding: 1.5rem;
             }
             
-            .svg-icon {
-                width: 80px;
-                height: 80px;
-                padding: 1rem;
+            .testimonial-avatar-img {
+                width: 48px;
+                height: 48px;
             }
             
-            .svg-icon svg {
-                width: 50px;
-                height: 50px;
+            .modal-content {
+                padding: 1.25rem;
+            }
+            
+            .legal-content {
+                padding: 1.5rem;
+            }
+            
+            .legal-tabs {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+            
+            .price-amount {
+                font-size: 3rem;
+            }
+            
+            .price-amount .amount {
+                font-size: 3.5rem;
+            }
+            
+            .price-amount .currency {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 0.4rem 1rem;
+            }
+            
+            .trust-badges {
+                gap: 0.75rem;
+            }
+            
+            .trust-badge {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.75rem;
+            }
+            
+            .price-amount {
+                font-size: 2.5rem;
+            }
+            
+            .price-amount .amount {
+                font-size: 2.8rem;
+            }
+            
+            .price-amount .currency {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
-<body class="bg-white">
+<body>
     <!-- Navigation -->
     <nav class="sticky-nav">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <!-- SVG Logo -->
-                <a href="#" id="home-logo" class="logo-container space-x-2">
-                    <svg class="logo-svg" viewBox="0 0 100 100">
-                        <path class="shield-path" d="M50,15 C65,15 75,20 85,30 L85,45 C85,70 70,85 50,95 C30,85 15,70 15,45 L15,30 C25,20 35,15 50,15 Z"></path>
-                        <path class="check-path" d="M40,65 L30,55 L25,60 L40,75 L75,40 L70,35 L40,65 Z"></path>
+                <!-- Modern SVG Logo -->
+                <a href="#" id="home-logo" class="flex items-center space-x-2 cursor-pointer">
+                    <svg class="logo-svg" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" y="5" width="50" height="50" rx="12" fill="#1A1A1A" stroke="#5E8E3E" stroke-width="2.5"/>
+                        <path d="M25,15 L25,45 M15,25 L25,15 L35,25" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M25,32 L32,39 L40,31" stroke="#5E8E3E" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <text x="62" y="38" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="#1A1A1A">Secure</text>
+                        <text x="125" y="38" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="#5E8E3E">Patch</text>
+                        <text x="180" y="38" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1A1A1A" opacity="0.5">Pro</text>
                     </svg>
-                    <span class="text-xl font-bold text-gray-900">SecurePatch<span class="blue-gradient-text">Pro</span></span>
                 </a>
                 
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 font-medium hover:text-gray-900">Home</a>
-                    <a href="#solutions" class="nav-link text-gray-700 font-medium hover:text-gray-900">Solutions</a>
-                    <a href="#platforms" class="nav-link text-gray-700 font-medium hover:text-gray-900">Platforms</a>
-                    <a href="#pricing" class="nav-link text-gray-700 font-medium hover:text-gray-900">Pricing</a>
-                    <a href="#contact" class="nav-link text-gray-700 font-medium hover:text-gray-900">Contact</a>
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#solutions" class="nav-link">Solutions</a>
+                    <a href="#platforms" class="nav-link">Platforms</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </div>
                 
                 <div class="flex items-center space-x-4">
@@ -918,47 +1067,61 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="mobile-menu hidden md:hidden mt-4 pb-4">
                 <div class="flex flex-col space-y-4 mt-4 px-4">
-                    <a href="#home" class="text-gray-700 font-medium hover:text-gray-900 py-2">Home</a>
-                    <a href="#solutions" class="text-gray-700 font-medium hover:text-gray-900 py-2">Solutions</a>
-                    <a href="#platforms" class="text-gray-700 font-medium hover:text-gray-900 py-2">Platforms</a>
-                    <a href="#pricing" class="text-gray-700 font-medium hover:text-gray-900 py-2">Pricing</a>
-                    <a href="#contact" class="text-gray-700 font-medium hover:text-gray-900 py-2">Contact</a>
+                    <a href="#home" class="text-gray-700 font-medium hover:text-green-600 py-2">Home</a>
+                    <a href="#solutions" class="text-gray-700 font-medium hover:text-green-600 py-2">Solutions</a>
+                    <a href="#platforms" class="text-gray-700 font-medium hover:text-green-600 py-2">Platforms</a>
+                    <a href="#pricing" class="text-gray-700 font-medium hover:text-green-600 py-2">Pricing</a>
+                    <a href="#contact" class="text-gray-700 font-medium hover:text-green-600 py-2">Contact</a>
                     <button onclick="openContactModal()" class="btn-primary w-full mt-4">Get Quote</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Clean, Professional Hero Section -->
+    <!-- Modern 2026 Hero Section -->
     <section id="home" class="hero-gradient text-white">
         <div class="container mx-auto px-4">
             <div class="hero-content fade-in">
-                <div class="hero-tag">
-                    <i class="fas fa-shield-alt mr-2"></i> Enterprise-Grade Security Platform
-                </div>
-                
                 <div class="hero-badge">
                     <i class="fas fa-store"></i>
-                    Specialized Ecommerce Platform Security
+                    <span>Specialized Ecommerce Platform Security</span>
                 </div>
                 
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                    Intelligent Vulnerability Remediation & Compliance Automation
+                <h1 class="hero-title">
+                    Intelligent Vulnerability<br>
+                    <span class="highlight">Remediation & Compliance</span>
                 </h1>
                 
-                <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-                    Reduce enterprise risk exposure by 95% with automated security governance and specialized ecommerce platform protection.
+                <p class="hero-subtitle">
+                    Reduce enterprise risk exposure by 95% with automated security governance 
+                    and specialized protection for Shopify, WooCommerce, Wix, Squarespace & more.
                 </p>
                 
                 <!-- Trust Badges -->
                 <div class="trust-badges">
-                    <div class="trust-badge"
-
-                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">    
-                    <button onclick="openContactModal()" class="assessment-btn">
-                        <i class="fas fa-calendar-check mr-2"></i> Schedule Security Assessment
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-check text-green-400"></i>
+                        <span class="text-sm font-medium">SOC 2 Type II</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-lock text-green-300"></i>
+                        <span class="text-sm font-medium">Military Encryption</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-medal text-yellow-400"></i>
+                        <span class="text-sm font-medium">99.9% Uptime SLA</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-check-circle text-green-400"></i>
+                        <span class="text-sm font-medium">PCI DSS Compliant</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">
+                    <button onclick="openContactModal()" class="btn-primary">
+                        <i class="fas fa-calendar-check mr-2"></i> Schedule Assessment
                     </button>
-                    <a href="#pricing" class="btn-secondary border-white text-white hover:bg-white hover:text-blue-600">
+                    <a href="#pricing" class="btn-secondary">
                         <i class="fas fa-tags mr-2"></i> View Pricing Plans
                     </a>
                 </div>
@@ -967,24 +1130,24 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="bg-white py-12">
+    <section class="stats-section">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="stat-number">99.97%</div>
-                    <p class="text-gray-600 mt-2">Remediation Success Rate</p>
+                <div class="stat-item">
+                    <h3>99.97%</h3>
+                    <p class="text-gray-600 mt-1 text-sm font-medium">Remediation Success Rate</p>
                 </div>
-                <div>
-                    <div class="stat-number">4.2h</div>
-                    <p class="text-gray-600 mt-2">Avg. Critical Patch Deployment</p>
+                <div class="stat-item">
+                    <h3>4.2h</h3>
+                    <p class="text-gray-600 mt-1 text-sm font-medium">Avg. Critical Patch Deployment</p>
                 </div>
-                <div>
-                    <div class="stat-number">5000+</div>
-                    <p class="text-gray-600 mt-2">CVEs Monitored Daily</p>
+                <div class="stat-item">
+                    <h3>5,000+</h3>
+                    <p class="text-gray-600 mt-1 text-sm font-medium">CVEs Monitored Daily</p>
                 </div>
-                <div>
-                    <div class="stat-number">98%</div>
-                    <p class="text-gray-600 mt-2">Audit Compliance Score</p>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p class="text-gray-600 mt-1 text-sm font-medium">Audit Compliance Score</p>
                 </div>
             </div>
         </div>
@@ -994,156 +1157,140 @@
     <section id="platforms" class="platforms-container">
         <div class="container mx-auto px-4">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Trusted by Ecommerce Platforms</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
+                <h2 class="text-2xl font-bold text-white mb-2">Trusted by Leading Ecommerce Platforms</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
                     Specialized security solutions for all major ecommerce and business platforms
                 </p>
             </div>
             
             <div class="platforms-marquee">
                 <div class="platform-item">
-                    <i class="fab fa-shopify text-purple-600"></i>
+                    <i class="fab fa-shopify"></i>
                     <span class="font-bold">Shopify</span>
-                    <span class="text-sm text-gray-500">Store Security</span>
+                    <span class="text-sm text-gray-400">Store Security</span>
                 </div>
                 <div class="platform-item">
-                    <i class="fas fa-shopping-cart text-blue-600"></i>
+                    <i class="fas fa-shopping-cart"></i>
                     <span class="font-bold">Wix</span>
-                    <span class="text-sm text-gray-500">Ecommerce Protection</span>
+                    <span class="text-sm text-gray-400">Ecommerce Protection</span>
                 </div>
                 <div class="platform-item">
-                    <i class="fab fa-wordpress text-blue-800"></i>
+                    <i class="fab fa-wordpress"></i>
                     <span class="font-bold">WooCommerce</span>
-                    <span class="text-sm text-gray-500">WordPress Security</span>
+                    <span class="text-sm text-gray-400">WordPress Security</span>
                 </div>
                 <div class="platform-item">
-                    <i class="fas fa-square text-black"></i>
+                    <i class="fas fa-square"></i>
                     <span class="font-bold">Squarespace</span>
-                    <span class="text-sm text-gray-500">Website Security</span>
+                    <span class="text-sm text-gray-400">Website Security</span>
                 </div>
                 <div class="platform-item">
-                    <i class="fab fa-magento text-orange-600"></i>
+                    <i class="fab fa-magento"></i>
                     <span class="font-bold">Magento</span>
-                    <span class="text-sm text-gray-500">Enterprise Ecommerce</span>
+                    <span class="text-sm text-gray-400">Enterprise Ecommerce</span>
                 </div>
                 <div class="platform-item">
-                    <i class="fab fa-bigcommerce text-blue-500"></i>
+                    <i class="fab fa-bigcommerce"></i>
                     <span class="font-bold">BigCommerce</span>
-                    <span class="text-sm text-gray-500">SaaS Security</span>
+                    <span class="text-sm text-gray-400">SaaS Security</span>
                 </div>
                 <!-- Duplicate for seamless loop -->
                 <div class="platform-item">
-                    <i class="fab fa-shopify text-purple-600"></i>
+                    <i class="fab fa-shopify"></i>
                     <span class="font-bold">Shopify</span>
-                    <span class="text-sm text-gray-500">Store Security</span>
+                    <span class="text-sm text-gray-400">Store Security</span>
                 </div>
                 <div class="platform-item">
-                    <i class="fas fa-shopping-cart text-blue-600"></i>
+                    <i class="fas fa-shopping-cart"></i>
                     <span class="font-bold">Wix</span>
-                    <span class="text-sm text-gray-500">Ecommerce Protection</span>
+                    <span class="text-sm text-gray-400">Ecommerce Protection</span>
                 </div>
                 <div class="platform-item">
-                    <i class="fab fa-wordpress text-blue-800"></i>
+                    <i class="fab fa-wordpress"></i>
                     <span class="font-bold">WooCommerce</span>
-                    <span class="text-sm text-gray-500">WordPress Security</span>
+                    <span class="text-sm text-gray-400">WordPress Security</span>
                 </div>
                 <div class="platform-item">
-                    <i class="fas fa-square text-black"></i>
+                    <i class="fas fa-square"></i>
                     <span class="font-bold">Squarespace</span>
-                    <span class="text-sm text-gray-500">Website Security</span>
+                    <span class="text-sm text-gray-400">Website Security</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- OPTIMIZED: Solutions Carousel -->
-    <section id="solutions" class="bg-gray-50 py-16">
+    <!-- Solutions Section -->
+    <section id="solutions" class="bg-white py-16">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Comprehensive Security Solutions</h2>
-                <p class="text-gray-600">Explore our key security offerings</p>
+                <span class="inline-block px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">Our Solutions</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comprehensive Security Solutions</h2>
+                <p class="text-gray-600">Enterprise-grade protection for your entire digital ecosystem</p>
             </div>
             
-            <div class="content-carousel">
-                <div class="carousel-track" id="carouselTrack">
-                    <!-- Slide 1 -->
-                    <div class="carousel-slide">
-                        <div class="svg-icon blue-bg">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 text-gray-800">AI-Powered Vulnerability Intelligence</h3>
-                        <p class="text-gray-600 mb-6">Context-aware threat prioritization with predictive risk scoring and automated remediation workflows.</p>
-                        <div class="flex flex-wrap justify-center gap-4">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Threat Detection</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Risk Scoring</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Automated Remediation</span>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+                    <div class="feature-icon feature-icon-green">
+                        <i class="fas fa-brain text-2xl"></i>
                     </div>
-                    
-                    <!-- Slide 2 -->
-                    <div class="carousel-slide">
-                        <div class="svg-icon green-bg">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Application Security Governance</h3>
-                        <p class="text-gray-600 mb-6">Protect your applications from third-party vulnerabilities and threats across your entire software supply chain.</p>
-                        <div class="flex flex-wrap justify-center gap-4">
-                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Dependency Management</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Container Scanning</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">DevSecOps Integration</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3 -->
-                    <div class="carousel-slide">
-                        <div class="svg-icon bg-purple-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Regulatory Compliance Orchestration</h3>
-                        <p class="text-gray-600 mb-6">Continuous compliance monitoring for HIPAA, PCI DSS, GDPR, ISO 27001 with audit-ready reporting.</p>
-                        <div class="flex flex-wrap justify-center gap-4">
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">HIPAA Compliance</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">PCI DSS</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">GDPR Ready</span>
-                        </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI-Powered Vulnerability Intelligence</h3>
+                    <p class="text-gray-600 mb-4">Context-aware threat prioritization with predictive risk scoring and automated remediation workflows.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium">Threat Detection</span>
+                        <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium">Risk Scoring</span>
+                        <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium">Auto Remediation</span>
                     </div>
                 </div>
                 
-                <div class="carousel-indicators" id="carouselIndicators">
-                    <div class="carousel-indicator active" data-slide="0"></div>
-                    <div class="carousel-indicator" data-slide="1"></div>
-                    <div class="carousel-indicator" data-slide="2"></div>
+                <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+                    <div class="feature-icon feature-icon-dark">
+                        <i class="fas fa-layer-group text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Application Security Governance</h3>
+                    <p class="text-gray-600 mb-4">Protect your applications from third-party vulnerabilities across your entire software supply chain.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Dependency Mgmt</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Container Scanning</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">DevSecOps</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+                    <div class="feature-icon feature-icon-green">
+                        <i class="fas fa-clipboard-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Regulatory Compliance Orchestration</h3>
+                    <p class="text-gray-600 mb-4">Continuous compliance monitoring for HIPAA, PCI DSS, GDPR, ISO 27001 with audit-ready reporting.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium">HIPAA</span>
+                        <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium">PCI DSS</span>
+                        <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium">GDPR</span>
+                    </div>
                 </div>
             </div>
             
-            <!-- Risk-Free Guarantee Section -->
+            <!-- Risk-Free Guarantee -->
             <div class="risk-free-section mt-12">
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="md:w-2/3 mb-6 md:mb-0 md:pr-8">
-                        <h3 class="text-2xl font-bold mb-4 text-blue-900">Risk-Free Implementation Guarantee</h3>
-                        <p class="text-gray-700">Our 60-day pilot program includes full implementation at no cost. Only commit if you achieve measurable risk reduction and compliance improvement.</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Risk-Free Implementation Guarantee</h3>
+                        <p class="text-gray-600">Our 60-day pilot program includes full implementation at no cost. Only commit if you achieve measurable risk reduction and compliance improvement.</p>
                         <div class="mt-4 flex flex-wrap gap-4">
                             <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-sm">No upfront costs</span>
+                                <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                                <span class="text-sm text-gray-700">No upfront costs</span>
                             </div>
                             <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-sm">Cancel anytime</span>
+                                <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                                <span class="text-sm text-gray-700">Cancel anytime</span>
                             </div>
                             <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-sm">Full implementation support</span>
+                                <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                                <span class="text-sm text-gray-700">Full implementation support</span>
                             </div>
                         </div>
                     </div>
-                    <div class="md:w-1/3 text-center md:text-right mt-4 md:mt-0">
+                    <div class="md:w-1/3 text-center md:text-right">
                         <button onclick="openContactModal()" class="btn-green">
                             <i class="fas fa-comment-dots mr-2"></i> Schedule Pilot
                         </button>
@@ -1153,168 +1300,183 @@
         </div>
     </section>
 
-    <!-- Pricing Section with UPDATED PRICING ($270 for Premium) -->
-    <section id="pricing" class="bg-white py-16">
+    <!-- Pricing Section with Enhanced Pricing Display -->
+    <section id="pricing" class="bg-gray-50 py-16">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Transparent Security Investment</h2>
+                <span class="inline-block px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">Pricing</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Transparent Security Investment</h2>
                 <p class="text-gray-600">Scale your security posture with predictable, value-aligned pricing.</p>
             </div>
             
             <div class="pricing-cards">
-                <!-- Basic Plan - $120 -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 relative">
+                <!-- Basic Plan - $105 -->
+                <div class="pricing-card">
                     <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Basic</h3>
-                        <p class="text-gray-600">For small businesses</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Basic</h3>
+                        <p class="text-gray-500 text-sm">For small businesses</p>
                         <div class="mt-4">
-                            <span class="text-4xl font-bold blue-gradient-text">$120</span>
+                            <span class="price-amount">
+                                <span class="currency">$</span>
+                                <span class="amount">105</span>
+                            </span>
                         </div>
-                        <p class="text-gray-500 text-sm mt-2">Billed for 5 months</p>
+                        <p class="text-gray-500 text-sm mt-1">Billed for 5 months</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Up to 25 endpoints</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Up to 25 endpoints</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>OS patching only</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">OS patching only</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Monthly reporting</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Monthly reporting</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Third-party application patching</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Third-party app patching</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Compliance reporting</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Compliance reporting</span>
                         </li>
                     </ul>
-                    <button onclick="openSignupForm('Basic', '$120', '5 months')" class="btn-secondary w-full">Get Started</button>
+                    <button onclick="openSignupForm('Basic', '$105', '5 months')" class="btn-outline-dark w-full">Get Started</button>
                 </div>
                 
-                <!-- Standard Plan - $180 -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-blue-500 relative card-hover">
+                <!-- Standard Plan - $160 -->
+                <div class="pricing-card">
                     <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Standard</h3>
-                        <p class="text-gray-600">For growing businesses</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Standard</h3>
+                        <p class="text-gray-500 text-sm">For growing businesses</p>
                         <div class="mt-4">
-                            <span class="text-4xl font-bold blue-gradient-text">$180</span>
+                            <span class="price-amount price-green">
+                                <span class="currency">$</span>
+                                <span class="amount">160</span>
+                            </span>
                         </div>
-                        <p class="text-gray-500 text-sm mt-2">Billed for 12 months</p>
+                        <p class="text-gray-500 text-sm mt-1">Billed for 12 months</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Up to 100 endpoints</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Up to 100 endpoints</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>OS + 50+ third-party apps</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">OS + 50+ third-party apps</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Weekly reporting</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Weekly reporting</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Basic compliance reporting</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Basic compliance reporting</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Dedicated engineer</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Dedicated engineer</span>
                         </li>
                     </ul>
-                    <button onclick="openSignupForm('Standard', '$180', '12 months')" class="btn-primary w-full">Get Started</button>
+                    <button onclick="openSignupForm('Standard', '$160', '12 months')" class="btn-outline-green w-full">Get Started</button>
                 </div>
                 
-                <!-- Premium Plan - UPDATED to $270 -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-green-500 relative card-hover" style="padding-top: 2rem;">
-                    <div class="popular-badge">MOST POPULAR</div>
+                <!-- Premium Plan - $199 with MOST POPULAR badge -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">⭐ Most Popular</div>
                     <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Premium</h3>
-                        <p class="text-gray-600">For established businesses</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Premium</h3>
+                        <p class="text-gray-500 text-sm">For established businesses</p>
                         <div class="mt-4">
-                            <span class="text-4xl font-bold green-gradient-text">$270</span>
+                            <span class="price-amount price-green">
+                                <span class="currency">$</span>
+                                <span class="amount">199</span>
+                            </span>
                         </div>
-                        <p class="text-gray-500 text-sm mt-2">Billed for 2 years</p>
+                        <p class="text-gray-500 text-sm mt-1">Billed for 2 years</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Up to 250 endpoints</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Up to 250 endpoints</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>500+ applications supported</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">500+ applications supported</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Real-time dashboard</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Real-time dashboard</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Advanced compliance (HIPAA, PCI DSS)</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Advanced compliance (HIPAA, PCI DSS)</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                            <span>Dedicated security engineer</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Dedicated security engineer</span>
                         </li>
                     </ul>
-                    <button onclick="openSignupForm('Premium', '$270', '2 years')" class="btn-green w-full">Get Started</button>
+                    <button onclick="openSignupForm('Premium', '$199', '2 years')" class="btn-primary w-full">Get Started</button>
                 </div>
                 
-                <!-- Enterprise Plan - Custom -->
-                <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-200 relative">
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
                     <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold mb-2 text-gray-800">Enterprise</h3>
-                        <p class="text-gray-600">For large organizations</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Enterprise</h3>
+                        <p class="text-gray-500 text-sm">For large organizations</p>
                         <div class="mt-4">
-                            <span class="text-4xl font-bold blue-gradient-text">Custom</span>
+                            <span class="price-amount">
+                                <span class="amount" style="font-size:2.5rem; font-weight:800;">Custom</span>
+                            </span>
                         </div>
-                        <p class="text-gray-500 text-sm mt-2">Tailored pricing</p>
+                        <p class="text-gray-500 text-sm mt-1">Tailored pricing</p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Unlimited endpoints</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Unlimited endpoints</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>1000+ applications supported</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">1000+ applications supported</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Custom reporting</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Custom reporting</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>Custom compliance requirements</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">Custom compliance requirements</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>24/7 dedicated engineering team</span>
+                            <i class="fas fa-check text-green-600 mt-1 mr-3 text-sm"></i>
+                            <span class="text-gray-700">24/7 dedicated engineering team</span>
                         </li>
                     </ul>
-                    <button onclick="openContactModal('Enterprise Plan')" class="btn-secondary w-full">Contact Sales</button>
+                    <button onclick="openContactModal('Enterprise Plan')" class="btn-outline-dark w-full">Contact Sales</button>
                 </div>
             </div>
             
             <div class="text-center mt-12">
-                <p class="text-gray-600">Need a different plan? <button onclick="openContactModal()" class="blue-accent font-medium hover:underline">Contact us for custom pricing</button></p>
+                <p class="text-gray-600">Need a different plan? <button onclick="openContactModal()" class="text-green-600 font-medium hover:underline">Contact us for custom pricing</button></p>
             </div>
         </div>
     </section>
 
-    <!-- Activity Feed (Moved after Pricing) -->
-    <section class="bg-gray-50 py-8">
+    <!-- Activity Feed -->
+    <section class="bg-white py-8">
         <div class="container mx-auto px-4">
             <div class="activity-feed">
-                <h4 class="font-bold text-lg mb-4 text-gray-800">Recent Enterprise Onboardings</h4>
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-bold text-lg text-gray-900">Recent Enterprise Onboardings</h4>
+                    <span class="text-sm text-green-600 font-medium"><i class="fas fa-circle text-xs mr-1"></i> Live</span>
+                </div>
                 <div class="space-y-1">
                     <div class="activity-item">
                         <div class="activity-avatar">FH</div>
@@ -1326,15 +1488,22 @@
                     <div class="activity-item">
                         <div class="activity-avatar">HC</div>
                         <div>
-                            <span class="font-medium">Healthcare Corp</span> achieved <span class="text-blue-600 font-medium">HIPAA Compliance</span>
+                            <span class="font-medium">Healthcare Corp</span> achieved <span class="text-green-600 font-medium">HIPAA Compliance</span>
                             <div class="text-sm text-gray-500">• 5 hours ago • 98.7% compliance score</div>
                         </div>
                     </div>
                     <div class="activity-item">
                         <div class="activity-avatar">RG</div>
                         <div>
-                            <span class="font-medium">Retail Giant</span> eliminated <span class="text-red-600 font-medium">95% of critical vulnerabilities</span>
+                            <span class="font-medium">Retail Giant</span> eliminated <span class="text-green-600 font-medium">95% of critical vulnerabilities</span>
                             <div class="text-sm text-gray-500">• 1 day ago • 5,000+ systems protected</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-avatar">EC</div>
+                        <div>
+                            <span class="font-medium">Ecommerce Co</span> achieved <span class="text-green-600 font-medium">PCI DSS Level 1</span>
+                            <div class="text-sm text-gray-500">• 3 days ago • 2,500 endpoints secured</div>
                         </div>
                     </div>
                 </div>
@@ -1342,72 +1511,183 @@
         </div>
     </section>
 
-    <!-- Testimonial Carousel (Moved after Pricing) -->
-    <section class="testimonial-bg py-16">
+    <!-- Enhanced Testimonials with 10 Reviews & Mixed Ratings -->
+    <section class="bg-gray-50 py-16">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
-                <p class="text-gray-600">Trusted by enterprises worldwide</p>
+                <span class="inline-block px-4 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">Testimonials</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600">Trusted by enterprises and ecommerce businesses worldwide</p>
             </div>
             
             <div class="testimonial-carousel">
                 <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Testimonial 1 - 5 Stars -->
                     <div class="testimonial-slide">
                         <div class="testimonial-content">
                             <div class="flex items-center mb-4">
-                                <div class="testimonial-avatar bg-blue-600">FH</div>
-                                <div>
-                                    <h4 class="font-bold">Sarah Johnson</h4>
-                                    <p class="text-gray-600 text-sm">CTO, Fintech Holdings</p>
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=5E8E3E&color=fff&size=64&bold=true" alt="Sarah Johnson" class="testimonial-avatar-img">
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+                                    <p class="text-gray-500 text-sm">CTO, Fintech Holdings</p>
                                 </div>
                             </div>
                             <p class="text-gray-700 mb-4">"SecurePatch Pro transformed our security posture. We reduced critical vulnerabilities by 92% and achieved PCI DSS compliance in record time."</p>
                             <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                         </div>
                     </div>
                     
+                    <!-- Testimonial 2 - 4.5 Stars -->
                     <div class="testimonial-slide">
                         <div class="testimonial-content">
                             <div class="flex items-center mb-4">
-                                <div class="testimonial-avatar bg-green-600">HC</div>
-                                <div>
-                                    <h4 class="font-bold">Dr. Michael Chen</h4>
-                                    <p class="text-gray-600 text-sm">Security Director, Healthcare Corp</p>
+                                <img src="https://ui-avatars.com/api/?name=Michael+Chen&background=3D6B2B&color=fff&size=64&bold=true" alt="Michael Chen" class="testimonial-avatar-img">
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Dr. Michael Chen</h4>
+                                    <p class="text-gray-500 text-sm">Security Director, Healthcare Corp</p>
                                 </div>
                             </div>
                             <p class="text-gray-700 mb-4">"The specialized ecommerce platform protection has been invaluable. HIPAA compliance is now seamless with their automated reporting."</p>
                             <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                             </div>
                         </div>
                     </div>
                     
+                    <!-- Testimonial 3 - 5 Stars -->
                     <div class="testimonial-slide">
                         <div class="testimonial-content">
                             <div class="flex items-center mb-4">
-                                <div class="testimonial-avatar bg-purple-600">RG</div>
-                                <div>
-                                    <h4 class="font-bold">Robert Williams</h4>
-                                    <p class="text-gray-600 text-sm">IT Director, Retail Giant</p>
+                                <img src="https://ui-avatars.com/api/?name=Robert+Williams&background=5E8E3E&color=fff&size=64&bold=true" alt="Robert Williams" class="testimonial-avatar-img">
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Robert Williams</h4>
+                                    <p class="text-gray-500 text-sm">IT Director, Retail Giant</p>
                                 </div>
                             </div>
                             <p class="text-gray-700 mb-4">"Our Shopify and WooCommerce stores are now completely secure. The automated patch management has saved us hundreds of hours monthly."</p>
                             <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 - 4 Stars -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="flex items-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Amanda+Lee&background=1A1A1A&color=fff&size=64&bold=true" alt="Amanda Lee" class="testimonial-avatar-img">
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Amanda Lee</h4>
+                                    <p class="text-gray-500 text-sm">VP Engineering, SaaS Innovators</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"The DevSecOps integration was seamless. We now have real-time visibility into our entire security posture across 200+ microservices."</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 5 - 4.5 Stars -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="flex items-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=David+Park&background=5E8E3E&color=fff&size=64&bold=true" alt="David Park" class="testimonial-avatar-img">
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">David Park</h4>
+                                    <p class="text-gray-500 text-sm">CISO, Global Retail Group</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"We've reduced our security operations overhead by 70% while improving our compliance scores across all 12 of our global brands."</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 6 - 5 Stars -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="flex items-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Jessica+Meyer&background=3D6B2B&color=fff&size=64&bold=true" alt="Jessica Meyer" class="testimonial-avatar-img">
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Jessica Meyer</h4>
+                                    <p class="text-gray-500 text-sm">Head of Security, Ecommerce Plus</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"The real-time patch management for our Shopify Plus stores has been a game-changer. Zero security incidents since implementation."</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 7 - 4 Stars -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="flex items-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Thomas+Brown&background=1A1A1A&color=fff&size=64&bold=true" alt="Thomas Brown" class="testimonial-avatar-img">
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Thomas Brown</h4>
+                                    <p class="text-gray-500 text-sm">IT Manager, Digital Commerce Inc</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"Solid platform with great support. The compliance reporting has made our audits significantly easier and less time-consuming."</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 8 - 4.5 Stars -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="flex items-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Emily+White&background=5E8E3E&color=fff&size=64&bold=true" alt="Emily White" class="testimonial-avatar-img">
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Emily White</h4>
+                                    <p class="text-gray-500 text-sm">Security Lead, CloudTech Solutions</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"Excellent vulnerability management capabilities. The AI-driven prioritization helps us focus on what matters most for our business."</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 9 - 5 Stars -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="flex items-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=James+Wilson&background=3D6B2B&color=fff&size=64&bold=true" alt="James Wilson" class="testimonial-avatar-img">
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">James Wilson</h4>
+                                    <p class="text-gray-500 text-sm">CEO, SecureStore Network</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"We've been using SecurePatch Pro for 18 months now. Our security posture has improved dramatically and our customers trust us more."</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 10 - 4 Stars -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="flex items-center mb-4">
+                                <img src="https://ui-avatars.com/api/?name=Rachel+Green&background=1A1A1A&color=fff&size=64&bold=true" alt="Rachel Green" class="testimonial-avatar-img">
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-gray-900">Rachel Green</h4>
+                                    <p class="text-gray-500 text-sm">Director of IT, FashionHub</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">"Good platform overall. The WooCommerce integration saved us from multiple security incidents. Support team is very responsive."</p>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                             </div>
                         </div>
                     </div>
@@ -1417,39 +1697,46 @@
                     <div class="carousel-indicator active" data-slide="0"></div>
                     <div class="carousel-indicator" data-slide="1"></div>
                     <div class="carousel-indicator" data-slide="2"></div>
+                    <div class="carousel-indicator" data-slide="3"></div>
+                    <div class="carousel-indicator" data-slide="4"></div>
+                    <div class="carousel-indicator" data-slide="5"></div>
+                    <div class="carousel-indicator" data-slide="6"></div>
+                    <div class="carousel-indicator" data-slide="7"></div>
+                    <div class="carousel-indicator" data-slide="8"></div>
+                    <div class="carousel-indicator" data-slide="9"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact CTA -->
-    <section id="contact" class="hero-gradient text-white py-16">
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gradient-to-br from-[#1A1A1A] to-[#2D4F1F] text-white py-16">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Security Posture?</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Security Posture?</h2>
             <p class="text-xl opacity-90 max-w-2xl mx-auto mb-10">Schedule a comprehensive security assessment and receive your custom risk reduction roadmap.</p>
             
-            <div class="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8">
+            <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
                 <form id="contact-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-6">
                     <input type="hidden" name="_subject" value="Enterprise Security Assessment Request - SecurePatch Pro">
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-left text-white mb-2">Executive Contact *</label>
+                            <label class="block text-left text-white/80 mb-2 text-sm font-medium">Executive Contact *</label>
                             <input type="text" name="name" required class="contact-input" placeholder="Full Name">
                         </div>
                         <div>
-                            <label class="block text-left text-white mb-2">Corporate Email *</label>
+                            <label class="block text-left text-white/80 mb-2 text-sm font-medium">Corporate Email *</label>
                             <input type="email" name="email" required class="contact-input" placeholder="business@company.com">
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-left text-white mb-2">Organization</label>
+                            <label class="block text-left text-white/80 mb-2 text-sm font-medium">Organization</label>
                             <input type="text" name="company" class="contact-input" placeholder="Company Name">
                         </div>
                         <div>
-                            <label class="block text-left text-white mb-2">Enterprise Asset Count</label>
+                            <label class="block text-left text-white/80 mb-2 text-sm font-medium">Enterprise Asset Count</label>
                             <select name="endpoints" class="contact-select">
                                 <option value="" class="text-gray-800">Select range</option>
                                 <option value="1-50" class="text-gray-800">1-50 assets</option>
@@ -1461,15 +1748,15 @@
                     </div>
                     
                     <div>
-                        <label class="block text-left text-white mb-2">Primary Security Objectives *</label>
+                        <label class="block text-left text-white/80 mb-2 text-sm font-medium">Primary Security Objectives *</label>
                         <textarea name="message" rows="4" required class="contact-textarea" placeholder="Describe your key security challenges, compliance requirements, and objectives..."></textarea>
                     </div>
                     
-                    <div class="text-center pt-4">
+                    <div class="text-center pt-2">
                         <button type="submit" class="assessment-btn px-10 py-4 text-lg">
                             <i class="fas fa-paper-plane mr-2"></i> Request Executive Briefing
                         </button>
-                        <p class="text-white text-opacity-80 text-sm mt-4">A security architect will contact you within 24 hours to schedule your assessment.</p>
+                        <p class="text-white/60 text-sm mt-4">A security architect will contact you within 24 hours</p>
                     </div>
                 </form>
             </div>
@@ -1477,231 +1764,227 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer-bg text-white pt-12 pb-6">
+    <footer class="footer-bg text-white pt-16 pb-8">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <svg class="logo-svg" viewBox="0 0 100 100">
-                            <path class="shield-path" d="M50,15 C65,15 75,20 85,30 L85,45 C85,70 70,85 50,95 C30,85 15,70 15,45 L15,30 C25,20 35,15 50,15 Z"></path>
-                            <path class="check-path" d="M40,65 L30,55 L25,60 L40,75 L75,40 L70,35 L40,65 Z"></path>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <svg class="logo-svg" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="5" width="50" height="50" rx="12" fill="#1A1A1A" stroke="#5E8E3E" stroke-width="2.5"/>
+                            <path d="M25,15 L25,45 M15,25 L25,15 L35,25" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25,32 L32,39 L40,31" stroke="#5E8E3E" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="62" y="38" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="white">Secure</text>
+                            <text x="125" y="38" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#5E8E3E">Patch</text>
+                            <text x="180" y="38" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="white" opacity="0.5">Pro</text>
                         </svg>
-                        <span class="text-xl font-bold">SecurePatch<span class="text-blue-400">Pro</span></span>
                     </div>
-                    <p class="text-gray-400 mb-4">Enterprise-grade vulnerability management and compliance automation.</p>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Enterprise-grade vulnerability management and compliance automation for modern ecommerce businesses.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-green-400 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-green-400 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-green-400 transition-colors"><i class="fab fa-github text-xl"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-green-400 transition-colors"><i class="fab fa-youtube text-xl"></i></a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Platform</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white">Vulnerability Management</a></li>
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white">Compliance Automation</a></li>
-                        <li><a href="#solutions" class="text-gray-400 hover:text-white">Threat Intelligence</a></li>
-                        <li><a href="#pricing" class="text-gray-400 hover:text-white">Enterprise Pricing</a></li>
+                    <h4 class="text-lg font-bold mb-4 text-white">Platform</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#solutions" class="footer-link text-sm">Vulnerability Management</a></li>
+                        <li><a href="#solutions" class="footer-link text-sm">Compliance Automation</a></li>
+                        <li><a href="#solutions" class="footer-link text-sm">Threat Intelligence</a></li>
+                        <li><a href="#pricing" class="footer-link text-sm">Enterprise Pricing</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Enterprise</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Case Studies</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Security Research</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Partner Program</a></li>
+                    <h4 class="text-lg font-bold mb-4 text-white">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-sm">Documentation</a></li>
+                        <li><a href="#" class="footer-link text-sm">API Reference</a></li>
+                        <li><a href="#" class="footer-link text-sm">Security Blog</a></li>
+                        <li><a href="#" class="footer-link text-sm">Status Page</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="javascript:void(0)" onclick="showLegalPage('terms')" class="text-gray-400 hover:text-white">Terms of Service</a></li>
-                        <li><a href="javascript:void(0)" onclick="showLegalPage('cookie')" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
-                        <li><a href="javascript:void(0)" onclick="showLegalPage('gdpr')" class="text-gray-400 hover:text-white">GDPR Compliance</a></li>
+                    <h4 class="text-lg font-bold mb-4 text-white">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="footer-link text-sm">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="showLegalPage('terms')" class="footer-link text-sm">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)" onclick="showLegalPage('cookie')" class="footer-link text-sm">Cookie Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="showLegalPage('gdpr')" class="footer-link text-sm">GDPR Compliance</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2026 SecurePatch Pro. All rights reserved.</p>
-                <div class="flex space-x-6 text-sm text-gray-400">
-                    <a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="hover:text-white">Security Policy</a>
-                    <a href="javascript:void(0)" onclick="showLegalPage('terms')" class="hover:text-white">Service Terms</a>
-                    <a href="javascript:void(0)" onclick="showLegalPage('gdpr')" class="hover:text-white">GDPR</a>
-                    <a href="javascript:void(0)" onclick="showLegalPage('cookie')" class="hover:text-white">Cookies</a>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">© 2026 SecurePatch Pro. All rights reserved.</p>
+                <div class="flex space-x-8 text-sm text-gray-500 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="hover:text-green-400 transition-colors">Security</a>
+                    <a href="javascript:void(0)" onclick="showLegalPage('terms')" class="hover:text-green-400 transition-colors">Terms</a>
+                    <a href="javascript:void(0)" onclick="showLegalPage('gdpr')" class="hover:text-green-400 transition-colors">GDPR</a>
+                    <a href="javascript:void(0)" onclick="showLegalPage('cookie')" class="hover:text-green-400 transition-colors">Cookies</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- UPDATED: Signup Form Modal -->
+    <!-- Signup Modal -->
     <div id="signupModal" class="modal-overlay hidden">
         <div class="modal-content">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-2xl font-bold text-gray-800">Complete Your Signup</h3>
-                    <button onclick="closeSignupModal()" class="text-gray-500 hover:text-gray-700">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900">Complete Your Signup</h3>
+                <button onclick="closeSignupModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form id="signup-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-4">
+                <input type="hidden" name="_subject" value="New Package Signup - SecurePatch Pro">
+                <input type="hidden" name="selected_plan" id="selected-plan">
+                <input type="hidden" name="selected_price" id="selected-price">
+                <input type="hidden" name="selected_duration" id="selected-duration">
+                
+                <div class="bg-green-50 p-4 rounded-xl mb-4 border border-green-200">
+                    <h4 class="font-bold text-green-800 mb-1 text-sm">Selected Package</h4>
+                    <p id="selected-package-info" class="text-green-700 font-medium"></p>
                 </div>
                 
-                <form id="signup-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-4">
-                    <input type="hidden" name="_subject" value="New Package Signup - SecurePatch Pro">
-                    <input type="hidden" name="selected_plan" id="selected-plan">
-                    <input type="hidden" name="selected_price" id="selected-price">
-                    <input type="hidden" name="selected_duration" id="selected-duration">
-                    
-                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                        <h4 class="font-bold text-blue-800 mb-2">Selected Package</h4>
-                        <p id="selected-package-info" class="text-blue-700"></p>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                        <input type="text" name="name" required class="form-control" placeholder="John Smith">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                        <input type="email" name="email" required class="form-control" placeholder="john@example.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Company Name *</label>
-                        <input type="text" name="company" required class="form-control" placeholder="Your Company Inc.">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                        <input type="tel" name="phone" class="form-control" placeholder="(555) 123-4567">
-                    </div>
-                    
-                    <!-- Platform Selection -->
-                    <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Select Your Platform *</label>
-                        <div class="platform-options">
-                            <div class="platform-option" data-platform="shopify">
-                                <i class="fab fa-shopify platform-icon text-purple-600"></i>
-                                <span class="text-sm font-medium">Shopify</span>
-                            </div>
-                            <div class="platform-option" data-platform="wix">
-                                <i class="fas fa-shopping-cart platform-icon text-blue-600"></i>
-                                <span class="text-sm font-medium">Wix</span>
-                            </div>
-                            <div class="platform-option" data-platform="woocommerce">
-                                <i class="fab fa-wordpress platform-icon text-blue-800"></i>
-                                <span class="text-sm font-medium">WooCommerce</span>
-                            </div>
-                            <div class="platform-option" data-platform="squarespace">
-                                <i class="fas fa-square platform-icon text-black"></i>
-                                <span class="text-sm font-medium">Squarespace</span>
-                            </div>
+                <div class="form-group">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                    <input type="text" name="name" required class="form-control" placeholder="John Smith">
+                </div>
+                
+                <div class="form-group">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                    <input type="email" name="email" required class="form-control" placeholder="john@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Company Name *</label>
+                    <input type="text" name="company" required class="form-control" placeholder="Your Company Inc.">
+                </div>
+                
+                <div class="form-group">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                    <input type="tel" name="phone" class="form-control" placeholder="(555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Select Your Platform *</label>
+                    <div class="platform-options">
+                        <div class="platform-option" data-platform="shopify">
+                            <i class="fab fa-shopify text-green-600"></i>
+                            <span class="text-sm font-medium">Shopify</span>
                         </div>
-                        <input type="hidden" name="platform" id="selected-platform" required>
-                    </div>
-                    
-                    <!-- Store URL -->
-                    <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Store URL *</label>
-                        <input type="url" name="store_url" required class="form-control" placeholder="https://yourstore.com">
-                    </div>
-                    
-                    <!-- Business Address -->
-                    <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Business Address *</label>
-                        <input type="text" name="business_address" required class="form-control" placeholder="123 Business Street">
-                    </div>
-                    
-                    <!-- Country and Zip Code -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="form-group">
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Country *</label>
-                            <select name="country" required class="form-control">
-                                <option value="">Select Country</option>
-                                <option value="US">United States</option>
-                                <option value="CA">Canada</option>
-                                <option value="UK">United Kingdom</option>
-                                <option value="AU">Australia</option>
-                                <option value="DE">Germany</option>
-                                <option value="FR">France</option>
-                                <option value="JP">Japan</option>
-                                <option value="OTHER">Other</option>
-                            </select>
+                        <div class="platform-option" data-platform="wix">
+                            <i class="fas fa-shopping-cart text-blue-600"></i>
+                            <span class="text-sm font-medium">Wix</span>
                         </div>
-                        <div class="form-group">
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Zip/Postal Code *</label>
-                            <input type="text" name="zip_code" required class="form-control" placeholder="12345">
+                        <div class="platform-option" data-platform="woocommerce">
+                            <i class="fab fa-wordpress text-blue-800"></i>
+                            <span class="text-sm font-medium">WooCommerce</span>
+                        </div>
+                        <div class="platform-option" data-platform="squarespace">
+                            <i class="fas fa-square text-black"></i>
+                            <span class="text-sm font-medium">Squarespace</span>
                         </div>
                     </div>
-                    
-                    <!-- Expert Code Field -->
+                    <input type="hidden" name="platform" id="selected-platform" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Store URL *</label>
+                    <input type="url" name="store_url" required class="form-control" placeholder="https://yourstore.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Business Address *</label>
+                    <input type="text" name="business_address" required class="form-control" placeholder="123 Business Street">
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">
-                            Expert Code (Required for patch delivery) *
-                        </label>
-                        <input type="text" name="expert_code" required placeholder="XX-12345" class="form-control" pattern="[A-Z]{2}-[0-9]{5}" title="Format: XX-12345 (e.g., DA-87543)">
-                        <p class="text-xs text-gray-500 mt-1">Format: XX-12345 (e.g., DA-87543)</p>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Country *</label>
+                        <select name="country" required class="form-control">
+                            <option value="">Select Country</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="AU">Australia</option>
+                            <option value="DE">Germany</option>
+                            <option value="FR">France</option>
+                            <option value="JP">Japan</option>
+                            <option value="OTHER">Other</option>
+                        </select>
                     </div>
-                    
                     <div class="form-group">
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Additional Requirements (Optional)</label>
-                        <textarea name="requirements" rows="3" class="form-control" placeholder="Any specific requirements or questions..."></textarea>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Zip/Postal Code *</label>
+                        <input type="text" name="zip_code" required class="form-control" placeholder="12345">
                     </div>
-                    
-                    <div class="flex items-start">
-                        <input type="checkbox" id="terms-signup" name="terms" required class="mt-1">
-                        <label for="terms-signup" class="ml-3 text-sm text-gray-600">
-                            I agree to the <a href="javascript:void(0)" onclick="showLegalPage('terms')" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="text-blue-600 hover:underline">Privacy Policy</a>
-                        </label>
-                    </div>
-                    
-                    <div class="pt-2">
-                        <button type="submit" class="btn-primary w-full py-3">
-                            <i class="fas fa-check-circle mr-2"></i> Complete Signup
-                        </button>
-                        <p class="text-gray-500 text-sm mt-2">You will receive a confirmation email with next steps.</p>
-                    </div>
-                </form>
-            </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                        Expert Code (Required for patch delivery) *
+                    </label>
+                    <input type="text" name="expert_code" required placeholder="XX-12345" class="form-control" pattern="[A-Z]{2}-[0-9]{5}" title="Format: XX-12345 (e.g., DA-87543)">
+                    <p class="text-xs text-gray-500 mt-1">Format: XX-12345 (e.g., DA-87543)</p>
+                </div>
+                
+                <div class="form-group">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Additional Requirements (Optional)</label>
+                    <textarea name="requirements" rows="3" class="form-control" placeholder="Any specific requirements or questions..."></textarea>
+                </div>
+                
+                <div class="flex items-start">
+                    <input type="checkbox" id="terms-signup" name="terms" required class="mt-1 w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                    <label for="terms-signup" class="ml-3 text-sm text-gray-600">
+                        I agree to the <a href="javascript:void(0)" onclick="showLegalPage('terms')" class="text-green-600 hover:underline">Terms of Service</a> and <a href="javascript:void(0)" onclick="showLegalPage('privacy')" class="text-green-600 hover:underline">Privacy Policy</a>
+                    </label>
+                </div>
+                
+                <div class="pt-2">
+                    <button type="submit" class="btn-primary w-full py-3">
+                        <i class="fas fa-check-circle mr-2"></i> Complete Signup
+                    </button>
+                    <p class="text-gray-500 text-sm mt-2 text-center">You will receive a confirmation email with next steps.</p>
+                </div>
+            </form>
         </div>
     </div>
 
     <!-- Confirmation Modal -->
     <div id="confirmationModal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <div class="p-8 text-center">
-                <div class="confirmation-icon">
-                    <i class="fas fa-check"></i>
-                </div>
-                
-                <h3 class="text-2xl font-bold text-gray-800 mt-6 mb-4">Signup Successful!</h3>
-                
-                <div class="text-gray-600 mb-6">
-                    <p id="confirmation-message" class="mb-4"></p>
-                    <div class="mt-4">
-                        <p class="text-sm text-gray-500 mb-2">Your Expert Code:</p>
-                        <div id="expert-code-display" class="expert-code-box mb-4"></div>
-                        <p class="text-sm text-gray-500">Keep this code for patch delivery configuration.</p>
-                    </div>
-                </div>
-                
-                <button onclick="closeConfirmationModal()" class="btn-secondary px-6 py-2">
-                    Return to Home
-                </button>
+        <div class="modal-content text-center">
+            <div class="confirmation-icon">
+                <i class="fas fa-check"></i>
             </div>
+            
+            <h3 class="text-2xl font-bold text-gray-900 mt-6 mb-4">Signup Successful!</h3>
+            
+            <div class="text-gray-600 mb-6">
+                <p id="confirmation-message" class="mb-4"></p>
+                <div class="mt-4">
+                    <p class="text-sm text-gray-500 mb-2 font-medium">Your Expert Code:</p>
+                    <div id="expert-code-display" class="expert-code-box mb-4"></div>
+                    <p class="text-sm text-gray-500">Keep this code for patch delivery configuration.</p>
+                </div>
+            </div>
+            
+            <button onclick="closeConfirmationModal()" class="btn-primary px-8 py-3">
+                Return to Home
+            </button>
         </div>
     </div>
 
-    <!-- Legal Pages Modal -->
+    <!-- Legal Modal -->
     <div id="legalModal" class="legal-modal hidden">
         <div class="legal-content">
             <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-bold text-gray-800">Legal Documents</h2>
-                <button onclick="closeLegalModal()" class="text-gray-500 hover:text-gray-700">
+                <h2 class="text-2xl font-bold text-gray-900">Legal Documents</h2>
+                <button onclick="closeLegalModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
                     <i class="fas fa-times text-xl"></i>
                 </button>
             </div>
@@ -1713,10 +1996,8 @@
                 <button class="legal-tab" data-tab="gdpr">GDPR Compliance</button>
             </div>
             
-            <!-- Privacy Policy -->
             <div id="privacy-policy" class="legal-section active">
-                <p class="legal-date">Last Updated: November 2026</p>
-                
+                <p class="legal-date">Last Updated: January 2026</p>
                 <h2>1. Information We Collect</h2>
                 <p>We collect information that you provide directly to us, including:</p>
                 <ul>
@@ -1725,38 +2006,18 @@
                     <li><strong>Technical Information:</strong> IP address, browser type, device information</li>
                     <li><strong>Communication Data:</strong> Emails, chat messages, support requests</li>
                 </ul>
-                
                 <h2>2. How We Use Your Information</h2>
-                <p>We use the information we collect to:</p>
-                <ul>
-                    <li>Provide and maintain our patch management services</li>
-                    <li>Process your subscription and billing</li>
-                    <li>Send technical notices, updates, and security alerts</li>
-                    <li>Respond to your comments, questions, and customer service requests</li>
-                    <li>Monitor and analyze trends, usage, and activities</li>
-                    <li>Comply with legal obligations and enforce our agreements</li>
-                </ul>
-                
+                <p>We use the information we collect to provide and maintain our patch management services, process subscriptions, send technical notices, respond to inquiries, and comply with legal obligations.</p>
                 <h2>3. Data Security</h2>
-                <p>We implement appropriate technical and organizational security measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
-                
-                <h2>4. Data Retention</h2>
-                <p>We retain personal data only for as long as necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements.</p>
-                
-                <h2>5. Your Rights</h2>
+                <p>We implement appropriate technical and organizational security measures to protect your personal data.</p>
+                <h2>4. Your Rights</h2>
                 <p>Depending on your location, you may have rights regarding your personal data including access, correction, deletion, and data portability.</p>
-                
-                <h2>6. Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy, please contact us at privacy@securepatchpro.com.</p>
             </div>
             
-            <!-- Terms of Service -->
             <div id="terms-service" class="legal-section">
-                <p class="legal-date">Last Updated: November 2026</p>
-                
+                <p class="legal-date">Last Updated: January 2026</p>
                 <h2>1. Agreement to Terms</h2>
                 <p>By accessing or using SecurePatch Pro's services, you agree to be bound by these Terms of Service.</p>
-                
                 <h2>2. Subscription Terms</h2>
                 <h3>2.1 Subscription Periods:</h3>
                 <ul>
@@ -1765,203 +2026,120 @@
                     <li><strong>Premium Plan:</strong> 24-month minimum commitment</li>
                     <li><strong>Enterprise Plan:</strong> Custom term as agreed</li>
                 </ul>
-                
                 <h3>2.2 Billing and Payment:</h3>
                 <ul>
                     <li>All fees are payable in advance</li>
                     <li>Auto-renewal is enabled by default</li>
-                    <li>Late payments may result in service suspension</li>
                 </ul>
-                
-                <h2>3. Service Level Agreement (SLA)</h2>
+                <h2>3. Service Level Agreement</h2>
                 <p>We guarantee 99.9% uptime for our patch management services.</p>
-                
-                <h2>4. Acceptable Use</h2>
-                <p>You agree not to misuse our services, including attempting to breach security or using the service for any illegal purpose.</p>
-                
-                <h2>5. Termination</h2>
-                <p>Either party may terminate this agreement with 30 days written notice.</p>
-                
-                <h2>6. Governing Law</h2>
-                <p>These Terms shall be governed by the laws of the State of California.</p>
             </div>
             
-            <!-- Cookie Policy -->
             <div id="cookie-policy" class="legal-section">
-                <p class="legal-date">Last Updated: November 2026</p>
-                
+                <p class="legal-date">Last Updated: January 2026</p>
                 <h2>1. What Are Cookies</h2>
-                <p>Cookies are small text files that are placed on your computer or mobile device when you visit our website.</p>
-                
+                <p>Cookies are small text files placed on your device when you visit our website.</p>
                 <h2>2. How We Use Cookies</h2>
-                <p>We use cookies for the following purposes:</p>
                 <ul>
-                    <li><strong>Essential Cookies:</strong> Necessary for the website to function properly</li>
-                    <li><strong>Performance Cookies:</strong> Collect information about how visitors use our website</li>
-                    <li><strong>Functionality Cookies:</strong> Remember choices you make to improve your experience</li>
+                    <li><strong>Essential Cookies:</strong> Necessary for website functionality</li>
+                    <li><strong>Performance Cookies:</strong> Collect usage information</li>
+                    <li><strong>Functionality Cookies:</strong> Remember user preferences</li>
                 </ul>
-                
                 <h2>3. Managing Cookies</h2>
-                <p>You can control and/or delete cookies as you wish through your browser settings.</p>
-                
-                <h2>4. Specific Cookies We Use</h2>
-                <ul>
-                    <li><strong>Google Analytics:</strong> _ga, _gid, _gat - Used to distinguish users</li>
-                    <li><strong>Formspree:</strong> formspree_session - Used for form submission</li>
-                    <li><strong>Session Cookie:</strong> securepatch_session - Maintains your session</li>
-                </ul>
+                <p>You can control cookies through your browser settings.</p>
             </div>
             
-            <!-- GDPR Compliance -->
             <div id="gdpr-compliance" class="legal-section">
-                <p class="legal-date">Last Updated: November 2026</p>
-                
+                <p class="legal-date">Last Updated: January 2026</p>
                 <h2>1. Our Commitment to GDPR</h2>
-                <p>SecurePatch Pro is committed to complying with the General Data Protection Regulation (GDPR) for all users in the European Union.</p>
-                
-                <h2>2. Data Protection Principles</h2>
-                <p>We adhere to data protection principles including lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, and integrity.</p>
-                
-                <h2>3. Legal Basis for Processing</h2>
-                <p>We process personal data based on consent, contract, legal obligation, or legitimate interests.</p>
-                
-                <h2>4. Data Subject Rights</h2>
-                <p>Under GDPR, you have rights including access, rectification, erasure, restriction of processing, data portability, and objection.</p>
-                
-                <h2>5. Data Protection Officer</h2>
-                <p>We have appointed a Data Protection Officer (DPO) who can be contacted at dpo@securepatchpro.com.</p>
-                
-                <h2>6. Data Breach Notification</h2>
-                <p>In the event of a data breach, we will notify affected users and authorities within 72 hours where feasible.</p>
+                <p>SecurePatch Pro is committed to GDPR compliance for all users in the European Union.</p>
+                <h2>2. Data Subject Rights</h2>
+                <p>You have rights including access, rectification, erasure, restriction, data portability, and objection.</p>
+                <h2>3. Data Protection Officer</h2>
+                <p>Contact our DPO at dpo@securepatchpro.com for privacy-related inquiries.</p>
             </div>
             
             <div class="mt-6 pt-4 border-t border-gray-200">
-                <button onclick="closeLegalModal()" class="btn-primary">
-                    Close
-                </button>
+                <button onclick="closeLegalModal()" class="btn-primary">Close</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Logo click functionality
+        // Logo click - scroll to top
         document.getElementById('home-logo').addEventListener('click', function(e) {
             e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
         
-        // Close mobile menu when clicking outside on mobile
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobile-menu');
-            const menuBtn = document.getElementById('mobile-menu-btn');
-            if (!menu.contains(event.target) && !menuBtn.contains(event.target) && !menu.classList.contains('hidden')) {
-                menu.classList.add('hidden');
-            }
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
         });
         
-        // Smooth scrolling for navigation links
+        // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    document.getElementById('mobile-menu').classList.add('hidden');
-                    
+                const target = document.querySelector(targetId);
+                if (target) {
+                    document.getElementById('mobile-menu')?.classList.add('hidden');
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: target.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
         });
         
-        // Platform selection functionality
+        // Platform selection
         function setupPlatformSelection() {
-            const platformOptions = document.querySelectorAll('.platform-option');
+            const options = document.querySelectorAll('.platform-option');
             const hiddenInput = document.getElementById('selected-platform');
             
-            platformOptions.forEach(option => {
+            options.forEach(option => {
                 option.addEventListener('click', function() {
-                    // Remove selected class from all options
-                    platformOptions.forEach(opt => opt.classList.remove('selected'));
-                    
-                    // Add selected class to clicked option
+                    options.forEach(opt => opt.classList.remove('selected'));
                     this.classList.add('selected');
-                    
-                    // Update hidden input value
-                    hiddenInput.value = this.getAttribute('data-platform');
+                    hiddenInput.value = this.dataset.platform;
                 });
             });
             
-            // Set default selection
-            if (platformOptions.length > 0) {
-                platformOptions[0].click();
+            // Auto-select first if available
+            if (options.length > 0 && !hiddenInput.value) {
+                options[0].classList.add('selected');
+                hiddenInput.value = options[0].dataset.platform;
             }
         }
         
-        // Content Carousel
-        let currentSlide = 0;
-        const carouselSlides = document.querySelectorAll('.carousel-slide');
-        const carouselTrack = document.getElementById('carouselTrack');
-        const carouselIndicators = document.querySelectorAll('#carouselIndicators .carousel-indicator');
-        
-        function setupCarousel() {
-            // Set initial position
-            updateCarousel();
-            
-            // Auto-advance carousel every 5 seconds
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % carouselSlides.length;
-                updateCarousel();
-            }, 5000);
-            
-            // Indicator click handlers
-            carouselIndicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    currentSlide = index;
-                    updateCarousel();
-                });
-            });
-        }
-        
-        function updateCarousel() {
-            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            // Update indicators
-            carouselIndicators.forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
-            });
-        }
-        
-        // Testimonial Carousel
+        // Testimonial Carousel - 10 testimonials
         let currentTestimonial = 0;
         const testimonialSlides = document.querySelectorAll('.testimonial-slide');
         const testimonialTrack = document.getElementById('testimonialTrack');
         const testimonialIndicators = document.querySelectorAll('#testimonialIndicators .carousel-indicator');
         
+        function updateTestimonialCarousel() {
+            if (!testimonialTrack || testimonialSlides.length === 0) return;
+            testimonialTrack.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+            testimonialIndicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === currentTestimonial);
+            });
+        }
+        
         function setupTestimonialCarousel() {
-            // Set initial position
+            if (testimonialSlides.length === 0) return;
             updateTestimonialCarousel();
             
-            // Auto-advance testimonial carousel every 6 seconds
+            // Auto-advance every 6 seconds
             setInterval(() => {
                 currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
                 updateTestimonialCarousel();
@@ -1976,190 +2154,129 @@
             });
         }
         
-        function updateTestimonialCarousel() {
-            testimonialTrack.style.transform = `translateX(-${currentTestimonial * 100}%)`;
-            
-            // Update indicators
-            testimonialIndicators.forEach((indicator, index) => {
-                if (index === currentTestimonial) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
-            });
-        }
-        
-        // Signup Form Functions
+        // Signup Modal
         function openSignupForm(plan, price, duration) {
-            // Update hidden fields
             document.getElementById('selected-plan').value = plan;
             document.getElementById('selected-price').value = price;
             document.getElementById('selected-duration').value = duration;
-            
-            // Update display text
             document.getElementById('selected-package-info').textContent = `${plan} Plan - ${price} (${duration})`;
             
             // Reset platform selection
-            setupPlatformSelection();
+            const options = document.querySelectorAll('.platform-option');
+            const hiddenInput = document.getElementById('selected-platform');
+            options.forEach((opt, i) => {
+                opt.classList.toggle('selected', i === 0);
+            });
+            if (options.length > 0) {
+                hiddenInput.value = options[0].dataset.platform;
+            }
             
-            // Open modal
-            const modal = document.getElementById('signupModal');
-            modal.classList.remove('hidden');
+            document.getElementById('signupModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
         
         function closeSignupModal() {
-            const modal = document.getElementById('signupModal');
-            modal.classList.add('hidden');
+            document.getElementById('signupModal').classList.add('hidden');
             document.body.style.overflow = '';
         }
         
-        // Confirmation modal functions
+        // Confirmation Modal
         function openConfirmationModal(plan, expertCode) {
-            const modal = document.getElementById('confirmationModal');
-            modal.classList.remove('hidden');
+            document.getElementById('confirmationModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
-            
-            // Update confirmation message
             document.getElementById('confirmation-message').textContent = 
                 `Thank you for signing up for the ${plan} Plan! You will receive a confirmation email with next steps.`;
-            
-            // Update expert code display
             document.getElementById('expert-code-display').textContent = expertCode || 'XX-12345';
         }
         
         function closeConfirmationModal() {
-            const modal = document.getElementById('confirmationModal');
-            modal.classList.add('hidden');
+            document.getElementById('confirmationModal').classList.add('hidden');
             document.body.style.overflow = '';
-            
-            // Close signup modal if open
             closeSignupModal();
         }
         
-        // Contact modal function
-        function openContactModal(plan = '') {
-            window.scrollTo({
-                top: document.getElementById('contact').offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-        
-        // Legal modal functions
-        function showLegalPage(page) {
-            const modal = document.getElementById('legalModal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            
-            // Update active tab
-            document.querySelectorAll('.legal-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            document.querySelectorAll('.legal-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show selected page
-            document.querySelector(`.legal-tab[data-tab="${page}"]`).classList.add('active');
-            
-            if (page === 'privacy') {
-                document.getElementById('privacy-policy').classList.add('active');
-            } else if (page === 'terms') {
-                document.getElementById('terms-service').classList.add('active');
-            } else if (page === 'cookie') {
-                document.getElementById('cookie-policy').classList.add('active');
-            } else if (page === 'gdpr') {
-                document.getElementById('gdpr-compliance').classList.add('active');
+        // Contact
+        function openContactModal() {
+            const contact = document.getElementById('contact');
+            if (contact) {
+                window.scrollTo({ top: contact.offsetTop - 80, behavior: 'smooth' });
             }
         }
         
+        // Legal
+        function showLegalPage(page) {
+            document.getElementById('legalModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            document.querySelectorAll('.legal-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.legal-section').forEach(section => section.classList.remove('active'));
+            
+            document.querySelector(`.legal-tab[data-tab="${page}"]`).classList.add('active');
+            const sectionMap = {
+                privacy: 'privacy-policy',
+                terms: 'terms-service',
+                cookie: 'cookie-policy',
+                gdpr: 'gdpr-compliance'
+            };
+            document.getElementById(sectionMap[page]).classList.add('active');
+        }
+        
         function closeLegalModal() {
-            const modal = document.getElementById('legalModal');
-            modal.classList.add('hidden');
+            document.getElementById('legalModal').classList.add('hidden');
             document.body.style.overflow = '';
         }
         
         // Legal tab switching
         document.querySelectorAll('.legal-tab').forEach(tab => {
             tab.addEventListener('click', function() {
-                const tabName = this.getAttribute('data-tab');
-                
-                // Update active tab
-                document.querySelectorAll('.legal-tab').forEach(t => {
-                    t.classList.remove('active');
-                });
+                const page = this.dataset.tab;
+                document.querySelectorAll('.legal-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.legal-section').forEach(s => s.classList.remove('active'));
                 this.classList.add('active');
-                
-                // Show selected section
-                document.querySelectorAll('.legal-section').forEach(section => {
-                    section.classList.remove('active');
-                });
-                
-                if (tabName === 'privacy') {
-                    document.getElementById('privacy-policy').classList.add('active');
-                } else if (tabName === 'terms') {
-                    document.getElementById('terms-service').classList.add('active');
-                } else if (tabName === 'cookie') {
-                    document.getElementById('cookie-policy').classList.add('active');
-                } else if (tabName === 'gdpr') {
-                    document.getElementById('gdpr-compliance').classList.add('active');
-                }
+                const sectionMap = {
+                    privacy: 'privacy-policy',
+                    terms: 'terms-service',
+                    cookie: 'cookie-policy',
+                    gdpr: 'gdpr-compliance'
+                };
+                document.getElementById(sectionMap[page]).classList.add('active');
             });
         });
         
-        // Close modal when clicking outside
+        // Close modals on backdrop click
         document.querySelectorAll('.modal-overlay, .legal-modal').forEach(modal => {
             modal.addEventListener('click', function(e) {
                 if (e.target === this) {
-                    if (this.id === 'signupModal') {
-                        closeSignupModal();
-                    } else if (this.id === 'confirmationModal') {
-                        closeConfirmationModal();
-                    } else if (this.id === 'legalModal') {
-                        closeLegalModal();
-                    }
+                    if (this.id === 'signupModal') closeSignupModal();
+                    else if (this.id === 'confirmationModal') closeConfirmationModal();
+                    else if (this.id === 'legalModal') closeLegalModal();
                 }
             });
         });
         
-        // Close modal with Escape key
+        // Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                if (!document.getElementById('signupModal').classList.contains('hidden')) {
-                    closeSignupModal();
-                } else if (!document.getElementById('confirmationModal').classList.contains('hidden')) {
-                    closeConfirmationModal();
-                } else if (!document.getElementById('legalModal').classList.contains('hidden')) {
-                    closeLegalModal();
-                }
+                if (!document.getElementById('signupModal').classList.contains('hidden')) closeSignupModal();
+                else if (!document.getElementById('confirmationModal').classList.contains('hidden')) closeConfirmationModal();
+                else if (!document.getElementById('legalModal').classList.contains('hidden')) closeLegalModal();
             }
         });
         
         // Expert code validation
-        const expertCodeInput = document.querySelector('input[name="expert_code"]');
-        if (expertCodeInput) {
-            expertCodeInput.addEventListener('input', function() {
-                const input = this.value;
-                if (/^[A-Z]{2}-[0-9]{5}$/.test(input)) {
-                    this.classList.add('border-green-500');
-                    this.classList.remove('border-red-500');
-                } else {
-                    this.classList.remove('border-green-500');
-                    if (input.length > 0) {
-                        this.classList.add('border-red-500');
-                    } else {
-                        this.classList.remove('border-red-500');
-                    }
-                }
-            });
-        }
+        document.querySelector('input[name="expert_code"]')?.addEventListener('input', function() {
+            const isValid = /^[A-Z]{2}-[0-9]{5}$/.test(this.value);
+            this.classList.toggle('border-green-500', isValid && this.value.length > 0);
+            this.classList.toggle('border-red-500', !isValid && this.value.length > 0);
+            if (isValid && this.value.length > 0) {
+                this.classList.remove('border-red-500');
+            }
+        });
         
         // Signup form submission
         document.getElementById('signup-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Validate platform selection
             const platformInput = document.getElementById('selected-platform');
             if (!platformInput.value) {
                 alert('Please select a platform.');
@@ -2171,38 +2288,28 @@
             const expertCode = this.querySelector('input[name="expert_code"]').value;
             const selectedPlan = document.getElementById('selected-plan').value;
             
-            // Show loading state
             submitBtn.innerHTML = '<span class="loading-spinner"></span> Processing...';
             submitBtn.disabled = true;
             
             try {
                 const formData = new FormData(this);
-                
                 const response = await fetch(this.action, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
                 
                 if (response.ok) {
-                    // Close signup modal and show confirmation
                     closeSignupModal();
-                    setTimeout(() => {
-                        openConfirmationModal(selectedPlan, expertCode);
-                    }, 300);
-                    
-                    // Reset form
+                    setTimeout(() => openConfirmationModal(selectedPlan, expertCode), 300);
                     this.reset();
                 } else {
-                    alert('There was an error submitting your signup. Please try again or contact us directly.');
+                    alert('There was an error submitting your signup. Please try again.');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('There was an error submitting your signup. Please try again or contact us directly.');
+                alert('There was an error submitting your signup. Please try again.');
             } finally {
-                // Reset button state
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }
@@ -2215,78 +2322,37 @@
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
-            // Show loading state
             submitBtn.innerHTML = '<span class="loading-spinner"></span> Processing...';
             submitBtn.disabled = true;
             
             try {
                 const formData = new FormData(this);
-                
                 const response = await fetch(this.action, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
                 
                 if (response.ok) {
-                    alert('Thank you for your interest! A security specialist will contact you within 24 hours to schedule your assessment.');
+                    alert('Thank you! A security specialist will contact you within 24 hours.');
                     this.reset();
                 } else {
-                    alert('There was an error submitting your form. Please try again or contact us directly.');
+                    alert('There was an error submitting your form. Please try again.');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('There was an error submitting your form. Please try again or contact us directly.');
+                alert('There was an error submitting your form. Please try again.');
             } finally {
-                // Reset button state
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }
         });
         
-        // Add animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.card-hover, .fade-in');
-            
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('fade-in');
-                }
-            });
-        }
-        
-        // Sticky navigation
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('sticky-nav');
-            } else {
-                nav.classList.remove('sticky-nav');
-            }
-        });
-        
-        // Initialize on load
+        // Initialize
         window.addEventListener('load', function() {
-            animateOnScroll();
             setupPlatformSelection();
-            setupCarousel();
             setupTestimonialCarousel();
-            
-            // Check for mobile
-            if (window.innerWidth <= 768) {
-                // Add touch improvements for mobile
-                document.querySelectorAll('button').forEach(btn => {
-                    btn.style.touchAction = 'manipulation';
-                });
-            }
         });
-        
-        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>
