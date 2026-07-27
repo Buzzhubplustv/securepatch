@@ -935,6 +935,60 @@
             color: #d1d5db;
         }
         
+        /* Thank you message styles */
+        .thank-you-container {
+            background: #f0fdf4;
+            border: 2px solid #5E8E3E;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            text-align: center;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .thank-you-container .expert-code-display {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 2px dashed #5E8E3E;
+            font-family: monospace;
+            font-size: 1.75rem;
+            letter-spacing: 0.1em;
+            color: #1A1A1A;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .thank-you-container .info-grid {
+            background: #f8faf6;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            margin-top: 1.25rem;
+            text-align: left;
+        }
+        
+        .thank-you-container .info-grid p {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #4b5563;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .thank-you-container .info-grid p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .thank-you-container .info-grid i {
+            color: #5E8E3E;
+            width: 20px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .hero-title {
@@ -996,6 +1050,15 @@
             .price-amount .currency {
                 font-size: 1.5rem;
             }
+            
+            .thank-you-container {
+                padding: 1.5rem;
+            }
+            
+            .thank-you-container .expert-code-display {
+                font-size: 1.25rem;
+                padding: 1rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -1027,6 +1090,15 @@
             
             .price-amount .currency {
                 font-size: 1.2rem;
+            }
+            
+            .thank-you-container .expert-code-display {
+                font-size: 1rem;
+                padding: 0.75rem;
+            }
+            
+            .thank-you-container .info-grid p {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -1709,56 +1781,114 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section with Updated Thank You Message -->
     <section id="contact" class="bg-gradient-to-br from-[#1A1A1A] to-[#2D4F1F] text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Security Posture?</h2>
             <p class="text-xl opacity-90 max-w-2xl mx-auto mb-10">Schedule a comprehensive security assessment and receive your custom risk reduction roadmap.</p>
             
             <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
-                <form id="contact-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-6">
-                    <input type="hidden" name="_subject" value="Enterprise Security Assessment Request - SecurePatch Pro">
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-left text-white/80 mb-2 text-sm font-medium">Executive Contact *</label>
-                            <input type="text" name="name" required class="contact-input" placeholder="Full Name">
+                <!-- Form Container -->
+                <div id="form-container">
+                    <form id="contact-form" action="https://formspree.io/f/xaqradyk" method="POST" class="space-y-6">
+                        <input type="hidden" name="_subject" value="Enterprise Security Assessment Request - SecurePatch Pro">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-left text-white/80 mb-2 text-sm font-medium">Executive Contact *</label>
+                                <input type="text" name="name" required class="contact-input" placeholder="Full Name">
+                            </div>
+                            <div>
+                                <label class="block text-left text-white/80 mb-2 text-sm font-medium">Corporate Email *</label>
+                                <input type="email" name="email" required class="contact-input" placeholder="business@company.com">
+                            </div>
                         </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-left text-white/80 mb-2 text-sm font-medium">Organization</label>
+                                <input type="text" name="company" class="contact-input" placeholder="Company Name">
+                            </div>
+                            <div>
+                                <label class="block text-left text-white/80 mb-2 text-sm font-medium">Enterprise Asset Count</label>
+                                <select name="endpoints" class="contact-select">
+                                    <option value="" class="text-gray-800">Select range</option>
+                                    <option value="1-50" class="text-gray-800">1-50 assets</option>
+                                    <option value="51-250" class="text-gray-800">51-250 assets</option>
+                                    <option value="251-1000" class="text-gray-800">251-1,000 assets</option>
+                                    <option value="1000+" class="text-gray-800">1,000+ assets</option>
+                                </select>
+                            </div>
+                        </div>
+                        
                         <div>
-                            <label class="block text-left text-white/80 mb-2 text-sm font-medium">Corporate Email *</label>
-                            <input type="email" name="email" required class="contact-input" placeholder="business@company.com">
+                            <label class="block text-left text-white/80 mb-2 text-sm font-medium">Primary Security Objectives *</label>
+                            <textarea name="message" rows="4" required class="contact-textarea" placeholder="Describe your key security challenges, compliance requirements, and objectives..."></textarea>
+                        </div>
+                        
+                        <!-- Expert Code Field -->
+                        <div>
+                            <label class="block text-left text-white/80 mb-2 text-sm font-medium">
+                                Expert Code (Required for patch delivery) *
+                            </label>
+                            <input type="text" name="expert_code" required placeholder="XX-12345" class="contact-input" pattern="[A-Z]{2}-[0-9]{5}" title="Format: XX-12345 (e.g., DA-87543)">
+                            <p class="text-white/60 text-xs mt-1 text-left">Format: XX-12345 (e.g., DA-87543)</p>
+                        </div>
+                        
+                        <div class="text-center pt-2">
+                            <button type="submit" class="assessment-btn px-10 py-4 text-lg" id="contact-submit-btn">
+                                <i class="fas fa-paper-plane mr-2"></i> Request Executive Briefing
+                            </button>
+                            <p class="text-white/60 text-sm mt-4">A security architect will contact you within 30 minutes - 5 hours</p>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Thank You Message (hidden initially) -->
+                <div id="thank-you-message" class="thank-you-container hidden">
+                    <div class="flex justify-center">
+                        <div class="confirmation-icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
                     </div>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-left text-white/80 mb-2 text-sm font-medium">Organization</label>
-                            <input type="text" name="company" class="contact-input" placeholder="Company Name">
-                        </div>
-                        <div>
-                            <label class="block text-left text-white/80 mb-2 text-sm font-medium">Enterprise Asset Count</label>
-                            <select name="endpoints" class="contact-select">
-                                <option value="" class="text-gray-800">Select range</option>
-                                <option value="1-50" class="text-gray-800">1-50 assets</option>
-                                <option value="51-250" class="text-gray-800">51-250 assets</option>
-                                <option value="251-1000" class="text-gray-800">251-1,000 assets</option>
-                                <option value="1000+" class="text-gray-800">1,000+ assets</option>
-                            </select>
-                        </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mt-4">✅ Security Assessment Received</h3>
+                    
+                    <div class="bg-white rounded-xl p-5 mt-4 border border-gray-200">
+                        <p class="text-gray-600 font-medium text-sm">Your Expert Code:</p>
+                        <div id="display-expert-code" class="expert-code-display">XX-12345</div>
+                        <p class="text-gray-500 text-xs mt-1">
+                            <i class="fas fa-lock text-green-600"></i>
+                            This code is required for patch delivery
+                        </p>
                     </div>
                     
-                    <div>
-                        <label class="block text-left text-white/80 mb-2 text-sm font-medium">Primary Security Objectives *</label>
-                        <textarea name="message" rows="4" required class="contact-textarea" placeholder="Describe your key security challenges, compliance requirements, and objectives..."></textarea>
+                    <p class="text-gray-600 mt-4">
+                        We've received your request. Our security team will review your requirements and prepare your personalized patch delivery package.
+                    </p>
+                    
+                    <div class="info-grid">
+                        <p>
+                            <i class="fas fa-clock"></i>
+                            <span>You will receive your encrypted patch within <strong>30 minutes - 5 hours</strong> after payment confirmation</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-key"></i>
+                            <span>Your expert code <strong id="expert-code-ref">XX-12345</strong> will be required to decrypt and install the patch</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <span>Check your email for payment instructions from <strong>contact@securepatchpro.com</strong></span>
+                        </p>
                     </div>
                     
-                    <div class="text-center pt-2">
-                        <button type="submit" class="assessment-btn px-10 py-4 text-lg">
-                            <i class="fas fa-paper-plane mr-2"></i> Request Executive Briefing
-                        </button>
-                        <p class="text-white/60 text-sm mt-4">A security architect will contact you within 24 hours</p>
+                    <div class="mt-5 pt-4 border-t border-gray-200">
+                        <p class="text-gray-500 text-sm">
+                            <i class="fas fa-phone text-green-600"></i>
+                            Need immediate assistance? Contact us at <strong class="text-gray-700">contact@securepatchpro.com</strong>
+                        </p>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1840,7 +1970,7 @@
                 </button>
             </div>
             
-            <form id="signup-form" action="https://formspree.io/f/xgvglpva" method="POST" class="space-y-4">
+            <form id="signup-form" action="https://formspree.io/f/xaqradyk" method="POST" class="space-y-4">
                 <input type="hidden" name="_subject" value="New Package Signup - SecurePatch Pro">
                 <input type="hidden" name="selected_plan" id="selected-plan">
                 <input type="hidden" name="selected_price" id="selected-price">
@@ -2273,6 +2403,61 @@
             }
         });
         
+        // Contact Form Submission with Thank You Message
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('contact-submit-btn');
+            const originalText = submitBtn.innerHTML;
+            const formContainer = document.getElementById('form-container');
+            const thankYouMessage = document.getElementById('thank-you-message');
+            
+            // Get the expert code value
+            const expertCodeInput = this.querySelector('input[name="expert_code"]');
+            const expertCode = expertCodeInput ? expertCodeInput.value : 'XX-12345';
+            
+            // Show loading state
+            submitBtn.innerHTML = '<span class="loading-spinner"></span> Processing...';
+            submitBtn.disabled = true;
+            
+            try {
+                const formData = new FormData(this);
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    // Hide form, show thank you message
+                    formContainer.classList.add('hidden');
+                    thankYouMessage.classList.remove('hidden');
+                    
+                    // Update the expert code in the thank you message
+                    const displayCode = document.getElementById('display-expert-code');
+                    const codeRef = document.getElementById('expert-code-ref');
+                    if (displayCode) displayCode.textContent = expertCode;
+                    if (codeRef) codeRef.textContent = expertCode;
+                    
+                    // Scroll to the thank you message
+                    setTimeout(() => {
+                        document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 300);
+                    
+                    // Reset form
+                    this.reset();
+                } else {
+                    alert('There was an error submitting your form. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error submitting your form. Please try again.');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        
         // Signup form submission
         document.getElementById('signup-form').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -2309,39 +2494,6 @@
             } catch (error) {
                 console.error('Error:', error);
                 alert('There was an error submitting your signup. Please try again.');
-            } finally {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-        
-        // Contact form submission
-        document.getElementById('contact-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<span class="loading-spinner"></span> Processing...';
-            submitBtn.disabled = true;
-            
-            try {
-                const formData = new FormData(this);
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-                
-                if (response.ok) {
-                    alert('Thank you! A security specialist will contact you within 24 hours.');
-                    this.reset();
-                } else {
-                    alert('There was an error submitting your form. Please try again.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('There was an error submitting your form. Please try again.');
             } finally {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
